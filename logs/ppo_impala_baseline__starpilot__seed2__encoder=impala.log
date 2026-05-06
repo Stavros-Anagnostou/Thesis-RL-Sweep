@@ -1,0 +1,44 @@
+Load librocdxg.so successully!
+Load all DTIF APIs OK!
+wandb: Currently logged in as: stayrosanang (staanagnostou-). Use `wandb login --relogin` to force relogin
+ERROR:root:Driver not initialized (amdgpu not found in modules)
+wandb: wandb version 0.26.1 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.16.6
+wandb: Run data is saved locally in /home/steve/Thesis-RL-Sweep/wandb/run-20260507_002421-8sy9efxe
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run starpilot__impala__seed2__20260507_002420
+wandb: ⭐️ View project at https://wandb.ai/staanagnostou-/thesis-rl-baselines
+wandb: 🚀 View run at https://wandb.ai/staanagnostou-/thesis-rl-baselines/runs/8sy9efxe
+pygame 2.6.1 (SDL 2.28.4, Python 3.11.15)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+[device] GPU detected: AMD Radeon RX 9070 XT  (15.8 GB VRAM)
+[device] Backend: AMD ROCm (HIP translation layer)
+[wandb] Run ID: 8sy9efxe  tags=['none', 'starpilot', 'seed_2', 'impala']
+[env] starpilot  64 envs  200 levels  mode=easy  backend=auto
+[env] obs_space=(64, 64, 3)  num_actions=15
+[model] IMPALA-CNN  params=626,256
+
+=================================================================
+  Starting PPO  |  env=starpilot  aug=none  lvl=uniform
+  total_steps=25,000,000  updates=1,525  device=cuda
+=================================================================
+
+Traceback (most recent call last):
+  File "/home/steve/Thesis-RL-Sweep/src/train_ppo.py", line 628, in <module>
+    main()
+  File "/home/steve/Thesis-RL-Sweep/src/train_ppo.py", line 430, in main
+    _, new_logp, entropy, new_value = model.get_action_and_value(mb_obs_input, mb_acts)
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/steve/thesis_rl/src/networks.py", line 209, in get_action_and_value
+    dist = torch.distributions.Categorical(logits=logits)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/steve/miniconda3/envs/test/lib/python3.11/site-packages/torch/distributions/categorical.py", line 81, in __init__
+    super().__init__(batch_shape, validate_args=validate_args)
+  File "/home/steve/miniconda3/envs/test/lib/python3.11/site-packages/torch/distributions/distribution.py", line 76, in __init__
+    if not torch._is_all_true(valid):
+KeyboardInterrupt
+wandb: - 0.037 MB of 0.037 MB uploadedwandb: \ 0.037 MB of 0.037 MB uploadedwandb: | 0.037 MB of 0.037 MB uploadedwandb: / 0.049 MB of 0.057 MB uploaded (0.005 MB deduped)wandb: - 0.049 MB of 0.057 MB uploaded (0.005 MB deduped)wandb: \ 0.057 MB of 0.057 MB uploaded (0.005 MB deduped)wandb: 🚀 View run starpilot__impala__seed2__20260507_002420 at: https://wandb.ai/staanagnostou-/thesis-rl-baselines/runs/8sy9efxe
+wandb: ⭐️ View project at: https://wandb.ai/staanagnostou-/thesis-rl-baselines
+wandb: Synced 7 W&B file(s), 0 media file(s), 3 artifact file(s) and 1 other file(s)
+wandb: Find logs at: ./wandb/run-20260507_002421-8sy9efxe/logs

@@ -1,0 +1,43 @@
+Load librocdxg.so successully!
+Load all DTIF APIs OK!
+wandb: Currently logged in as: stayrosanang (staanagnostou-). Use `wandb login --relogin` to force relogin
+ERROR:root:Driver not initialized (amdgpu not found in modules)
+wandb: wandb version 0.26.1 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.16.6
+wandb: Run data is saved locally in /home/steve/Thesis-RL-Sweep/wandb/run-20260507_002421-znh980t7
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run starpilot__impala__seed1__20260507_002420
+wandb: ⭐️ View project at https://wandb.ai/staanagnostou-/thesis-rl-baselines
+wandb: 🚀 View run at https://wandb.ai/staanagnostou-/thesis-rl-baselines/runs/znh980t7
+pygame 2.6.1 (SDL 2.28.4, Python 3.11.15)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+[device] GPU detected: AMD Radeon RX 9070 XT  (15.8 GB VRAM)
+[device] Backend: AMD ROCm (HIP translation layer)
+[wandb] Run ID: znh980t7  tags=['none', 'starpilot', 'seed_1', 'impala']
+[env] starpilot  64 envs  200 levels  mode=easy  backend=auto
+[env] obs_space=(64, 64, 3)  num_actions=15
+[model] IMPALA-CNN  params=626,256
+
+=================================================================
+  Starting PPO  |  env=starpilot  aug=none  lvl=uniform
+  total_steps=25,000,000  updates=1,525  device=cuda
+=================================================================
+
+Traceback (most recent call last):
+  File "/home/steve/Thesis-RL-Sweep/src/train_ppo.py", line 628, in <module>
+    main()
+  File "/home/steve/Thesis-RL-Sweep/src/train_ppo.py", line 467, in main
+    loss.backward()
+  File "/home/steve/miniconda3/envs/test/lib/python3.11/site-packages/torch/_tensor.py", line 625, in backward
+    torch.autograd.backward(
+  File "/home/steve/miniconda3/envs/test/lib/python3.11/site-packages/torch/autograd/__init__.py", line 354, in backward
+    _engine_run_backward(
+  File "/home/steve/miniconda3/envs/test/lib/python3.11/site-packages/torch/autograd/graph.py", line 841, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+wandb: - 0.037 MB of 0.037 MB uploadedwandb: \ 0.037 MB of 0.037 MB uploadedwandb: | 0.037 MB of 0.037 MB uploadedwandb: / 0.037 MB of 0.037 MB uploadedwandb: - 0.049 MB of 0.057 MB uploaded (0.005 MB deduped)wandb: \ 0.057 MB of 0.057 MB uploaded (0.005 MB deduped)wandb: 🚀 View run starpilot__impala__seed1__20260507_002420 at: https://wandb.ai/staanagnostou-/thesis-rl-baselines/runs/znh980t7
+wandb: ⭐️ View project at: https://wandb.ai/staanagnostou-/thesis-rl-baselines
+wandb: Synced 7 W&B file(s), 0 media file(s), 3 artifact file(s) and 1 other file(s)
+wandb: Find logs at: ./wandb/run-20260507_002421-znh980t7/logs
