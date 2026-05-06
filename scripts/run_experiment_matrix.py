@@ -199,41 +199,94 @@ def run_sequential(runs: list[Run], skip_completed: set[str], dry_run: bool) -> 
             avg_dur = elapsed_total / len(durations)
             remaining = total - i
             eta_sec  = avg_dur * remaining
-            eta_str  = f"  ETA ~{eta_sec / 3600:.1f}h"
+            eta_str  = f"  ETA ~{_format_duration(eta_sec)}"
 
-        print(f"\n{'─'*65}")
-        print(f"  Run [{i:>4}/{total}]  {run.experiment_id} | {run.env_id} | seed={run.seed}{eta_str}")
+        progress_pct = i / total * 100
+        print(
+            f"\n  [{i:>4}/{total}]  {progress_pct:5.1f}%  │  "
+            f"{run.experiment_id:<20}  {run.env_id:<12}  seed={run.seed}{eta_str}"
+        )
         if run.overrides:
             print(f"  overrides: {run.overrides}")
-        print(f"{'─'*65}")
 
         if dry_run:
             print(f"  CMD: {' '.join(run.to_cmd())}")
             continue
 
+        LOG_DIR.mkdir(parents=True, exist_ok=True)
+        log_path = LOG_DIR / f"{run.run_id}.log"
+
         t_start = time.time()
         try:
-            result = subprocess.run(run.to_cmd(), check=True)
+            with open(log_path, "w") as log_file:
+                result = subprocess.run(
+                    run.to_cmd(), check=True,
+                    stdout=log_file, stderr=subprocess.STDOUT,
+                )
             duration = time.time() - t_start
             durations.append(duration)
-            print(f"\n  ✓ Done in {duration / 60:.1f} min")
+            print(f"  ✓ Done in {_format_duration(duration)}")
         except subprocess.CalledProcessError as e:
             duration = time.time() - t_start
-            print(f"\n  ✗ FAILED (exit code {e.returncode}) after {duration / 60:.1f} min")
-            print(f"  Run ID: {run.run_id}")
+            print(f"  ✗ FAILED (exit code {e.returncode}) after {_format_duration(duration)}")
+            print(f"    └─ Log: {log_path}")
             # Continue to next run rather than aborting the sweep.
 
-    print(f"\n{'='*65}")
-    print(f"  Sweep complete.  {len(durations)}/{total} runs succeeded.")
+    print(f"\n{'═' * 70}")
+    print(f"  COMPLETE  │  {len(durations)}/{total} succeeded")
     if durations:
-        print(f"  Total wall time: {sum(durations) / 3600:.2f} h")
-        print(f"  Mean per run:    {np.mean(durations) / 60:.1f} min")
-    print(f"{'='*65}\n")
+        print(f"  Total: {_format_duration(sum(durations))}  │  Mean per run: {_format_duration(sum(durations) / len(durations))}")
+    print(f"  Logs: {LOG_DIR.resolve()}/")
+    print(f"{'═' * 70}\n")
 
 
 # ---------------------------------------------------------------------------
 # Parallel runner
 # ---------------------------------------------------------------------------
+
+LOG_DIR = Path("logs")
+
+
+def _run_one(run: Run) -> tuple[Run, bool, float]:
+    """Execute a single training run via subprocess, logging output to file."""
+    LOG_DIR.mkdir(parents=True, exist_ok=True)
+    log_path = LOG_DIR / f"{run.run_id}.log"
+
+    t = time.time()
+    try:
+        with open(log_path, "w") as log_file:
+            subprocess.run(
+                run.to_cmd(),
+                check=True,
+                stdout=log_file,
+                stderr=subprocess.STDOUT,
+            )
+        return run, True, time.time() - t
+    except subprocess.CalledProcessError:
+        return run, False, time.time() - t
+
+
+def _format_duration(seconds: float) -> str:
+    """Format seconds into a human-readable string."""
+    if seconds < 60:
+        return f"{seconds:.0f}s"
+    if seconds < 3600:
+        return f"{seconds / 60:.1f}m"
+    h = int(seconds // 3600)
+    m = int((seconds % 3600) // 60)
+    return f"{h}h{m:02d}m"
+
+
+def _estimate_remaining(durations: list[float], remaining: int, n_parallel: int) -> str:
+    """Estimate wall-clock time for remaining runs."""
+    if not durations:
+        return "estimating..."
+    avg = sum(durations) / len(durations)
+    # With N workers, remaining runs take ceil(remaining/N) batches
+    batches = -(-remaining // n_parallel)  # ceiling division
+    eta_seconds = avg * batches
+    return _format_duration(eta_seconds)
+
 
 def run_parallel(runs: list[Run], skip_completed: set[str], n_parallel: int) -> None:
     """Run up to n_parallel experiments concurrently using subprocess."""
@@ -243,31 +296,67 @@ def run_parallel(runs: list[Run], skip_completed: set[str], n_parallel: int) -> 
     total = len(pending)
     completed = 0
     failed = 0
+    durations: list[float] = []
 
-    print(f"\n[parallel] Running {total} runs with {n_parallel} workers\n")
+    skipped = len(runs) - total
+    if skipped > 0:
+        print(f"  Skipping {skipped} already-completed runs")
 
-    def _run_one(run: Run) -> tuple[Run, bool, float]:
-        t = time.time()
-        try:
-            subprocess.run(run.to_cmd(), check=True)
-            return run, True, time.time() - t
-        except subprocess.CalledProcessError:
-            return run, False, time.time() - t
+    print(f"\n{'═' * 70}")
+    print(f"  RUNNING {total} EXPERIMENTS  |  {n_parallel} parallel workers")
+    print(f"  Logs: {LOG_DIR.resolve()}/")
+    print(f"{'═' * 70}\n")
 
-    with concurrent.futures.ProcessPoolExecutor(max_workers=n_parallel) as executor:
+    # ThreadPoolExecutor is sufficient here — the actual training runs in
+    # separate processes via subprocess.run(). Using threads avoids the
+    # pickling issues that ProcessPoolExecutor has with complex objects.
+    with concurrent.futures.ThreadPoolExecutor(max_workers=n_parallel) as executor:
         futures = {executor.submit(_run_one, r): r for r in pending}
         for future in concurrent.futures.as_completed(futures):
             run, ok, dur = future.result()
             completed += 1
-            status = "✓" if ok else "✗"
+            durations.append(dur)
+            remaining = total - completed
+
+            status = "✓" if ok else "✗ FAIL"
             if not ok:
                 failed += 1
+
+            eta = _estimate_remaining(durations, remaining, n_parallel)
+            progress_pct = completed / total * 100
+
             print(
-                f"  {status} [{completed:>4}/{total}]  "
-                f"{run.run_id}  ({dur / 60:.1f} min)"
+                f"  {status}  [{completed:>4}/{total}]  {progress_pct:5.1f}%  "
+                f"│  {_format_duration(dur):>6}  │  {run.experiment_id:<20}  "
+                f"{run.env_id:<12}  seed={run.seed}"
             )
 
-    print(f"\n[parallel] Done.  {completed - failed}/{total} succeeded.")
+            if remaining > 0 and completed % n_parallel == 0:
+                print(f"  {'─' * 66}")
+                print(f"  ETA: ~{eta}  |  {remaining} runs remaining")
+                print(f"  {'─' * 66}")
+
+            # If a run failed, print where to find the log
+            if not ok:
+                log_path = LOG_DIR / f"{run.run_id}.log"
+                print(f"         └─ Log: {log_path}")
+
+    print(f"\n{'═' * 70}")
+    print(f"  COMPLETE  │  {completed - failed}/{total} succeeded  │  {failed} failed")
+    total_time = sum(durations)
+    wall_time = max(durations) if durations else 0  # approximate
+    print(f"  Total compute: {_format_duration(total_time)}  │  Wall clock: ~{_format_duration(sum(durations) / max(n_parallel, 1))}")
+    print(f"{'═' * 70}\n")
+
+    if failed > 0:
+        print(f"  Failed runs (check logs in {LOG_DIR}/):")
+        # Re-scan to list failures
+        for future in futures:
+            run = futures[future]
+            r, ok, _ = future.result()
+            if not ok:
+                print(f"    ✗ {run.run_id}")
+        print()
 
 
 # ---------------------------------------------------------------------------
@@ -330,7 +419,6 @@ def parse_args() -> argparse.Namespace:
 
 
 def main() -> None:
-    import numpy as np  # deferred import so --dry-run doesn't require numpy
     args = parse_args()
 
     matrix_path = Path(args.matrix)

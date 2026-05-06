@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# PyTorch checkpoints (tracked via W&B, not git)
+checkpoints/
+
+# W&B local run cache
+wandb/
+
+# Figures output (regeneratable)
+figures/
+
+# Video output
+videos/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Byte-compiled / optimised
+*.pyc
+*.pyo
