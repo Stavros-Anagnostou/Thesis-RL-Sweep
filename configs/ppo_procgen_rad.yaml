@@ -1,0 +1,38 @@
+# =============================================================================
+# PPO + RAD (Reinforcement Learning with Augmented Data)
+# Laskin et al. (2020) "Reinforcement Learning with Augmented Data"
+# Simplest augmentation baseline: just apply crop to observations before the
+# PPO update. No additional loss terms.
+# =============================================================================
+
+total_timesteps: 25_000_000
+num_envs: 64
+num_steps: 256
+num_epochs: 3
+num_minibatches: 8
+learning_rate: 5.0e-4
+gamma: 0.999
+gae_lambda: 0.95
+clip_coef: 0.2
+ent_coef: 0.01
+vf_coef: 0.5
+max_grad_norm: 0.5
+num_levels: 200
+start_level: 0
+distribution_mode: "easy"
+normalize_reward: true
+encoder: "impala"
+seed: 1
+wandb_project: "thesis-rl-baselines"
+wandb_entity: null
+checkpoint_freq: 500_000
+eval_freq: 500_000
+eval_episodes: 100
+device: "auto"
+norm_adv: true
+
+# --- RAD-specific ---
+augmentation_method: "rad"
+aug_type: "crop"                   # augmentation applied to obs during PPO update
+
+level_selection: "uniform"

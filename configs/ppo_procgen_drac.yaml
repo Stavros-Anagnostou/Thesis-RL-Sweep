@@ -1,0 +1,41 @@
+# =============================================================================
+# PPO + DrAC (Data-Regularized Actor-Critic)
+# Raileanu & Fergus (2021) "Decoupling Value and Policy for Generalization in RL"
+# Inherits ALL baseline hyperparameters; overrides only DrAC-specific fields.
+# =============================================================================
+
+# --- Inherit baseline ---
+total_timesteps: 25_000_000
+num_envs: 64
+num_steps: 256
+num_epochs: 3
+num_minibatches: 8
+learning_rate: 5.0e-4
+gamma: 0.999
+gae_lambda: 0.95
+clip_coef: 0.2
+ent_coef: 0.01
+vf_coef: 0.5
+max_grad_norm: 0.5
+num_levels: 200
+start_level: 0
+distribution_mode: "easy"
+normalize_reward: true
+encoder: "impala"
+seed: 1
+wandb_project: "thesis-rl-baselines"
+wandb_entity: null
+checkpoint_freq: 500_000
+eval_freq: 500_000
+eval_episodes: 100
+device: "auto"
+norm_adv: true
+
+# --- DrAC-specific ---
+augmentation_method: "drac"        # "none" | "rad" | "drac" | "ucb_drac"
+aug_type: "crop"                    # augmentation to use; "crop" is strongest on Procgen
+aug_coef: 0.1                       # weight for policy + value regularization losses
+drac_mode: "full"                   # "full" | "actor_only" | "critic_only" (for ablation)
+
+# --- Level selection (default: uniform) ---
+level_selection: "uniform"          # "uniform" | "plr"

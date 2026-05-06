@@ -1,0 +1,41 @@
+# =============================================================================
+# PPO + UCB-DrAC (UCB bandit over augmentation selection)
+# Raileanu & Fergus (2021) — automatically selects the best augmentation.
+# =============================================================================
+
+total_timesteps: 25_000_000
+num_envs: 64
+num_steps: 256
+num_epochs: 3
+num_minibatches: 8
+learning_rate: 5.0e-4
+gamma: 0.999
+gae_lambda: 0.95
+clip_coef: 0.2
+ent_coef: 0.01
+vf_coef: 0.5
+max_grad_norm: 0.5
+num_levels: 200
+start_level: 0
+distribution_mode: "easy"
+normalize_reward: true
+encoder: "impala"
+seed: 1
+wandb_project: "thesis-rl-baselines"
+wandb_entity: null
+checkpoint_freq: 500_000
+eval_freq: 500_000
+eval_episodes: 100
+device: "auto"
+norm_adv: true
+
+# --- UCB-DrAC-specific ---
+augmentation_method: "ucb_drac"
+aug_coef: 0.1
+ucb_exploration: 0.1               # UCB1 exploration coefficient c
+drac_mode: "full"
+
+# Bandit arm set — all augmentations considered for selection.
+ucb_augmentations: ["crop", "color_jitter", "grayscale", "cutout", "flip", "rotate", "random_conv"]
+
+level_selection: "uniform"

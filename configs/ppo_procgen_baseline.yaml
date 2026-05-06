@@ -1,0 +1,47 @@
+# =============================================================================
+# PPO Procgen Baseline Configuration
+# Source: Cobbe et al. (2020) "Leveraging Procedural Generation to Benchmark
+#         Reinforcement Learning" + CleanRL reference implementation
+# =============================================================================
+
+# --- Environment ---
+env_id: "starpilot"               # override with --env-id from CLI
+num_levels: 200                   # training distribution size (Procgen easy-mode standard)
+start_level: 0                    # first level index for training
+distribution_mode: "easy"         # "easy" | "hard" | "exploration" | "memory" | "extreme"
+normalize_reward: true            # online running reward normalisation (highly recommended)
+env_backend: "auto"               # "auto" prefers EnvPool if available | "envpool" | "procgen"
+
+# --- PPO Core Hyperparameters ---
+# These match the Cobbe et al. (2020) paper / CleanRL Procgen baseline exactly.
+total_timesteps: 25_000_000
+num_envs: 64                      # parallel actors
+num_steps: 256                    # rollout length per actor per update
+num_epochs: 3                     # PPO optimisation epochs per rollout
+num_minibatches: 8                # mini-batches per epoch; batch_size = num_envs*num_steps // num_minibatches
+learning_rate: 5.0e-4             # constant LR — Procgen baseline does NOT use LR annealing
+gamma: 0.999                      # discount factor (also used by reward normaliser — must match!)
+gae_lambda: 0.95                  # GAE lambda
+clip_coef: 0.2                    # PPO clip epsilon
+ent_coef: 0.01                    # entropy bonus coefficient
+vf_coef: 0.5                      # value function loss coefficient
+max_grad_norm: 0.5                # global gradient clipping
+norm_adv: true                    # normalise advantages per mini-batch (standard practice)
+
+# --- Network ---
+encoder: "impala"                 # "impala" (default/recommended) | "nature"
+
+# --- Seeding ---
+seed: 1                           # override with --seed from CLI
+
+# --- Logging ---
+wandb_project: "thesis-rl-baselines"
+wandb_entity: null                # set to your W&B username / team, or leave null for default
+
+# --- Checkpointing & Evaluation ---
+checkpoint_freq: 500_000          # save checkpoint every N environment steps
+eval_freq: 500_000                # run evaluation every N environment steps
+eval_episodes: 100                # episodes per evaluation split (train-levels + test-levels)
+
+# --- Device ---
+device: "auto"                    # "auto" → detect CUDA/ROCm, fallback CPU | "cuda" | "cpu"

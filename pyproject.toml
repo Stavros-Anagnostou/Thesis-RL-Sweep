@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "thesis-rl"
+version = "0.1.0"
+description = "MSc Thesis: Generalization and Robustness of RL Agents in Procedurally Generated Environments"
+requires-python = ">=3.11,<3.13"
+dependencies = [
+    # PyTorch for ROCm — install separately with:
+    #   pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/rocm6.3
+    # For NVIDIA CUDA (Colab / other):
+    #   pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+    # torch and torchvision are NOT listed here so pip doesn't pull the CPU build by accident.
+    "gymnasium>=0.29.1",
+    "envpool>=1.1.0",             # Primary env backend — ~30-50% faster than native Procgen
+    # procgen is an OPTIONAL fallback. Install manually if EnvPool is unavailable:
+    #   pip install procgen==0.10.7
+    "numpy>=1.26.4",
+    "wandb>=0.16.6",
+    "pyyaml>=6.0.1",
+    "matplotlib>=3.8.4",
+    "seaborn>=0.13.2",
+    "rliable",                    # unpinned — pinned versions have broken arch dependency
+    "opencv-python-headless>=4.9.0.80",
+    "tqdm>=4.66.2",
+    "imageio[ffmpeg]>=2.34.0",
+    "minigrid>=2.3.1",
+]
+
+[project.scripts]
+thesis-train = "src.train_ppo:main"
+thesis-eval  = "src.evaluate:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
+
+[tool.setuptools.package-data]
+"*" = ["*.yaml"]

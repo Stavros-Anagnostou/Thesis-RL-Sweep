@@ -1,0 +1,67 @@
+# =============================================================================
+# docker-compose.yml — Thesis-RL-Sweep
+#
+# Prerequisites on the HOST machine (the other computer):
+#   1. Docker + Docker Compose v2 installed
+#   2. ROCm drivers installed  (amdgpu-install or rocm-install-on-ubuntu)
+#   3. Your user is in the 'render' and 'video' groups:
+#        sudo usermod -aG render,video $USER  &&  newgrp render
+#   4. Devices exist:
+#        ls /dev/kfd /dev/dri/renderD*
+#
+# Usage:
+#   docker compose build                          # one-time build (~15-20 min)
+#   docker compose run --rm thesis-rl bash        # interactive shell
+#   docker compose run --rm thesis-rl bash scripts/run_sweep.sh
+#   docker compose run --rm thesis-rl python src/train_ppo.py --env-id coinrun --seed 1
+# =============================================================================
+
+services:
+  thesis-rl:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: thesis-rl:latest
+    container_name: thesis-rl
+
+    # ---- GPU passthrough -------------------------------------------------- #
+    # Exposes the AMD GPU to the container via ROCm device files.
+    devices:
+      - /dev/kfd:/dev/kfd          # HSA kernel fusion driver
+      - /dev/dri:/dev/dri          # DRM render nodes (renderD128, card0, …)
+
+    # ---- Group membership (required for /dev/kfd access) ------------------ #
+    group_add:
+      - video
+      - render
+
+    # ---- Environment overrides -------------------------------------------- #
+    environment:
+      # RX 9070 XT / RDNA4 shim — remove if target machine has a different GPU
+      HSA_OVERRIDE_GFX_VERSION: "11.0.0"
+      # Uncomment to run W&B offline (sync later with: docker compose run thesis-rl wandb sync)
+      # WANDB_MODE: offline
+      # Paste your W&B key here, or set it via .env file (preferred — see below)
+      WANDB_API_KEY: ${WANDB_API_KEY:-}
+
+    # ---- Persistent volumes ------------------------------------------------ #
+    # Checkpoints, figures, and W&B runs survive container restarts.
+    volumes:
+      - ./checkpoints:/workspace/checkpoints
+      - ./figures:/workspace/figures
+      - ./wandb:/workspace/wandb
+      # Mount the whole source tree so edits on the host are reflected
+      # immediately without rebuilding. Remove this line for a pure
+      # immutable image (faster I/O in HPC-style deployments).
+      - .:/workspace
+
+    # ---- Shared memory ----------------------------------------------------- #
+    # PyTorch DataLoader workers use /dev/shm. The default 64 MB is too small
+    # for multi-env training. Set to ~25% of host RAM, e.g. 8g for 32 GB RAM.
+    shm_size: "8g"
+
+    # ---- Interactive mode -------------------------------------------------- #
+    stdin_open: true
+    tty: true
+
+    working_dir: /workspace

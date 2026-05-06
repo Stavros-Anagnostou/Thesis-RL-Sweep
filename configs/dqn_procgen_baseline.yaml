@@ -1,0 +1,54 @@
+# =============================================================================
+# DQN Procgen Baseline
+# NOTE: DQN is expected to perform worse than PPO on Procgen, particularly on
+# generalization. This is a feature, not a bug — the contrast is a thesis result.
+# DQN relies on random exploration and a replay buffer, which makes it much
+# less sample-efficient than PPO with many parallel actors.
+# =============================================================================
+
+# --- Environment ---
+env_id: "starpilot"
+num_levels: 200
+start_level: 0
+distribution_mode: "easy"
+normalize_reward: false            # DQN with replay buffer + reward normalization
+                                   # is unstable; use reward clipping instead
+env_backend: "auto"                # "auto" prefers EnvPool if available
+
+# --- DQN Core Hyperparameters ---
+total_timesteps: 25_000_000
+learning_rate: 1.0e-4
+gamma: 0.99                        # DQN standard (not 0.999 — replay buffer is less
+                                   # compatible with very high gamma)
+batch_size: 32
+buffer_size: 200_000               # 1M would be ideal but hits RAM on 26 GB WSL2 alloc;
+                                   # 200K is a pragmatic compromise (still competitive)
+learning_starts: 10_000            # fill buffer before first update
+train_freq: 4                      # update every 4 environment steps
+target_update_freq: 10_000         # hard target network update interval (steps)
+
+# --- Exploration ---
+eps_start: 1.0
+eps_end: 0.02
+eps_decay_steps: 1_000_000         # linear epsilon decay over first 1M steps
+
+# --- Network ---
+encoder: "impala"                  # same IMPALA-CNN as PPO for fair comparison
+
+# --- Seeding ---
+seed: 1
+
+# --- Logging ---
+wandb_project: "thesis-rl-baselines"
+wandb_entity: null
+
+# --- Checkpointing & Evaluation ---
+checkpoint_freq: 500_000
+eval_freq: 500_000
+eval_episodes: 100
+
+# --- Device ---
+device: "auto"
+
+# --- Reward clipping (DQN convention instead of reward normalization) ---
+reward_clipping: true              # clip rewards to [-1, 1] — standard DQN practice

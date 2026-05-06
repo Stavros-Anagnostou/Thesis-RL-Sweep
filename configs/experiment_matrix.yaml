@@ -1,0 +1,196 @@
+# =============================================================================
+# Experiment Matrix — Complete experimental scope of the MSc thesis
+#
+# Structure:
+#   experiments:
+#     <experiment_id>:
+#       config: <yaml file in configs/>
+#       encoder: <optional override>
+#       games: <list of Procgen env names>
+#       seeds: <list of integers>
+#       overrides: <optional dict of single-value overrides>
+#       overrides_sweep: <optional dict of list-valued overrides — expands into multiple runs>
+#
+# Total run count (rough): ~1200+ individual runs.
+# Use scripts/run_experiment_matrix.py to enumerate and dispatch them.
+# =============================================================================
+
+# Games: 4-game "representative" subset for quick ablations.
+# Games: 16-game "full" set for main results.
+_game_sets:
+  representative: &representative_games
+    - starpilot
+    - bigfish
+    - coinrun
+    - ninja
+  full: &full_games
+    - starpilot
+    - bigfish
+    - coinrun
+    - ninja
+    - miner
+    - dodgeball
+    - heist
+    - climber
+    - maze
+    - jumper
+    - leaper
+    - chaser
+    - fruitbot
+    - plunder
+    - bossfight
+    - caveflyer
+
+experiments:
+
+  # ============================================================
+  # TIER 1: Baselines
+  # ============================================================
+
+  ppo_impala_baseline:
+    config: ppo_procgen_baseline.yaml
+    encoder: impala
+    games: *full_games
+    seeds: [1, 2, 3, 4, 5]
+
+  ppo_nature_baseline:
+    config: ppo_procgen_baseline.yaml
+    encoder: nature
+    games: *full_games
+    seeds: [1, 2, 3, 4, 5]
+
+  ppo_small_baseline:
+    config: ppo_procgen_baseline.yaml
+    encoder: small
+    games: *full_games
+    seeds: [1, 2, 3, 4, 5]
+
+  dqn_impala_baseline:
+    config: dqn_procgen_baseline.yaml
+    encoder: impala
+    games: *representative_games   # DQN is slower — restrict to 4-game subset
+    seeds: [1, 2, 3, 4, 5]
+
+  # ============================================================
+  # TIER 2: Generalization Methods
+  # ============================================================
+
+  ppo_rad:
+    config: ppo_procgen_rad.yaml
+    games: *full_games
+    seeds: [1, 2, 3, 4, 5]
+
+  ppo_drac:
+    config: ppo_procgen_drac.yaml
+    games: *full_games
+    seeds: [1, 2, 3, 4, 5]
+
+  ppo_ucb_drac:
+    config: ppo_procgen_ucb_drac.yaml
+    games: *full_games
+    seeds: [1, 2, 3, 4, 5]
+
+  ppo_plr:
+    config: ppo_procgen_plr.yaml
+    games: *full_games
+    seeds: [1, 2, 3, 4, 5]
+
+  ppo_plr_drac:
+    config: ppo_procgen_plr_drac.yaml
+    games: *full_games
+    seeds: [1, 2, 3, 4, 5]
+
+  # ============================================================
+  # TIER 3: Ablations — Augmentation Type (DrAC with each aug)
+  # ============================================================
+
+  drac_crop:
+    config: ppo_procgen_drac.yaml
+    overrides: {aug_type: "crop"}
+    games: *full_games
+    seeds: [1, 2, 3]
+
+  drac_color_jitter:
+    config: ppo_procgen_drac.yaml
+    overrides: {aug_type: "color_jitter"}
+    games: *full_games
+    seeds: [1, 2, 3]
+
+  drac_random_conv:
+    config: ppo_procgen_drac.yaml
+    overrides: {aug_type: "random_conv"}
+    games: *full_games
+    seeds: [1, 2, 3]
+
+  drac_grayscale:
+    config: ppo_procgen_drac.yaml
+    overrides: {aug_type: "grayscale"}
+    games: *full_games
+    seeds: [1, 2, 3]
+
+  drac_cutout:
+    config: ppo_procgen_drac.yaml
+    overrides: {aug_type: "cutout"}
+    games: *full_games
+    seeds: [1, 2, 3]
+
+  drac_flip:
+    config: ppo_procgen_drac.yaml
+    overrides: {aug_type: "flip"}
+    games: *full_games
+    seeds: [1, 2, 3]
+
+  drac_rotate:
+    config: ppo_procgen_drac.yaml
+    overrides: {aug_type: "rotate"}
+    games: *full_games
+    seeds: [1, 2, 3]
+
+  # ============================================================
+  # TIER 3: Ablations — Number of Training Levels
+  # ============================================================
+
+  num_levels_sweep:
+    config: ppo_procgen_baseline.yaml
+    overrides_sweep:
+      num_levels: [10, 50, 100, 200, 500, 1000]
+    games: *representative_games
+    seeds: [1, 2, 3]
+
+  # ============================================================
+  # TIER 3: Ablations — Encoder Architecture
+  # ============================================================
+
+  encoder_ablation:
+    config: ppo_procgen_baseline.yaml
+    overrides_sweep:
+      encoder: ["impala", "nature", "small"]
+    games: *representative_games
+    seeds: [1, 2, 3]
+
+  # ============================================================
+  # TIER 3: Ablations — DrAC Components
+  # ============================================================
+
+  drac_actor_only:
+    config: ppo_procgen_drac.yaml
+    overrides: {drac_mode: "actor_only"}
+    games: *representative_games
+    seeds: [1, 2, 3]
+
+  drac_critic_only:
+    config: ppo_procgen_drac.yaml
+    overrides: {drac_mode: "critic_only"}
+    games: *representative_games
+    seeds: [1, 2, 3]
+
+  # ============================================================
+  # TIER 3: Ablations — PLR Temperature
+  # ============================================================
+
+  plr_beta_sweep:
+    config: ppo_procgen_plr.yaml
+    overrides_sweep:
+      plr_beta: [0.01, 0.05, 0.1, 0.3, 1.0]
+    games: *representative_games
+    seeds: [1, 2, 3]

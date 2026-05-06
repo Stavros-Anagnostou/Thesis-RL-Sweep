@@ -1,0 +1,96 @@
+# =============================================================================
+# STRONG THESIS TIER — Ablation studies
+#
+# Run AFTER the essential tier is complete and validated.
+# Total: 300 runs
+# =============================================================================
+
+_game_sets:
+  representative: &representative_games
+    - starpilot
+    - bigfish
+    - coinrun
+    - ninja
+  diverse_8: &diverse_8_games
+    - coinrun
+    - ninja
+    - starpilot
+    - bigfish
+    - heist
+    - miner
+    - dodgeball
+    - caveflyer
+
+experiments:
+
+  # Augmentation type ablation (8 games × 3 seeds × 7 types = 168 runs)
+  drac_crop:
+    config: ppo_procgen_drac.yaml
+    overrides: {aug_type: "crop"}
+    games: *diverse_8_games
+    seeds: [1, 2, 3]
+
+  drac_color_jitter:
+    config: ppo_procgen_drac.yaml
+    overrides: {aug_type: "color_jitter"}
+    games: *diverse_8_games
+    seeds: [1, 2, 3]
+
+  drac_random_conv:
+    config: ppo_procgen_drac.yaml
+    overrides: {aug_type: "random_conv"}
+    games: *diverse_8_games
+    seeds: [1, 2, 3]
+
+  drac_grayscale:
+    config: ppo_procgen_drac.yaml
+    overrides: {aug_type: "grayscale"}
+    games: *diverse_8_games
+    seeds: [1, 2, 3]
+
+  drac_cutout:
+    config: ppo_procgen_drac.yaml
+    overrides: {aug_type: "cutout"}
+    games: *diverse_8_games
+    seeds: [1, 2, 3]
+
+  drac_flip:
+    config: ppo_procgen_drac.yaml
+    overrides: {aug_type: "flip"}
+    games: *diverse_8_games
+    seeds: [1, 2, 3]
+
+  drac_rotate:
+    config: ppo_procgen_drac.yaml
+    overrides: {aug_type: "rotate"}
+    games: *diverse_8_games
+    seeds: [1, 2, 3]
+
+  # Num-levels sweep (4 games × 3 seeds × 6 levels = 72 runs)
+  num_levels_sweep:
+    config: ppo_procgen_baseline.yaml
+    overrides_sweep:
+      num_levels: [10, 50, 100, 200, 500, 1000]
+    games: *representative_games
+    seeds: [1, 2, 3]
+
+  # Encoder ablation (4 games × 3 seeds × 3 encoders = 36 runs)
+  encoder_ablation:
+    config: ppo_procgen_baseline.yaml
+    overrides_sweep:
+      encoder: ["impala", "nature", "small"]
+    games: *representative_games
+    seeds: [1, 2, 3]
+
+  # DrAC component ablation (4 games × 3 seeds × 2 modes = 24 runs)
+  drac_actor_only:
+    config: ppo_procgen_drac.yaml
+    overrides: {drac_mode: "actor_only"}
+    games: *representative_games
+    seeds: [1, 2, 3]
+
+  drac_critic_only:
+    config: ppo_procgen_drac.yaml
+    overrides: {drac_mode: "critic_only"}
+    games: *representative_games
+    seeds: [1, 2, 3]

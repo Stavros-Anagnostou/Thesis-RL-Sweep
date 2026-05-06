@@ -1,0 +1,22 @@
+# =============================================================================
+# Game-specific config overrides for the Procgen easy-mode baseline sweep.
+# These override ONLY the keys that differ from ppo_procgen_baseline.yaml.
+# Load with: --config configs/ppo_procgen_baseline.yaml --config configs/games/<game>.yaml
+# (load_config applies overrides in order, so per-game settings win)
+#
+# Currently all four games use identical hyperparameters — this file exists
+# so you have a place to add per-game tuning in later phases without
+# polluting the base config.
+# =============================================================================
+
+# --- CoinRun ---
+# No deviations from baseline.  Expected test return: 8.5–9.5
+
+# --- StarPilot ---
+# No deviations from baseline.  Expected test return: 25–35
+
+# --- BigFish ---
+# No deviations from baseline.  Expected test return: 10–20
+
+# --- Ninja ---
+# No deviations from baseline.  Expected test return: 6–8
