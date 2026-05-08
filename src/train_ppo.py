@@ -179,6 +179,10 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--wandb-tags",          type=str, default=None)
     parser.add_argument("--resume",              type=str, default=None)
     parser.add_argument("--no-wandb",            action="store_true")
+    parser.add_argument("--use-amp",             dest="use_amp", action="store_true", default=None)
+    parser.add_argument("--no-amp",              dest="use_amp", action="store_false")
+    parser.add_argument("--compile-mode",        type=str, default=None,
+                        choices=["reduce-overhead", "max-autotune", "default", "none"])
     return parser.parse_args()
 
 
@@ -195,6 +199,8 @@ def main() -> None:
         "augmentation_method":  args.augmentation_method,
         "aug_type":             args.aug_type,
         "level_selection":      args.level_selection,
+        "use_amp":              args.use_amp,
+        "compile_mode":         args.compile_mode,
     }
     cfg = load_config(args.config, cli_overrides)
     cfg = compute_derived_config(cfg)
@@ -271,13 +277,10 @@ def main() -> None:
 
     # --- Model ---
     model = ActorCritic(encoder=cfg["encoder"], num_actions=num_actions).to(device)
-    if device.type != "cpu":
-        # torch.compile() bypasses MIOpen/cuDNN and generates Triton-based kernels.
-        # On AMD ROCm, MIOpen's backward pass for IMPALA-CNN runs ~20x below theoretical
-        # throughput; Triton-based kernels avoid this entirely.
-        # reduce-overhead: minimises kernel launch latency (good for many small ops).
-        model = torch.compile(model, mode="reduce-overhead")
-        print("[model] torch.compile applied (mode=reduce-overhead)")
+    compile_mode = cfg.get("compile_mode") or "reduce-overhead"
+    if device.type != "cpu" and compile_mode != "none":
+        model = torch.compile(model, mode=compile_mode)
+        print(f"[model] torch.compile applied (mode={compile_mode})")
     optimizer = optim.Adam(model.parameters(), lr=cfg["learning_rate"], eps=1e-5)
 
     # AMP: FP16 conv forward+backward is 2-4x faster on AMD RDNA 3 / NVIDIA Ampere+.
