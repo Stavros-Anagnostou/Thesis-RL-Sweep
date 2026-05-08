@@ -280,6 +280,12 @@ def main() -> None:
         print("[model] torch.compile applied (mode=reduce-overhead)")
     optimizer = optim.Adam(model.parameters(), lr=cfg["learning_rate"], eps=1e-5)
 
+    # AMP: FP16 conv forward+backward is 2-4x faster on AMD RDNA 3 / NVIDIA Ampere+.
+    # Disabled on CPU (no benefit) and can be disabled via config use_amp: false.
+    use_amp = (device.type == "cuda") and cfg.get("use_amp", True)
+    if use_amp:
+        print("[amp] Mixed precision (FP16) enabled")
+
     # --- Build augmentation and PLR after model is ready ---
     aug_module = _build_augmentation_module(cfg, model)
     plr = _build_plr(cfg)
@@ -334,6 +340,7 @@ def main() -> None:
     print(f"{'='*65}\n")
 
     start_time = time.time()
+    scaler = torch.amp.GradScaler(device=device.type, enabled=use_amp)
     # Phase timing accumulators (milliseconds, reset each print interval)
     _pt_rollout = _pt_bulk_xfer = _pt_gae = _pt_ppo_xfer = _pt_ppo_grad = 0.0
     _pt_updates = 0
@@ -476,46 +483,50 @@ def main() -> None:
                 if aug_module is not None and cfg["augmentation_method"] == "rad":
                     mb_obs_input = aug_module.augment(mb_obs)
 
-                _, new_logp, entropy, new_value = model.get_action_and_value(mb_obs_input, mb_acts)
-                new_value = new_value.squeeze(-1)
-
+                # Advantage normalisation in float32 before entering the AMP region.
                 if cfg.get("norm_adv", True):
                     mb_advs = (mb_advs - mb_advs.mean()) / (mb_advs.std() + 1e-8)
 
-                log_ratio = new_logp - mb_logps
-                ratio = log_ratio.exp()
-                with torch.no_grad():
-                    approx_kl = ((ratio - 1) - log_ratio).mean().item()
-                    clip_frac = ((ratio - 1.0).abs() > cfg["clip_coef"]).float().mean().item()
+                with torch.autocast(device_type=device.type, dtype=torch.float16, enabled=use_amp):
+                    _, new_logp, entropy, new_value = model.get_action_and_value(mb_obs_input, mb_acts)
+                    new_value = new_value.squeeze(-1)
 
-                pg_loss1 = -mb_advs * ratio
-                pg_loss2 = -mb_advs * ratio.clamp(1 - cfg["clip_coef"], 1 + cfg["clip_coef"])
-                pg_loss  = torch.max(pg_loss1, pg_loss2).mean()
+                    log_ratio = new_logp - mb_logps
+                    ratio = log_ratio.exp()
+                    with torch.no_grad():
+                        approx_kl = ((ratio - 1) - log_ratio).mean().item()
+                        clip_frac = ((ratio - 1.0).abs() > cfg["clip_coef"]).float().mean().item()
 
-                v_loss_unclipped = (new_value - mb_rets) ** 2
-                v_clipped = mb_vals + (new_value - mb_vals).clamp(-cfg["clip_coef"], cfg["clip_coef"])
-                v_loss_clipped = (v_clipped - mb_rets) ** 2
-                v_loss = 0.5 * torch.max(v_loss_unclipped, v_loss_clipped).mean()
+                    pg_loss1 = -mb_advs * ratio
+                    pg_loss2 = -mb_advs * ratio.clamp(1 - cfg["clip_coef"], 1 + cfg["clip_coef"])
+                    pg_loss  = torch.max(pg_loss1, pg_loss2).mean()
 
-                ent_loss = entropy.mean()
-                loss = pg_loss - cfg["ent_coef"] * ent_loss + cfg["vf_coef"] * v_loss
+                    v_loss_unclipped = (new_value - mb_rets) ** 2
+                    v_clipped = mb_vals + (new_value - mb_vals).clamp(-cfg["clip_coef"], cfg["clip_coef"])
+                    v_loss_clipped = (v_clipped - mb_rets) ** 2
+                    v_loss = 0.5 * torch.max(v_loss_unclipped, v_loss_clipped).mean()
 
-                # DrAC: add KL + MSE regularization on augmented observations
-                if aug_module is not None and cfg["augmentation_method"] == "drac":
-                    aug_loss = aug_module.compute_loss(mb_obs)
-                    loss = loss + aug_loss
-                    aug_losses.append(aug_loss.item())
+                    ent_loss = entropy.mean()
+                    loss = pg_loss - cfg["ent_coef"] * ent_loss + cfg["vf_coef"] * v_loss
 
-                # UCB-DrAC: select aug via bandit, add reg loss
-                elif aug_module is not None and cfg["augmentation_method"] == "ucb_drac":
-                    aug_loss, selected_aug_name = aug_module.compute_loss_and_select(mb_obs)
-                    loss = loss + aug_loss
-                    aug_losses.append(aug_loss.item())
+                    # DrAC: add KL + MSE regularization on augmented observations
+                    if aug_module is not None and cfg["augmentation_method"] == "drac":
+                        aug_loss = aug_module.compute_loss(mb_obs)
+                        loss = loss + aug_loss
+                        aug_losses.append(aug_loss.item())
+
+                    # UCB-DrAC: select aug via bandit, add reg loss
+                    elif aug_module is not None and cfg["augmentation_method"] == "ucb_drac":
+                        aug_loss, selected_aug_name = aug_module.compute_loss_and_select(mb_obs)
+                        loss = loss + aug_loss
+                        aug_losses.append(aug_loss.item())
 
                 optimizer.zero_grad()
-                loss.backward()
+                scaler.scale(loss).backward()
+                scaler.unscale_(optimizer)
                 nn.utils.clip_grad_norm_(model.parameters(), cfg["max_grad_norm"])
-                optimizer.step()
+                scaler.step(optimizer)
+                scaler.update()
 
                 clip_fracs.append(clip_frac)
                 pg_losses.append(pg_loss.item())
