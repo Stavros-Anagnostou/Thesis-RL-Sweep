@@ -281,8 +281,9 @@ def main() -> None:
     optimizer = optim.Adam(model.parameters(), lr=cfg["learning_rate"], eps=1e-5)
 
     # AMP: FP16 conv forward+backward is 2-4x faster on AMD RDNA 3 / NVIDIA Ampere+.
-    # Disabled on CPU (no benefit) and can be disabled via config use_amp: false.
-    use_amp = (device.type == "cuda") and cfg.get("use_amp", True)
+    # Off by default — enable explicitly with use_amp: true in config once server GPU
+    # health is verified (see thesis_rl_handoff.md Step 1 benchmark).
+    use_amp = (device.type == "cuda") and cfg.get("use_amp", False)
     if use_amp:
         print("[amp] Mixed precision (FP16) enabled")
 
