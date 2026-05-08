@@ -5,16 +5,16 @@ ERROR:root:Driver not initialized (amdgpu not found in modules)
 wandb: wandb version 0.26.1 is available!  To upgrade, please run:
 wandb:  $ pip install wandb --upgrade
 wandb: Tracking run with wandb version 0.16.6
-wandb: Run data is saved locally in /home/steve/Thesis-RL-Sweep/wandb/run-20260507_002421-znh980t7
+wandb: Run data is saved locally in /home/steve/Thesis-RL-Sweep/wandb/run-20260507_193150-idabquh9
 wandb: Run `wandb offline` to turn off syncing.
-wandb: Syncing run starpilot__impala__seed1__20260507_002420
+wandb: Syncing run starpilot__impala__seed1__20260507_193149
 wandb: ⭐️ View project at https://wandb.ai/staanagnostou-/thesis-rl-baselines
-wandb: 🚀 View run at https://wandb.ai/staanagnostou-/thesis-rl-baselines/runs/znh980t7
+wandb: 🚀 View run at https://wandb.ai/staanagnostou-/thesis-rl-baselines/runs/idabquh9
 pygame 2.6.1 (SDL 2.28.4, Python 3.11.15)
 Hello from the pygame community. https://www.pygame.org/contribute.html
 [device] GPU detected: AMD Radeon RX 9070 XT  (15.8 GB VRAM)
 [device] Backend: AMD ROCm (HIP translation layer)
-[wandb] Run ID: znh980t7  tags=['none', 'starpilot', 'seed_1', 'impala']
+[wandb] Run ID: idabquh9  tags=['none', 'starpilot', 'seed_1', 'impala']
 [env] starpilot  64 envs  200 levels  mode=easy  backend=auto
 [env] obs_space=(64, 64, 3)  num_actions=15
 [model] IMPALA-CNN  params=626,256
@@ -24,6 +24,16 @@ Hello from the pygame community. https://www.pygame.org/contribute.html
   total_steps=25,000,000  updates=1,525  device=cuda
 =================================================================
 
+  update     1/1525  step     16,384  SPS     185  pg=-0.0004  vf=0.9097  ent=2.7079  kl=0.0002
+  update    10/1525  step    163,840  SPS     195  pg=-0.0020  vf=0.1075  ent=2.5093  kl=0.0035
+  update    20/1525  step    327,680  SPS     215  pg=-0.0028  vf=0.1054  ent=2.3343  kl=0.0047
+  update    30/1525  step    491,520  SPS     223  pg=-0.0052  vf=0.0831  ent=2.3044  kl=0.0059
+
+[eval] step 507,904...
+  train=4.09±3.23  test=3.83±3.27  gap=0.26
+[checkpoint] Saved step 507,904 → checkpoints/starpilot/starpilot__impala__seed1__20260507_193149/step_507904.pt  (latest.pt updated)
+  update    40/1525  step    655,360  SPS     227  pg=-0.0094  vf=0.0801  ent=2.2647  kl=0.0072
+  update    50/1525  step    819,200  SPS     230  pg=-0.0123  vf=0.0877  ent=2.1422  kl=0.0093
 Traceback (most recent call last):
   File "/home/steve/Thesis-RL-Sweep/src/train_ppo.py", line 628, in <module>
     main()
@@ -37,7 +47,44 @@ Traceback (most recent call last):
     return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 KeyboardInterrupt
-wandb: - 0.037 MB of 0.037 MB uploadedwandb: \ 0.037 MB of 0.037 MB uploadedwandb: | 0.037 MB of 0.037 MB uploadedwandb: / 0.037 MB of 0.037 MB uploadedwandb: - 0.049 MB of 0.057 MB uploaded (0.005 MB deduped)wandb: \ 0.057 MB of 0.057 MB uploaded (0.005 MB deduped)wandb: 🚀 View run starpilot__impala__seed1__20260507_002420 at: https://wandb.ai/staanagnostou-/thesis-rl-baselines/runs/znh980t7
+wandb: - 0.046 MB of 0.046 MB uploadedwandb: \ 0.046 MB of 0.046 MB uploadedwandb: | 0.046 MB of 0.046 MB uploadedwandb: / 0.046 MB of 0.046 MB uploadedwandb: - 0.046 MB of 0.046 MB uploadedwandb: \ 0.046 MB of 0.046 MB uploadedwandb: | 0.046 MB of 0.046 MB uploadedwandb: / 0.046 MB of 0.046 MB uploadedwandb: - 0.046 MB of 0.046 MB uploadedwandb: \ 0.046 MB of 0.046 MB uploadedwandb: | 0.046 MB of 0.046 MB uploadedwandb: / 0.046 MB of 0.046 MB uploadedwandb: - 0.046 MB of 0.046 MB uploadedwandb: \ 0.046 MB of 0.046 MB uploadedwandb: | 0.046 MB of 0.046 MB uploadedwandb: / 0.046 MB of 0.046 MB uploadedwandb: - 0.046 MB of 0.046 MB uploadedwandb: \ 0.046 MB of 0.046 MB uploadedwandb: | 0.046 MB of 0.046 MB uploadedwandb: / 0.046 MB of 0.046 MB uploadedwandb: - 0.046 MB of 0.046 MB uploadedwandb: \ 0.046 MB of 0.046 MB uploadedwandb: | 0.046 MB of 0.046 MB uploadedwandb: / 0.046 MB of 0.046 MB uploadedwandb: - 0.046 MB of 0.046 MB uploadedwandb: \ 0.046 MB of 0.046 MB uploadedwandb: | 0.059 MB of 0.067 MB uploaded (0.001 MB deduped)wandb: / 0.059 MB of 0.067 MB uploaded (0.001 MB deduped)wandb: - 0.063 MB of 0.067 MB uploaded (0.001 MB deduped)wandb: \ 0.063 MB of 0.067 MB uploaded (0.001 MB deduped)wandb: | 0.063 MB of 0.067 MB uploaded (0.001 MB deduped)wandb: / 0.063 MB of 0.067 MB uploaded (0.001 MB deduped)wandb: - 0.063 MB of 0.067 MB uploaded (0.001 MB deduped)wandb: \ 0.063 MB of 0.067 MB uploaded (0.001 MB deduped)wandb: | 0.063 MB of 0.067 MB uploaded (0.001 MB deduped)wandb: / 0.063 MB of 0.067 MB uploaded (0.001 MB deduped)wandb: - 0.063 MB of 0.067 MB uploaded (0.001 MB deduped)wandb: \ 0.063 MB of 0.067 MB uploaded (0.001 MB deduped)wandb: | 0.063 MB of 0.067 MB uploaded (0.001 MB deduped)wandb: / 0.063 MB of 0.067 MB uploaded (0.001 MB deduped)wandb: - 0.063 MB of 0.067 MB uploaded (0.001 MB deduped)wandb: \ 0.063 MB of 0.067 MB uploaded (0.001 MB deduped)wandb: | 0.063 MB of 0.067 MB uploaded (0.001 MB deduped)wandb: / 0.063 MB of 0.067 MB uploaded (0.001 MB deduped)wandb: - 0.063 MB of 0.067 MB uploaded (0.001 MB deduped)wandb: \ 0.063 MB of 0.067 MB uploaded (0.001 MB deduped)wandb: | 0.063 MB of 0.067 MB uploaded (0.001 MB deduped)wandb: / 0.063 MB of 0.067 MB uploaded (0.001 MB deduped)wandb: - 0.063 MB of 0.067 MB uploaded (0.001 MB deduped)wandb: \ 0.063 MB of 0.067 MB uploaded (0.001 MB deduped)wandb: | 0.067 MB of 0.067 MB uploaded (0.001 MB deduped)wandb: 
+wandb: Run history:
+wandb:                            charts/SPS ▁▁▂▂▂▂▂▃▃▃▄▄▅▅▅▆▆▆▆▆▇▇▇▇▇▇▇▇▇▇██████████
+wandb:     charts/episodic_return_normalised █▁▂▂▄▃▅▄▄▃▃▅▅▄▄▄▃▄▅▄▅▅▄▄▄▆▅▅▆▆▇▆▇▅▆▆▆▇▆▆
+wandb: charts/episodic_return_normalised_std █▂▂▂▂▁▂▂▁▂▁▂▂▂▁▂▁▁▂▂▁▂▁▁▂▁▁▁▂▂▂▂▂▂▂▂▂▂▂▂
+wandb:                  charts/learning_rate ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:               eval/generalization_gap ▁
+wandb:                      eval/test_return ▁
+wandb:                  eval/test_return_std ▁
+wandb:                     eval/train_return ▁
+wandb:                 eval/train_return_std ▁
+wandb:                      losses/approx_kl ▁▂▅▃▅▅▄▃▄▃▃▃▄▄▄▄▄▄▄▅▅▅▅▆▆▅▅▆▆▅▆▆▆▆▇▇▇▇▇█
+wandb:                  losses/clip_fraction ▁▁▂▂▃▃▃▂▂▂▂▂▃▂▃▃▃▃▃▄▄▅▅▆▅▅▅▅▅▅▆▅▆▆▇█▇▇▇█
+wandb:                        losses/entropy ███▇▇▆▅▆▆▅▅▅▅▄▄▄▄▃▃▃▃▃▃▃▃▃▃▂▃▂▃▃▂▂▁▁▁▁▁▁
+wandb:                    losses/policy_loss ██▇▇▆▇▇▇▇▆▇▇▇▇▆▇▆▆▅▅▅▅▄▆▄▄▃▃▄▃▃▂▃▁▁▂▁▁▁▁
+wandb:                     losses/value_loss █▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:                 train/checkpoint_step ▁
+wandb:                     train/global_step ▁▁▁▁▂▂▂▂▂▃▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▆▇▇▇▇▇███
+wandb: 
+wandb: Run summary:
+wandb:                            charts/SPS 230.39598
+wandb:     charts/episodic_return_normalised 2.0864
+wandb: charts/episodic_return_normalised_std 1.88044
+wandb:                  charts/learning_rate 0.0005
+wandb:               eval/generalization_gap 0.26
+wandb:                      eval/test_return 3.83
+wandb:                  eval/test_return_std 3.2682
+wandb:                     eval/train_return 4.09
+wandb:                 eval/train_return_std 3.2283
+wandb:                      losses/approx_kl 0.01021
+wandb:                  losses/clip_fraction 0.14207
+wandb:                        losses/entropy 2.14086
+wandb:                    losses/policy_loss -0.01216
+wandb:                     losses/value_loss 0.07677
+wandb:                 train/checkpoint_step 507904
+wandb:                     train/global_step 851968
+wandb: 
+wandb: 🚀 View run starpilot__impala__seed1__20260507_193149 at: https://wandb.ai/staanagnostou-/thesis-rl-baselines/runs/idabquh9
 wandb: ⭐️ View project at: https://wandb.ai/staanagnostou-/thesis-rl-baselines
-wandb: Synced 7 W&B file(s), 0 media file(s), 3 artifact file(s) and 1 other file(s)
-wandb: Find logs at: ./wandb/run-20260507_002421-znh980t7/logs
+wandb: Synced 7 W&B file(s), 0 media file(s), 3 artifact file(s) and 2 other file(s)
+wandb: Find logs at: ./wandb/run-20260507_193150-idabquh9/logs

@@ -15,6 +15,10 @@ build/
 venv/
 env/
 
+thesis_rl_handoff.md
+thesis_rl_handoff.md:Zone.Identifier
+
+
 # PyTorch checkpoints (tracked via W&B, not git)
 checkpoints/
 

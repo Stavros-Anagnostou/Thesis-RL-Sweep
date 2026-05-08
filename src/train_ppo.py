@@ -271,6 +271,13 @@ def main() -> None:
 
     # --- Model ---
     model = ActorCritic(encoder=cfg["encoder"], num_actions=num_actions).to(device)
+    if device.type != "cpu":
+        # torch.compile() bypasses MIOpen/cuDNN and generates Triton-based kernels.
+        # On AMD ROCm, MIOpen's backward pass for IMPALA-CNN runs ~20x below theoretical
+        # throughput; Triton-based kernels avoid this entirely.
+        # reduce-overhead: minimises kernel launch latency (good for many small ops).
+        model = torch.compile(model, mode="reduce-overhead")
+        print("[model] torch.compile applied (mode=reduce-overhead)")
     optimizer = optim.Adam(model.parameters(), lr=cfg["learning_rate"], eps=1e-5)
 
     # --- Build augmentation and PLR after model is ready ---
@@ -305,7 +312,7 @@ def main() -> None:
     done_buf = torch.zeros((cfg["num_steps"], cfg["num_envs"]))
     val_buf  = torch.zeros((cfg["num_steps"], cfg["num_envs"]))
 
-    obs  = torch.tensor(train_env.reset(), dtype=torch.uint8)
+    obs  = torch.from_numpy(train_env.reset())
     done = torch.zeros(cfg["num_envs"])
 
     global_step   = global_step_start
@@ -327,6 +334,9 @@ def main() -> None:
     print(f"{'='*65}\n")
 
     start_time = time.time()
+    # Phase timing accumulators (milliseconds, reset each print interval)
+    _pt_rollout = _pt_bulk_xfer = _pt_gae = _pt_ppo_xfer = _pt_ppo_grad = 0.0
+    _pt_updates = 0
 
     for update in range(updates_done + 1, num_updates + 1):
 
@@ -337,31 +347,41 @@ def main() -> None:
             plr_current_level = plr.sample_level()
             train_env.close()
             train_env = _make_plr_env(cfg, plr_current_level)
-            obs  = torch.tensor(train_env.reset(), dtype=torch.uint8)
+            obs  = torch.from_numpy(train_env.reset())
             done = torch.zeros(cfg["num_envs"])
             plr_vl_accum = []
 
         # ==================================================================
         # 2. Collect rollout
         # ==================================================================
+        _t0 = time.perf_counter()
+
+        # GPU-side buffers for log_prob and value (avoid per-step .cpu() calls)
+        logp_buf_gpu = torch.zeros((cfg["num_steps"], cfg["num_envs"]), device=device)
+        val_buf_gpu  = torch.zeros((cfg["num_steps"], cfg["num_envs"]), device=device)
+
         model.eval()
         with torch.no_grad():
             for step in range(cfg["num_steps"]):
                 obs_buf[step]  = obs
                 done_buf[step] = done
 
-                obs_dev = obs.to(device)
+                obs_dev = obs.to(device, non_blocking=True)
                 action, log_prob, _, value = model.get_action_and_value(obs_dev)
 
-                act_buf[step]  = action.cpu()
-                logp_buf[step] = log_prob.cpu()
-                val_buf[step]  = value.squeeze(-1).cpu()
+                # Store log_prob and value on GPU — no sync needed.
+                logp_buf_gpu[step] = log_prob
+                val_buf_gpu[step]  = value.squeeze(-1)
 
-                raw_obs, reward, done_np, infos = train_env.step(action.cpu().numpy())
+                # Only sync once: pull action to CPU for env.step().
+                action_cpu = action.cpu()
+                act_buf[step] = action_cpu
 
-                rew_buf[step] = torch.tensor(reward, dtype=torch.float32)
-                done = torch.tensor(done_np, dtype=torch.float32)
-                obs  = torch.tensor(raw_obs, dtype=torch.uint8)
+                raw_obs, reward, done_np, infos = train_env.step(action_cpu.numpy())
+
+                rew_buf[step] = torch.from_numpy(reward)
+                done = torch.from_numpy(done_np)
+                obs  = torch.from_numpy(raw_obs)
                 global_step += cfg["num_envs"]
 
                 ep_return_buf += reward
@@ -370,7 +390,18 @@ def main() -> None:
                         completed_ep_returns.append(float(ep_return_buf[i]))
                         ep_return_buf[i] = 0.0
 
-            next_value = model.get_value(obs.to(device)).squeeze(-1).cpu()
+            next_value = model.get_value(obs.to(device)).squeeze(-1)
+
+        _t1 = time.perf_counter()
+        _pt_rollout += (_t1 - _t0) * 1000
+
+        # Bulk transfer log_prob and value from GPU → CPU (one sync, not 256).
+        logp_buf = logp_buf_gpu.cpu()
+        val_buf  = val_buf_gpu.cpu()
+        next_value = next_value.cpu()
+
+        _t2 = time.perf_counter()
+        _pt_bulk_xfer += (_t2 - _t1) * 1000
 
         # ==================================================================
         # 3. GAE
@@ -389,6 +420,9 @@ def main() -> None:
             advantages[t] = last_gae
         returns = advantages + val_buf
 
+        _t3 = time.perf_counter()
+        _pt_gae += (_t3 - _t2) * 1000
+
         # ==================================================================
         # 4. PPO update
         # ==================================================================
@@ -400,6 +434,20 @@ def main() -> None:
         b_advantages = advantages.reshape(-1)
         b_returns    = returns.reshape(-1)
         b_values     = val_buf.reshape(-1)
+
+        # Pre-transfer entire batch to GPU once (not per-minibatch).
+        # obs stays as uint8 until the network normalizes it.
+        b_obs_dev  = b_obs.to(device, non_blocking=True)
+        b_acts_dev = b_actions.to(device, non_blocking=True)
+        b_logp_dev = b_logprobs.to(device, non_blocking=True)
+        b_advs_dev = b_advantages.to(device, non_blocking=True)
+        b_rets_dev = b_returns.to(device, non_blocking=True)
+        b_vals_dev = b_values.to(device, non_blocking=True)
+        if device.type != "cpu":
+            torch.cuda.synchronize()
+
+        _t4 = time.perf_counter()
+        _pt_ppo_xfer += (_t4 - _t3) * 1000
 
         clip_fracs: list[float] = []
         pg_losses:  list[float] = []
@@ -415,12 +463,13 @@ def main() -> None:
             for start in range(0, cfg["batch_size"], cfg["minibatch_size"]):
                 mb_inds = b_inds[start:start + cfg["minibatch_size"]]
 
-                mb_obs   = b_obs[mb_inds].to(device)
-                mb_acts  = b_actions[mb_inds].to(device)
-                mb_logps = b_logprobs[mb_inds].to(device)
-                mb_advs  = b_advantages[mb_inds].to(device)
-                mb_rets  = b_returns[mb_inds].to(device)
-                mb_vals  = b_values[mb_inds].to(device)
+                # Index into pre-transferred GPU tensors — no transfer here.
+                mb_obs   = b_obs_dev[mb_inds]
+                mb_acts  = b_acts_dev[mb_inds]
+                mb_logps = b_logp_dev[mb_inds]
+                mb_advs  = b_advs_dev[mb_inds]
+                mb_rets  = b_rets_dev[mb_inds]
+                mb_vals  = b_vals_dev[mb_inds]
 
                 # RAD: augment observations before the PPO forward pass
                 mb_obs_input = mb_obs
@@ -477,6 +526,12 @@ def main() -> None:
                 if plr is not None:
                     plr_vl_accum.append(v_loss.item())
 
+        if device.type != "cpu":
+            torch.cuda.synchronize()
+        _t5 = time.perf_counter()
+        _pt_ppo_grad += (_t5 - _t4) * 1000
+        _pt_updates += 1
+
         # ==================================================================
         # 5. Post-update: PLR score update + UCB-DrAC bandit update
         # ==================================================================
@@ -529,6 +584,16 @@ def main() -> None:
                 f"vf={np.mean(vf_losses):.4f}  ent={np.mean(ent_losses):.4f}  "
                 f"kl={np.mean(approx_kls):.4f}{aug_str}"
             )
+            if _pt_updates > 0:
+                n = _pt_updates
+                print(
+                    f"  [phase ms/update]  rollout={_pt_rollout/n:.0f}  "
+                    f"bulk_xfer={_pt_bulk_xfer/n:.1f}  gae={_pt_gae/n:.1f}  "
+                    f"ppo_xfer={_pt_ppo_xfer/n:.0f}  ppo_grad={_pt_ppo_grad/n:.0f}  "
+                    f"total={(_pt_rollout+_pt_bulk_xfer+_pt_gae+_pt_ppo_xfer+_pt_ppo_grad)/n:.0f}"
+                )
+                _pt_rollout = _pt_bulk_xfer = _pt_gae = _pt_ppo_xfer = _pt_ppo_grad = 0.0
+                _pt_updates = 0
 
         # ==================================================================
         # 7. Periodic evaluation

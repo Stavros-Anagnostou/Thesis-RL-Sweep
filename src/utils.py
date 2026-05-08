@@ -5,7 +5,6 @@ Utility functions: seeding, device detection, config loading, RNG state helpers.
 from __future__ import annotations
 
 import random
-import os
 from pathlib import Path
 from typing import Any
 
@@ -26,11 +25,11 @@ def set_seed(seed: int) -> None:
     if torch.cuda.is_available():
         torch.cuda.manual_seed(seed)
         torch.cuda.manual_seed_all(seed)
-    # Deterministic ops where possible.  Note: this can slow down some ops.
-    # Keeping it on for reproducibility; disable for max throughput if needed.
-    os.environ["CUBLAS_WORKSPACE_CONFIG"] = ":4096:8"
-    torch.backends.cudnn.deterministic = True
-    torch.backends.cudnn.benchmark = False
+    # Do NOT enable cudnn.deterministic on ROCm — MIOpen's deterministic mode
+    # uses slow fallback algorithms that cost ~80x for IMPALA-CNN backward passes
+    # (measured: 41 s/update vs expected ~1-2 s/update on RX 9070 XT).
+    # Seeds above give run-level reproducibility; bit-exact op determinism is not needed.
+    torch.backends.cudnn.benchmark = True
 
 
 # ---------------------------------------------------------------------------
