@@ -1,9 +1,12 @@
 # =============================================================================
-# ESSENTIAL TIER — Minimum viable thesis
+# ESSENTIAL TIER — Safe plan, fits 1.5-month deadline on 2 machines
 #
-# PPO IMPALA baseline, UCB-DrAC, PLR, PLR+DrAC (16 games × 5 seeds)
-# + DQN baseline (4 games × 5 seeds)
-# Total: 340 runs
+# PPO IMPALA baseline, UCB-DrAC, PLR+DrAC (6 games × 3 seeds = 54 runs)
+# + DQN baseline (4 games × 3 seeds = 12 runs)
+# Total: 66 runs
+#
+# PLR-alone is dropped: gain attributable to PLR is implied by the
+# (PLR+DrAC) − (UCB-DrAC) delta rather than measured directly.
 # =============================================================================
 
 _game_sets:
@@ -12,49 +15,34 @@ _game_sets:
     - bigfish
     - coinrun
     - ninja
-  full: &full_games
+  reduced: &reduced_games
     - starpilot
     - bigfish
     - coinrun
     - ninja
     - miner
-    - dodgeball
-    - heist
-    - climber
-    - maze
-    - jumper
-    - leaper
-    - chaser
     - fruitbot
-    - plunder
-    - bossfight
-    - caveflyer
 
 experiments:
 
   ppo_impala_baseline:
     config: ppo_procgen_baseline.yaml
     overrides: {encoder: "impala"}
-    games: *full_games
-    seeds: [1, 2, 3, 4, 5]
+    games: *reduced_games
+    seeds: [1, 2, 3]
 
   ppo_ucb_drac:
     config: ppo_procgen_ucb_drac.yaml
-    games: *full_games
-    seeds: [1, 2, 3, 4, 5]
-
-  ppo_plr:
-    config: ppo_procgen_plr.yaml
-    games: *full_games
-    seeds: [1, 2, 3, 4, 5]
+    games: *reduced_games
+    seeds: [1, 2, 3]
 
   ppo_plr_drac:
     config: ppo_procgen_plr_drac.yaml
-    games: *full_games
-    seeds: [1, 2, 3, 4, 5]
+    games: *reduced_games
+    seeds: [1, 2, 3]
 
   dqn_impala_baseline:
     config: dqn_procgen_baseline.yaml
     overrides: {encoder: "impala"}
     games: *representative_games
-    seeds: [1, 2, 3, 4, 5]
+    seeds: [1, 2, 3]

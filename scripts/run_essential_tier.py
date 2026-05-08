@@ -1,15 +1,14 @@
 #!/usr/bin/env python3
 """
-Essential Tier — Minimum viable thesis experiments.
+Essential Tier — Safe plan, 1.5-month deadline.
 
 Runs:
-  PPO IMPALA baseline    16 games × 5 seeds =  80 runs
-  UCB-DrAC               16 games × 5 seeds =  80 runs
-  PLR                    16 games × 5 seeds =  80 runs
-  PLR + DrAC             16 games × 5 seeds =  80 runs
-  DQN baseline            4 games × 5 seeds =  20 runs
+  PPO IMPALA baseline     6 games × 3 seeds =  18 runs
+  UCB-DrAC                6 games × 3 seeds =  18 runs
+  PLR + DrAC              6 games × 3 seeds =  18 runs
+  DQN baseline            4 games × 3 seeds =  12 runs
   ─────────────────────────────────────────────────────
-  Total                                       340 runs
+  Total                                        66 runs
 
 Usage:
     python scripts/run_essential_tier.py                  # sequential
@@ -30,15 +29,14 @@ TIER_MATRIX = Path(__file__).resolve().parent.parent / "configs" / "tier_essenti
 
 DESCRIPTION = """
 ══════════════════════════════════════════
-  ESSENTIAL TIER
-  340 runs
+  ESSENTIAL TIER (safe plan)
+  66 runs
 ══════════════════════════════════════════
 
-  PPO IMPALA baseline    16 games × 5 seeds =  80 runs
-  UCB-DrAC               16 games × 5 seeds =  80 runs
-  PLR                    16 games × 5 seeds =  80 runs
-  PLR + DrAC             16 games × 5 seeds =  80 runs
-  DQN baseline            4 games × 5 seeds =  20 runs
+  PPO IMPALA baseline     6 games × 3 seeds =  18 runs
+  UCB-DrAC                6 games × 3 seeds =  18 runs
+  PLR + DrAC              6 games × 3 seeds =  18 runs
+  DQN baseline            4 games × 3 seeds =  12 runs
 """
 
 
