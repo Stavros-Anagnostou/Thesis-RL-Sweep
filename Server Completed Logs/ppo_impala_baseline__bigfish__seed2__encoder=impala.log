@@ -1,0 +1,570 @@
+[device] GPU detected:   (24.0 GB VRAM)
+[device] Backend: NVIDIA CUDA
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from WANDB_API_KEY.
+wandb: Currently logged in as: stayrosanang (staanagnostou-) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: setting up run 4ch0lnye
+wandb: Tracking run with wandb version 0.26.1
+wandb: Run data is saved locally in /workspace/wandb/run-20260509_202928-4ch0lnye
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run bigfish__impala__seed2__20260509_202927
+wandb: ⭐️ View project at https://wandb.ai/staanagnostou-/thesis-rl-baselines
+wandb: 🚀 View run at https://wandb.ai/staanagnostou-/thesis-rl-baselines/runs/4ch0lnye
+[wandb] Run ID: 4ch0lnye  tags=['none', 'bigfish', 'seed_2', 'impala']
+[env] bigfish  64 envs  200 levels  mode=easy  backend=auto
+[env] obs_space=(64, 64, 3)  num_actions=15
+[model] torch.compile applied (mode=reduce-overhead)
+[model] IMPALA-CNN  params=626,256
+
+=================================================================
+  Starting PPO  |  env=bigfish  aug=none  lvl=uniform
+  total_steps=25,000,000  updates=1,525  device=cuda
+=================================================================
+
+  update     1/1525  step     16,384  SPS     312  pg=-0.0005  vf=0.3946  ent=2.7079  kl=0.0002
+  [phase ms/update]  rollout=1580  bulk_xfer=0.1  gae=5.9  ppo_xfer=57  ppo_grad=50900  total=52543
+  update    10/1525  step    163,840  SPS     954  pg=-0.0008  vf=0.0475  ent=2.6492  kl=0.0013
+  [phase ms/update]  rollout=507  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12732  total=13253
+  update    20/1525  step    327,680  SPS   1,077  pg=-0.0094  vf=0.0419  ent=2.6145  kl=0.0056
+  [phase ms/update]  rollout=505  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12726  total=13244
+  update    30/1525  step    491,520  SPS   1,125  pg=-0.0109  vf=0.0546  ent=2.5298  kl=0.0072
+  [phase ms/update]  rollout=503  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12734  total=13251
+
+[eval] step 507,904...
+  train=1.15±1.70  test=1.09±1.54  gap=0.06
+[checkpoint] Saved step 507,904 → checkpoints/bigfish/bigfish__impala__seed2__20260509_202927/step_507904.pt  (latest.pt updated)
+  update    40/1525  step    655,360  SPS   1,146  pg=-0.0183  vf=0.0525  ent=2.4928  kl=0.0086
+  [phase ms/update]  rollout=493  bulk_xfer=0.1  gae=5.8  ppo_xfer=8  ppo_grad=12726  total=13233
+  update    50/1525  step    819,200  SPS   1,163  pg=-0.0210  vf=0.0467  ent=2.4601  kl=0.0087
+  [phase ms/update]  rollout=514  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12726  total=13254
+  update    60/1525  step    983,040  SPS   1,174  pg=-0.0230  vf=0.0451  ent=2.2993  kl=0.0114
+  [phase ms/update]  rollout=509  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12726  total=13249
+
+[eval] step 1,015,808...
+  train=1.42±1.62  test=1.07±1.38  gap=0.35
+[checkpoint] Saved step 1,015,808 → checkpoints/bigfish/bigfish__impala__seed2__20260509_202927/step_1015808.pt  (latest.pt updated)
+  update    70/1525  step  1,146,880  SPS   1,180  pg=-0.0220  vf=0.0379  ent=2.2902  kl=0.0108
+  [phase ms/update]  rollout=506  bulk_xfer=0.1  gae=5.8  ppo_xfer=8  ppo_grad=12716  total=13236
+  update    80/1525  step  1,310,720  SPS   1,186  pg=-0.0266  vf=0.0348  ent=2.2442  kl=0.0118
+  [phase ms/update]  rollout=508  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12720  total=13242
+  update    90/1525  step  1,474,560  SPS   1,192  pg=-0.0256  vf=0.0392  ent=2.2195  kl=0.0125
+  [phase ms/update]  rollout=510  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12722  total=13246
+
+[eval] step 1,507,328...
+  train=1.75±2.10  test=1.35±1.61  gap=0.40
+[checkpoint] Saved step 1,507,328 → checkpoints/bigfish/bigfish__impala__seed2__20260509_202927/step_1507328.pt  (latest.pt updated)
+  update   100/1525  step  1,638,400  SPS   1,193  pg=-0.0277  vf=0.0359  ent=2.1844  kl=0.0127
+  [phase ms/update]  rollout=505  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12721  total=13240
+  update   110/1525  step  1,802,240  SPS   1,197  pg=-0.0267  vf=0.0304  ent=2.1523  kl=0.0118
+  [phase ms/update]  rollout=520  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12724  total=13258
+  update   120/1525  step  1,966,080  SPS   1,200  pg=-0.0277  vf=0.0378  ent=2.0965  kl=0.0150
+  [phase ms/update]  rollout=504  bulk_xfer=0.1  gae=5.8  ppo_xfer=8  ppo_grad=12737  total=13255
+
+[eval] step 2,015,232...
+  train=1.74±1.71  test=1.10±1.58  gap=0.64
+[checkpoint] Saved step 2,015,232 → checkpoints/bigfish/bigfish__impala__seed2__20260509_202927/step_2015232.pt  (latest.pt updated)
+  update   130/1525  step  2,129,920  SPS   1,201  pg=-0.0289  vf=0.0334  ent=2.1027  kl=0.0136
+  [phase ms/update]  rollout=501  bulk_xfer=0.1  gae=5.8  ppo_xfer=8  ppo_grad=12735  total=13250
+  update   140/1525  step  2,293,760  SPS   1,203  pg=-0.0271  vf=0.0370  ent=2.1208  kl=0.0139
+  [phase ms/update]  rollout=504  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12730  total=13248
+  update   150/1525  step  2,457,600  SPS   1,206  pg=-0.0302  vf=0.0323  ent=1.9961  kl=0.0144
+  [phase ms/update]  rollout=510  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12719  total=13243
+
+[eval] step 2,506,752...
+  train=2.35±2.31  test=1.31±1.91  gap=1.04
+[checkpoint] Saved step 2,506,752 → checkpoints/bigfish/bigfish__impala__seed2__20260509_202927/step_2506752.pt  (latest.pt updated)
+  update   160/1525  step  2,621,440  SPS   1,206  pg=-0.0311  vf=0.0269  ent=2.0405  kl=0.0155
+  [phase ms/update]  rollout=520  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12720  total=13255
+  update   170/1525  step  2,785,280  SPS   1,207  pg=-0.0287  vf=0.0430  ent=2.0395  kl=0.0148
+  [phase ms/update]  rollout=501  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12733  total=13247
+  update   180/1525  step  2,949,120  SPS   1,209  pg=-0.0290  vf=0.0299  ent=2.0716  kl=0.0148
+  [phase ms/update]  rollout=508  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12724  total=13246
+
+[eval] step 3,014,656...
+  train=2.21±2.45  test=1.35±1.79  gap=0.86
+[checkpoint] Saved step 3,014,656 → checkpoints/bigfish/bigfish__impala__seed2__20260509_202927/step_3014656.pt  (latest.pt updated)
+  update   190/1525  step  3,112,960  SPS   1,209  pg=-0.0308  vf=0.0239  ent=2.0521  kl=0.0147
+  [phase ms/update]  rollout=494  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12721  total=13229
+  update   200/1525  step  3,276,800  SPS   1,210  pg=-0.0312  vf=0.0303  ent=2.0672  kl=0.0166
+  [phase ms/update]  rollout=514  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12718  total=13246
+  update   210/1525  step  3,440,640  SPS   1,211  pg=-0.0343  vf=0.0247  ent=2.0415  kl=0.0166
+  [phase ms/update]  rollout=520  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12723  total=13257
+
+[eval] step 3,506,176...
+  train=2.46±2.49  test=1.24±1.81  gap=1.22
+[checkpoint] Saved step 3,506,176 → checkpoints/bigfish/bigfish__impala__seed2__20260509_202927/step_3506176.pt  (latest.pt updated)
+  update   220/1525  step  3,604,480  SPS   1,211  pg=-0.0314  vf=0.0261  ent=1.9848  kl=0.0161
+  [phase ms/update]  rollout=506  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12730  total=13250
+  update   230/1525  step  3,768,320  SPS   1,212  pg=-0.0303  vf=0.0331  ent=2.0094  kl=0.0154
+  [phase ms/update]  rollout=506  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12728  total=13248
+  update   240/1525  step  3,932,160  SPS   1,213  pg=-0.0329  vf=0.0295  ent=1.9806  kl=0.0149
+  [phase ms/update]  rollout=511  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12717  total=13242
+
+[eval] step 4,014,080...
+  train=2.64±2.60  test=1.44±1.70  gap=1.20
+[checkpoint] Saved step 4,014,080 → checkpoints/bigfish/bigfish__impala__seed2__20260509_202927/step_4014080.pt  (latest.pt updated)
+  update   250/1525  step  4,096,000  SPS   1,213  pg=-0.0307  vf=0.0303  ent=1.9374  kl=0.0167
+  [phase ms/update]  rollout=515  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12717  total=13246
+  update   260/1525  step  4,259,840  SPS   1,214  pg=-0.0318  vf=0.0269  ent=1.9571  kl=0.0167
+  [phase ms/update]  rollout=525  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12713  total=13253
+  update   270/1525  step  4,423,680  SPS   1,215  pg=-0.0335  vf=0.0280  ent=1.9137  kl=0.0167
+  [phase ms/update]  rollout=503  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12714  total=13231
+
+[eval] step 4,505,600...
+  train=2.76±2.86  test=1.45±1.72  gap=1.31
+[checkpoint] Saved step 4,505,600 → checkpoints/bigfish/bigfish__impala__seed2__20260509_202927/step_4505600.pt  (latest.pt updated)
+  update   280/1525  step  4,587,520  SPS   1,214  pg=-0.0304  vf=0.0392  ent=1.8830  kl=0.0171
+  [phase ms/update]  rollout=505  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12718  total=13237
+  update   290/1525  step  4,751,360  SPS   1,215  pg=-0.0343  vf=0.0307  ent=1.8639  kl=0.0173
+  [phase ms/update]  rollout=510  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12726  total=13250
+  update   300/1525  step  4,915,200  SPS   1,216  pg=-0.0320  vf=0.0312  ent=1.8863  kl=0.0178
+  [phase ms/update]  rollout=505  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12726  total=13245
+
+[eval] step 5,013,504...
+  train=2.57±2.61  test=1.59±2.19  gap=0.98
+[checkpoint] Saved step 5,013,504 → checkpoints/bigfish/bigfish__impala__seed2__20260509_202927/step_5013504.pt  (latest.pt updated)
+  update   310/1525  step  5,079,040  SPS   1,215  pg=-0.0357  vf=0.0305  ent=1.8234  kl=0.0196
+  [phase ms/update]  rollout=505  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12729  total=13248
+  update   320/1525  step  5,242,880  SPS   1,216  pg=-0.0313  vf=0.0353  ent=1.8447  kl=0.0190
+  [phase ms/update]  rollout=523  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12724  total=13260
+  update   330/1525  step  5,406,720  SPS   1,217  pg=-0.0321  vf=0.0284  ent=1.9104  kl=0.0181
+  [phase ms/update]  rollout=504  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12727  total=13245
+
+[eval] step 5,505,024...
+  train=2.69±2.85  test=1.59±2.40  gap=1.10
+[checkpoint] Saved step 5,505,024 → checkpoints/bigfish/bigfish__impala__seed2__20260509_202927/step_5505024.pt  (latest.pt updated)
+  update   340/1525  step  5,570,560  SPS   1,216  pg=-0.0363  vf=0.0236  ent=1.8098  kl=0.0182
+  [phase ms/update]  rollout=518  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12727  total=13259
+  update   350/1525  step  5,734,400  SPS   1,217  pg=-0.0317  vf=0.0313  ent=1.8638  kl=0.0172
+  [phase ms/update]  rollout=511  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12728  total=13252
+  update   360/1525  step  5,898,240  SPS   1,217  pg=-0.0320  vf=0.0287  ent=1.8237  kl=0.0176
+  [phase ms/update]  rollout=513  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12727  total=13254
+
+[eval] step 6,012,928...
+  train=3.20±3.30  test=1.61±2.03  gap=1.59
+[checkpoint] Saved step 6,012,928 → checkpoints/bigfish/bigfish__impala__seed2__20260509_202927/step_6012928.pt  (latest.pt updated)
+  update   370/1525  step  6,062,080  SPS   1,217  pg=-0.0345  vf=0.0294  ent=1.8267  kl=0.0201
+  [phase ms/update]  rollout=516  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12729  total=13258
+  update   380/1525  step  6,225,920  SPS   1,217  pg=-0.0331  vf=0.0302  ent=1.8206  kl=0.0189
+  [phase ms/update]  rollout=499  bulk_xfer=0.1  gae=5.8  ppo_xfer=8  ppo_grad=12717  total=13230
+  update   390/1525  step  6,389,760  SPS   1,218  pg=-0.0341  vf=0.0270  ent=1.8227  kl=0.0204
+  [phase ms/update]  rollout=502  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12717  total=13233
+
+[eval] step 6,504,448...
+  train=3.04±3.17  test=1.24±1.72  gap=1.80
+[checkpoint] Saved step 6,504,448 → checkpoints/bigfish/bigfish__impala__seed2__20260509_202927/step_6504448.pt  (latest.pt updated)
+  update   400/1525  step  6,553,600  SPS   1,218  pg=-0.0258  vf=0.0337  ent=1.7507  kl=0.0173
+  [phase ms/update]  rollout=495  bulk_xfer=0.1  gae=5.8  ppo_xfer=8  ppo_grad=12716  total=13224
+  update   410/1525  step  6,717,440  SPS   1,218  pg=-0.0329  vf=0.0319  ent=1.7511  kl=0.0197
+  [phase ms/update]  rollout=515  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12712  total=13241
+  update   420/1525  step  6,881,280  SPS   1,219  pg=-0.0333  vf=0.0327  ent=1.7564  kl=0.0191
+  [phase ms/update]  rollout=503  bulk_xfer=0.1  gae=5.8  ppo_xfer=8  ppo_grad=12729  total=13245
+
+[eval] step 7,012,352...
+  train=2.74±2.61  test=1.56±2.22  gap=1.18
+[checkpoint] Saved step 7,012,352 → checkpoints/bigfish/bigfish__impala__seed2__20260509_202927/step_7012352.pt  (latest.pt updated)
+  update   430/1525  step  7,045,120  SPS   1,218  pg=-0.0290  vf=0.0337  ent=1.7815  kl=0.0205
+  [phase ms/update]  rollout=515  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12721  total=13250
+  update   440/1525  step  7,208,960  SPS   1,219  pg=-0.0340  vf=0.0325  ent=1.8115  kl=0.0193
+  [phase ms/update]  rollout=506  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12718  total=13237
+  update   450/1525  step  7,372,800  SPS   1,219  pg=-0.0354  vf=0.0228  ent=1.8142  kl=0.0205
+  [phase ms/update]  rollout=512  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12718  total=13244
+
+[eval] step 7,503,872...
+  train=3.39±4.61  test=1.62±2.27  gap=1.77
+[checkpoint] Saved step 7,503,872 → checkpoints/bigfish/bigfish__impala__seed2__20260509_202927/step_7503872.pt  (latest.pt updated)
+  update   460/1525  step  7,536,640  SPS   1,219  pg=-0.0335  vf=0.0277  ent=1.7591  kl=0.0217
+  [phase ms/update]  rollout=509  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12717  total=13240
+  update   470/1525  step  7,700,480  SPS   1,219  pg=-0.0336  vf=0.0262  ent=1.6964  kl=0.0212
+  [phase ms/update]  rollout=509  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12717  total=13240
+  update   480/1525  step  7,864,320  SPS   1,220  pg=-0.0336  vf=0.0316  ent=1.6919  kl=0.0216
+  [phase ms/update]  rollout=510  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12724  total=13248
+
+[eval] step 8,011,776...
+  train=3.31±3.68  test=1.61±2.19  gap=1.70
+[checkpoint] Saved step 8,011,776 → checkpoints/bigfish/bigfish__impala__seed2__20260509_202927/step_8011776.pt  (latest.pt updated)
+  update   490/1525  step  8,028,160  SPS   1,219  pg=-0.0333  vf=0.0264  ent=1.7691  kl=0.0203
+  [phase ms/update]  rollout=514  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12726  total=13254
+  update   500/1525  step  8,192,000  SPS   1,219  pg=-0.0353  vf=0.0270  ent=1.6800  kl=0.0205
+  [phase ms/update]  rollout=520  bulk_xfer=0.1  gae=6.2  ppo_xfer=8  ppo_grad=12729  total=13262
+  update   510/1525  step  8,355,840  SPS   1,220  pg=-0.0333  vf=0.0261  ent=1.6790  kl=0.0218
+  [phase ms/update]  rollout=523  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12731  total=13268
+
+[eval] step 8,503,296...
+  train=3.79±3.67  test=1.91±2.56  gap=1.88
+[checkpoint] Saved step 8,503,296 → checkpoints/bigfish/bigfish__impala__seed2__20260509_202927/step_8503296.pt  (latest.pt updated)
+  update   520/1525  step  8,519,680  SPS   1,219  pg=-0.0341  vf=0.0316  ent=1.6494  kl=0.0208
+  [phase ms/update]  rollout=525  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12731  total=13270
+  update   530/1525  step  8,683,520  SPS   1,220  pg=-0.0326  vf=0.0331  ent=1.7392  kl=0.0211
+  [phase ms/update]  rollout=488  bulk_xfer=0.1  gae=5.7  ppo_xfer=8  ppo_grad=12719  total=13221
+  update   540/1525  step  8,847,360  SPS   1,220  pg=-0.0333  vf=0.0325  ent=1.6280  kl=0.0198
+  [phase ms/update]  rollout=510  bulk_xfer=0.1  gae=5.8  ppo_xfer=8  ppo_grad=12721  total=13245
+  update   550/1525  step  9,011,200  SPS   1,220  pg=-0.0353  vf=0.0271  ent=1.7432  kl=0.0212
+  [phase ms/update]  rollout=506  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12713  total=13233
+
+[eval] step 9,011,200...
+  train=3.72±4.09  test=1.99±2.31  gap=1.73
+[checkpoint] Saved step 9,011,200 → checkpoints/bigfish/bigfish__impala__seed2__20260509_202927/step_9011200.pt  (latest.pt updated)
+  update   560/1525  step  9,175,040  SPS   1,220  pg=-0.0323  vf=0.0322  ent=1.6510  kl=0.0206
+  [phase ms/update]  rollout=510  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12725  total=13249
+  update   570/1525  step  9,338,880  SPS   1,220  pg=-0.0328  vf=0.0285  ent=1.6558  kl=0.0205
+  [phase ms/update]  rollout=513  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12730  total=13257
+  update   580/1525  step  9,502,720  SPS   1,221  pg=-0.0319  vf=0.0354  ent=1.6104  kl=0.0230
+  [phase ms/update]  rollout=513  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12726  total=13253
+
+[eval] step 9,502,720...
+  train=3.80±4.14  test=1.36±1.90  gap=2.44
+[checkpoint] Saved step 9,502,720 → checkpoints/bigfish/bigfish__impala__seed2__20260509_202927/step_9502720.pt  (latest.pt updated)
+  update   590/1525  step  9,666,560  SPS   1,220  pg=-0.0319  vf=0.0291  ent=1.6501  kl=0.0202
+  [phase ms/update]  rollout=507  bulk_xfer=0.1  gae=5.8  ppo_xfer=8  ppo_grad=12721  total=13242
+  update   600/1525  step  9,830,400  SPS   1,220  pg=-0.0312  vf=0.0324  ent=1.6043  kl=0.0222
+  [phase ms/update]  rollout=505  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12719  total=13238
+  update   610/1525  step  9,994,240  SPS   1,221  pg=-0.0350  vf=0.0300  ent=1.6280  kl=0.0223
+  [phase ms/update]  rollout=504  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12717  total=13234
+
+[eval] step 10,010,624...
+  train=4.08±4.50  test=1.68±2.07  gap=2.40
+[checkpoint] Saved step 10,010,624 → checkpoints/bigfish/bigfish__impala__seed2__20260509_202927/step_10010624.pt  (latest.pt updated)
+  update   620/1525  step 10,158,080  SPS   1,220  pg=-0.0359  vf=0.0273  ent=1.6428  kl=0.0227
+  [phase ms/update]  rollout=520  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12715  total=13249
+  update   630/1525  step 10,321,920  SPS   1,221  pg=-0.0372  vf=0.0272  ent=1.7260  kl=0.0223
+  [phase ms/update]  rollout=525  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12729  total=13268
+  update   640/1525  step 10,485,760  SPS   1,221  pg=-0.0331  vf=0.0294  ent=1.6502  kl=0.0219
+  [phase ms/update]  rollout=518  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12717  total=13249
+
+[eval] step 10,502,144...
+  train=4.24±6.18  test=1.73±2.51  gap=2.51
+[checkpoint] Saved step 10,502,144 → checkpoints/bigfish/bigfish__impala__seed2__20260509_202927/step_10502144.pt  (latest.pt updated)
+  update   650/1525  step 10,649,600  SPS   1,221  pg=-0.0343  vf=0.0331  ent=1.6907  kl=0.0201
+  [phase ms/update]  rollout=513  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12718  total=13246
+  update   660/1525  step 10,813,440  SPS   1,221  pg=-0.0337  vf=0.0298  ent=1.6408  kl=0.0224
+  [phase ms/update]  rollout=512  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12720  total=13246
+  update   670/1525  step 10,977,280  SPS   1,221  pg=-0.0352  vf=0.0246  ent=1.7137  kl=0.0224
+  [phase ms/update]  rollout=512  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12725  total=13251
+
+[eval] step 11,010,048...
+  train=3.77±4.19  test=1.76±2.29  gap=2.01
+[checkpoint] Saved step 11,010,048 → checkpoints/bigfish/bigfish__impala__seed2__20260509_202927/step_11010048.pt  (latest.pt updated)
+  update   680/1525  step 11,141,120  SPS   1,221  pg=-0.0339  vf=0.0319  ent=1.6251  kl=0.0219
+  [phase ms/update]  rollout=515  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12716  total=13245
+  update   690/1525  step 11,304,960  SPS   1,221  pg=-0.0336  vf=0.0282  ent=1.6605  kl=0.0235
+  [phase ms/update]  rollout=512  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12718  total=13244
+  update   700/1525  step 11,468,800  SPS   1,221  pg=-0.0380  vf=0.0243  ent=1.6813  kl=0.0223
+  [phase ms/update]  rollout=508  bulk_xfer=0.1  gae=5.8  ppo_xfer=8  ppo_grad=12716  total=13239
+
+[eval] step 11,501,568...
+  train=4.21±6.26  test=2.00±2.34  gap=2.21
+[checkpoint] Saved step 11,501,568 → checkpoints/bigfish/bigfish__impala__seed2__20260509_202927/step_11501568.pt  (latest.pt updated)
+  update   710/1525  step 11,632,640  SPS   1,221  pg=-0.0337  vf=0.0283  ent=1.6124  kl=0.0239
+  [phase ms/update]  rollout=512  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12715  total=13241
+  update   720/1525  step 11,796,480  SPS   1,221  pg=-0.0365  vf=0.0294  ent=1.6250  kl=0.0235
+  [phase ms/update]  rollout=509  bulk_xfer=0.1  gae=5.8  ppo_xfer=8  ppo_grad=12717  total=13240
+  update   730/1525  step 11,960,320  SPS   1,221  pg=-0.0342  vf=0.0297  ent=1.6046  kl=0.0230
+  [phase ms/update]  rollout=513  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12718  total=13245
+
+[eval] step 12,009,472...
+  train=4.06±3.84  test=1.88±2.49  gap=2.18
+[checkpoint] Saved step 12,009,472 → checkpoints/bigfish/bigfish__impala__seed2__20260509_202927/step_12009472.pt  (latest.pt updated)
+  update   740/1525  step 12,124,160  SPS   1,221  pg=-0.0311  vf=0.0322  ent=1.6041  kl=0.0235
+  [phase ms/update]  rollout=520  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12716  total=13250
+  update   750/1525  step 12,288,000  SPS   1,221  pg=-0.0313  vf=0.0366  ent=1.4896  kl=0.0241
+  [phase ms/update]  rollout=519  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12729  total=13261
+  update   760/1525  step 12,451,840  SPS   1,221  pg=-0.0352  vf=0.0277  ent=1.6461  kl=0.0256
+  [phase ms/update]  rollout=513  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12735  total=13261
+
+[eval] step 12,500,992...
+  train=3.46±4.21  test=1.71±2.14  gap=1.75
+[checkpoint] Saved step 12,500,992 → checkpoints/bigfish/bigfish__impala__seed2__20260509_202927/step_12500992.pt  (latest.pt updated)
+  update   770/1525  step 12,615,680  SPS   1,221  pg=-0.0315  vf=0.0371  ent=1.5483  kl=0.0248
+  [phase ms/update]  rollout=527  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12723  total=13264
+  update   780/1525  step 12,779,520  SPS   1,221  pg=-0.0317  vf=0.0303  ent=1.4966  kl=0.0252
+  [phase ms/update]  rollout=520  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12718  total=13252
+  update   790/1525  step 12,943,360  SPS   1,221  pg=-0.0328  vf=0.0302  ent=1.5782  kl=0.0254
+  [phase ms/update]  rollout=516  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12720  total=13250
+
+[eval] step 13,008,896...
+  train=4.34±5.65  test=2.17±2.63  gap=2.17
+[checkpoint] Saved step 13,008,896 → checkpoints/bigfish/bigfish__impala__seed2__20260509_202927/step_13008896.pt  (latest.pt updated)
+  update   800/1525  step 13,107,200  SPS   1,221  pg=-0.0355  vf=0.0264  ent=1.6047  kl=0.0237
+  [phase ms/update]  rollout=519  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12727  total=13261
+  update   810/1525  step 13,271,040  SPS   1,221  pg=-0.0343  vf=0.0315  ent=1.5908  kl=0.0246
+  [phase ms/update]  rollout=526  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12725  total=13265
+  update   820/1525  step 13,434,880  SPS   1,221  pg=-0.0330  vf=0.0333  ent=1.5731  kl=0.0243
+  [phase ms/update]  rollout=504  bulk_xfer=0.1  gae=5.8  ppo_xfer=8  ppo_grad=12715  total=13232
+
+[eval] step 13,500,416...
+  train=4.09±6.33  test=1.81±2.52  gap=2.28
+[checkpoint] Saved step 13,500,416 → checkpoints/bigfish/bigfish__impala__seed2__20260509_202927/step_13500416.pt  (latest.pt updated)
+  update   830/1525  step 13,598,720  SPS   1,221  pg=-0.0332  vf=0.0407  ent=1.4925  kl=0.0236
+  [phase ms/update]  rollout=513  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12719  total=13246
+  update   840/1525  step 13,762,560  SPS   1,221  pg=-0.0323  vf=0.0350  ent=1.5572  kl=0.0256
+  [phase ms/update]  rollout=510  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12719  total=13243
+  update   850/1525  step 13,926,400  SPS   1,222  pg=-0.0332  vf=0.0300  ent=1.5735  kl=0.0257
+  [phase ms/update]  rollout=513  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12722  total=13248
+
+[eval] step 14,008,320...
+  train=3.86±5.34  test=1.72±2.08  gap=2.14
+[checkpoint] Saved step 14,008,320 → checkpoints/bigfish/bigfish__impala__seed2__20260509_202927/step_14008320.pt  (latest.pt updated)
+  update   860/1525  step 14,090,240  SPS   1,221  pg=-0.0319  vf=0.0317  ent=1.5516  kl=0.0231
+  [phase ms/update]  rollout=510  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12730  total=13254
+  update   870/1525  step 14,254,080  SPS   1,221  pg=-0.0351  vf=0.0311  ent=1.6872  kl=0.0221
+  [phase ms/update]  rollout=513  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12730  total=13257
+  update   880/1525  step 14,417,920  SPS   1,222  pg=-0.0318  vf=0.0292  ent=1.5790  kl=0.0244
+  [phase ms/update]  rollout=522  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12721  total=13256
+
+[eval] step 14,516,224...
+  train=3.32±3.66  test=1.97±2.33  gap=1.35
+[checkpoint] Saved step 14,516,224 → checkpoints/bigfish/bigfish__impala__seed2__20260509_202927/step_14516224.pt  (latest.pt updated)
+  update   890/1525  step 14,581,760  SPS   1,221  pg=-0.0338  vf=0.0291  ent=1.6260  kl=0.0224
+  [phase ms/update]  rollout=531  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12720  total=13266
+  update   900/1525  step 14,745,600  SPS   1,222  pg=-0.0326  vf=0.0231  ent=1.6486  kl=0.0228
+  [phase ms/update]  rollout=520  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12720  total=13254
+  update   910/1525  step 14,909,440  SPS   1,222  pg=-0.0319  vf=0.0260  ent=1.6689  kl=0.0211
+  [phase ms/update]  rollout=508  bulk_xfer=0.1  gae=5.8  ppo_xfer=8  ppo_grad=12719  total=13241
+
+[eval] step 15,007,744...
+  train=3.89±5.52  test=1.57±2.13  gap=2.32
+[checkpoint] Saved step 15,007,744 → checkpoints/bigfish/bigfish__impala__seed2__20260509_202927/step_15007744.pt  (latest.pt updated)
+  update   920/1525  step 15,073,280  SPS   1,221  pg=-0.0336  vf=0.0262  ent=1.6437  kl=0.0243
+  [phase ms/update]  rollout=508  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12723  total=13245
+  update   930/1525  step 15,237,120  SPS   1,222  pg=-0.0323  vf=0.0436  ent=1.5519  kl=0.0254
+  [phase ms/update]  rollout=517  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12736  total=13266
+  update   940/1525  step 15,400,960  SPS   1,222  pg=-0.0339  vf=0.0308  ent=1.6573  kl=0.0256
+  [phase ms/update]  rollout=508  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12731  total=13253
+
+[eval] step 15,515,648...
+  train=4.18±6.43  test=1.70±2.59  gap=2.48
+[checkpoint] Saved step 15,515,648 → checkpoints/bigfish/bigfish__impala__seed2__20260509_202927/step_15515648.pt  (latest.pt updated)
+  update   950/1525  step 15,564,800  SPS   1,222  pg=-0.0357  vf=0.0304  ent=1.5323  kl=0.0271
+  [phase ms/update]  rollout=510  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12720  total=13244
+  update   960/1525  step 15,728,640  SPS   1,222  pg=-0.0296  vf=0.0333  ent=1.5107  kl=0.0228
+  [phase ms/update]  rollout=519  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12721  total=13254
+  update   970/1525  step 15,892,480  SPS   1,222  pg=-0.0319  vf=0.0367  ent=1.5803  kl=0.0251
+  [phase ms/update]  rollout=513  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12719  total=13246
+
+[eval] step 16,007,168...
+  train=4.06±5.36  test=1.93±2.47  gap=2.13
+[checkpoint] Saved step 16,007,168 → checkpoints/bigfish/bigfish__impala__seed2__20260509_202927/step_16007168.pt  (latest.pt updated)
+  update   980/1525  step 16,056,320  SPS   1,222  pg=-0.0312  vf=0.0372  ent=1.4895  kl=0.0234
+  [phase ms/update]  rollout=521  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12720  total=13255
+  update   990/1525  step 16,220,160  SPS   1,222  pg=-0.0330  vf=0.0298  ent=1.5199  kl=0.0245
+  [phase ms/update]  rollout=527  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12717  total=13259
+  update  1000/1525  step 16,384,000  SPS   1,222  pg=-0.0296  vf=0.0331  ent=1.5066  kl=0.0231
+  [phase ms/update]  rollout=521  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12722  total=13257
+
+[eval] step 16,515,072...
+  train=3.55±5.33  test=2.03±2.67  gap=1.52
+[checkpoint] Saved step 16,515,072 → checkpoints/bigfish/bigfish__impala__seed2__20260509_202927/step_16515072.pt  (latest.pt updated)
+  update  1010/1525  step 16,547,840  SPS   1,222  pg=-0.0323  vf=0.0255  ent=1.4728  kl=0.0227
+  [phase ms/update]  rollout=507  bulk_xfer=0.1  gae=5.8  ppo_xfer=8  ppo_grad=12734  total=13255
+  update  1020/1525  step 16,711,680  SPS   1,222  pg=-0.0321  vf=0.0311  ent=1.5844  kl=0.0248
+  [phase ms/update]  rollout=514  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12728  total=13256
+  update  1030/1525  step 16,875,520  SPS   1,222  pg=-0.0323  vf=0.0348  ent=1.4946  kl=0.0275
+  [phase ms/update]  rollout=504  bulk_xfer=0.1  gae=5.8  ppo_xfer=8  ppo_grad=12727  total=13245
+
+[eval] step 17,006,592...
+  train=4.33±5.54  test=1.79±2.13  gap=2.54
+[checkpoint] Saved step 17,006,592 → checkpoints/bigfish/bigfish__impala__seed2__20260509_202927/step_17006592.pt  (latest.pt updated)
+  update  1040/1525  step 17,039,360  SPS   1,222  pg=-0.0323  vf=0.0343  ent=1.5527  kl=0.0235
+  [phase ms/update]  rollout=512  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12722  total=13247
+  update  1050/1525  step 17,203,200  SPS   1,222  pg=-0.0336  vf=0.0281  ent=1.5827  kl=0.0267
+  [phase ms/update]  rollout=505  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12721  total=13239
+  update  1060/1525  step 17,367,040  SPS   1,222  pg=-0.0341  vf=0.0326  ent=1.5352  kl=0.0255
+  [phase ms/update]  rollout=505  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12731  total=13249
+
+[eval] step 17,514,496...
+  train=4.18±5.87  test=1.77±2.49  gap=2.41
+[checkpoint] Saved step 17,514,496 → checkpoints/bigfish/bigfish__impala__seed2__20260509_202927/step_17514496.pt  (latest.pt updated)
+  update  1070/1525  step 17,530,880  SPS   1,222  pg=-0.0304  vf=0.0341  ent=1.4947  kl=0.0266
+  [phase ms/update]  rollout=509  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12726  total=13249
+  update  1080/1525  step 17,694,720  SPS   1,222  pg=-0.0316  vf=0.0286  ent=1.5501  kl=0.0240
+  [phase ms/update]  rollout=517  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12725  total=13256
+  update  1090/1525  step 17,858,560  SPS   1,222  pg=-0.0304  vf=0.0292  ent=1.6776  kl=0.0238
+  [phase ms/update]  rollout=525  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12715  total=13253
+
+[eval] step 18,006,016...
+  train=4.65±6.78  test=1.50±1.93  gap=3.15
+[checkpoint] Saved step 18,006,016 → checkpoints/bigfish/bigfish__impala__seed2__20260509_202927/step_18006016.pt  (latest.pt updated)
+  update  1100/1525  step 18,022,400  SPS   1,222  pg=-0.0329  vf=0.0258  ent=1.6079  kl=0.0239
+  [phase ms/update]  rollout=515  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12717  total=13246
+  update  1110/1525  step 18,186,240  SPS   1,222  pg=-0.0313  vf=0.0301  ent=1.5618  kl=0.0266
+  [phase ms/update]  rollout=520  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12720  total=13254
+  update  1120/1525  step 18,350,080  SPS   1,222  pg=-0.0325  vf=0.0285  ent=1.5961  kl=0.0220
+  [phase ms/update]  rollout=515  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12717  total=13246
+  update  1130/1525  step 18,513,920  SPS   1,222  pg=-0.0319  vf=0.0270  ent=1.6330  kl=0.0237
+  [phase ms/update]  rollout=508  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12719  total=13241
+
+[eval] step 18,513,920...
+  train=4.48±5.53  test=1.46±1.93  gap=3.02
+[checkpoint] Saved step 18,513,920 → checkpoints/bigfish/bigfish__impala__seed2__20260509_202927/step_18513920.pt  (latest.pt updated)
+  update  1140/1525  step 18,677,760  SPS   1,222  pg=-0.0333  vf=0.0274  ent=1.5531  kl=0.0249
+  [phase ms/update]  rollout=510  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12725  total=13248
+  update  1150/1525  step 18,841,600  SPS   1,222  pg=-0.0337  vf=0.0224  ent=1.6729  kl=0.0224
+  [phase ms/update]  rollout=512  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12717  total=13243
+  update  1160/1525  step 19,005,440  SPS   1,222  pg=-0.0298  vf=0.0269  ent=1.5347  kl=0.0266
+  [phase ms/update]  rollout=517  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12712  total=13243
+
+[eval] step 19,005,440...
+  train=4.60±6.83  test=1.58±2.12  gap=3.02
+[checkpoint] Saved step 19,005,440 → checkpoints/bigfish/bigfish__impala__seed2__20260509_202927/step_19005440.pt  (latest.pt updated)
+  update  1170/1525  step 19,169,280  SPS   1,222  pg=-0.0300  vf=0.0286  ent=1.6238  kl=0.0218
+  [phase ms/update]  rollout=499  bulk_xfer=0.1  gae=5.8  ppo_xfer=8  ppo_grad=12727  total=13240
+  update  1180/1525  step 19,333,120  SPS   1,222  pg=-0.0292  vf=0.0298  ent=1.6316  kl=0.0252
+  [phase ms/update]  rollout=512  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12727  total=13253
+  update  1190/1525  step 19,496,960  SPS   1,222  pg=-0.0323  vf=0.0312  ent=1.5597  kl=0.0232
+  [phase ms/update]  rollout=522  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12729  total=13265
+
+[eval] step 19,513,344...
+  train=4.47±6.70  test=1.45±1.68  gap=3.02
+[checkpoint] Saved step 19,513,344 → checkpoints/bigfish/bigfish__impala__seed2__20260509_202927/step_19513344.pt  (latest.pt updated)
+  update  1200/1525  step 19,660,800  SPS   1,222  pg=-0.0305  vf=0.0280  ent=1.6303  kl=0.0233
+  [phase ms/update]  rollout=516  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12730  total=13260
+  update  1210/1525  step 19,824,640  SPS   1,222  pg=-0.0325  vf=0.0257  ent=1.7056  kl=0.0240
+  [phase ms/update]  rollout=518  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12721  total=13252
+  update  1220/1525  step 19,988,480  SPS   1,222  pg=-0.0294  vf=0.0238  ent=1.6025  kl=0.0248
+  [phase ms/update]  rollout=507  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12717  total=13238
+
+[eval] step 20,004,864...
+  train=3.98±5.33  test=1.77±2.28  gap=2.21
+[checkpoint] Saved step 20,004,864 → checkpoints/bigfish/bigfish__impala__seed2__20260509_202927/step_20004864.pt  (latest.pt updated)
+  update  1230/1525  step 20,152,320  SPS   1,222  pg=-0.0329  vf=0.0304  ent=1.5000  kl=0.0262
+  [phase ms/update]  rollout=515  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12725  total=13255
+  update  1240/1525  step 20,316,160  SPS   1,222  pg=-0.0307  vf=0.0362  ent=1.5878  kl=0.0240
+  [phase ms/update]  rollout=523  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12726  total=13263
+  update  1250/1525  step 20,480,000  SPS   1,222  pg=-0.0310  vf=0.0327  ent=1.4735  kl=0.0254
+  [phase ms/update]  rollout=520  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12726  total=13260
+
+[eval] step 20,512,768...
+  train=4.95±7.93  test=2.01±2.67  gap=2.94
+[checkpoint] Saved step 20,512,768 → checkpoints/bigfish/bigfish__impala__seed2__20260509_202927/step_20512768.pt  (latest.pt updated)
+  update  1260/1525  step 20,643,840  SPS   1,222  pg=-0.0338  vf=0.0290  ent=1.6138  kl=0.0269
+  [phase ms/update]  rollout=520  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12722  total=13256
+  update  1270/1525  step 20,807,680  SPS   1,222  pg=-0.0317  vf=0.0295  ent=1.5574  kl=0.0290
+  [phase ms/update]  rollout=519  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12734  total=13267
+  update  1280/1525  step 20,971,520  SPS   1,222  pg=-0.0303  vf=0.0318  ent=1.4504  kl=0.0266
+  [phase ms/update]  rollout=524  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12735  total=13273
+
+[eval] step 21,004,288...
+  train=4.19±6.35  test=1.90±2.39  gap=2.29
+[checkpoint] Saved step 21,004,288 → checkpoints/bigfish/bigfish__impala__seed2__20260509_202927/step_21004288.pt  (latest.pt updated)
+  update  1290/1525  step 21,135,360  SPS   1,222  pg=-0.0310  vf=0.0290  ent=1.5206  kl=0.0256
+  [phase ms/update]  rollout=512  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12725  total=13251
+  update  1300/1525  step 21,299,200  SPS   1,222  pg=-0.0280  vf=0.0381  ent=1.5243  kl=0.0281
+  [phase ms/update]  rollout=506  bulk_xfer=0.1  gae=5.8  ppo_xfer=8  ppo_grad=12716  total=13236
+  update  1310/1525  step 21,463,040  SPS   1,222  pg=-0.0280  vf=0.0410  ent=1.5618  kl=0.0275
+  [phase ms/update]  rollout=518  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12714  total=13246
+
+[eval] step 21,512,192...
+  train=4.49±6.72  test=1.74±2.59  gap=2.75
+[checkpoint] Saved step 21,512,192 → checkpoints/bigfish/bigfish__impala__seed2__20260509_202927/step_21512192.pt  (latest.pt updated)
+  update  1320/1525  step 21,626,880  SPS   1,222  pg=-0.0328  vf=0.0338  ent=1.6010  kl=0.0262
+  [phase ms/update]  rollout=525  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12722  total=13261
+  update  1330/1525  step 21,790,720  SPS   1,222  pg=-0.0334  vf=0.0371  ent=1.6257  kl=0.0245
+  [phase ms/update]  rollout=515  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12723  total=13253
+  update  1340/1525  step 21,954,560  SPS   1,222  pg=-0.0294  vf=0.0367  ent=1.5588  kl=0.0228
+  [phase ms/update]  rollout=516  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12730  total=13260
+
+[eval] step 22,003,712...
+  train=5.23±7.33  test=2.68±4.77  gap=2.55
+[checkpoint] Saved step 22,003,712 → checkpoints/bigfish/bigfish__impala__seed2__20260509_202927/step_22003712.pt  (latest.pt updated)
+  update  1350/1525  step 22,118,400  SPS   1,222  pg=-0.0328  vf=0.0416  ent=1.6526  kl=0.0240
+  [phase ms/update]  rollout=521  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12731  total=13266
+  update  1360/1525  step 22,282,240  SPS   1,222  pg=-0.0323  vf=0.0383  ent=1.5622  kl=0.0259
+  [phase ms/update]  rollout=522  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12731  total=13267
+  update  1370/1525  step 22,446,080  SPS   1,222  pg=-0.0312  vf=0.0395  ent=1.5526  kl=0.0264
+  [phase ms/update]  rollout=522  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12731  total=13267
+
+[eval] step 22,511,616...
+  train=6.41±9.53  test=1.96±2.43  gap=4.45
+[checkpoint] Saved step 22,511,616 → checkpoints/bigfish/bigfish__impala__seed2__20260509_202927/step_22511616.pt  (latest.pt updated)
+  update  1380/1525  step 22,609,920  SPS   1,222  pg=-0.0279  vf=0.0333  ent=1.6129  kl=0.0235
+  [phase ms/update]  rollout=528  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12727  total=13269
+  update  1390/1525  step 22,773,760  SPS   1,222  pg=-0.0334  vf=0.0331  ent=1.6052  kl=0.0234
+  [phase ms/update]  rollout=509  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12731  total=13254
+  update  1400/1525  step 22,937,600  SPS   1,222  pg=-0.0290  vf=0.0306  ent=1.5210  kl=0.0243
+  [phase ms/update]  rollout=533  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12727  total=13274
+
+[eval] step 23,003,136...
+  train=4.63±6.79  test=1.76±2.76  gap=2.87
+[checkpoint] Saved step 23,003,136 → checkpoints/bigfish/bigfish__impala__seed2__20260509_202927/step_23003136.pt  (latest.pt updated)
+  update  1410/1525  step 23,101,440  SPS   1,222  pg=-0.0305  vf=0.0295  ent=1.5705  kl=0.0256
+  [phase ms/update]  rollout=509  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12721  total=13244
+  update  1420/1525  step 23,265,280  SPS   1,222  pg=-0.0310  vf=0.0324  ent=1.5221  kl=0.0231
+  [phase ms/update]  rollout=505  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12715  total=13234
+  update  1430/1525  step 23,429,120  SPS   1,222  pg=-0.0298  vf=0.0280  ent=1.5097  kl=0.0264
+  [phase ms/update]  rollout=515  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12714  total=13242
+
+[eval] step 23,511,040...
+  train=4.64±7.16  test=1.96±2.60  gap=2.68
+[checkpoint] Saved step 23,511,040 → checkpoints/bigfish/bigfish__impala__seed2__20260509_202927/step_23511040.pt  (latest.pt updated)
+  update  1440/1525  step 23,592,960  SPS   1,222  pg=-0.0324  vf=0.0282  ent=1.4629  kl=0.0282
+  [phase ms/update]  rollout=510  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12711  total=13235
+  update  1450/1525  step 23,756,800  SPS   1,222  pg=-0.0288  vf=0.0314  ent=1.4725  kl=0.0230
+  [phase ms/update]  rollout=509  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12708  total=13230
+  update  1460/1525  step 23,920,640  SPS   1,222  pg=-0.0304  vf=0.0332  ent=1.4680  kl=0.0277
+  [phase ms/update]  rollout=506  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12714  total=13234
+
+[eval] step 24,002,560...
+  train=4.99±8.09  test=2.16±4.47  gap=2.83
+[checkpoint] Saved step 24,002,560 → checkpoints/bigfish/bigfish__impala__seed2__20260509_202927/step_24002560.pt  (latest.pt updated)
+  update  1470/1525  step 24,084,480  SPS   1,222  pg=-0.0314  vf=0.0293  ent=1.6469  kl=0.0243
+  [phase ms/update]  rollout=517  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12721  total=13252
+  update  1480/1525  step 24,248,320  SPS   1,222  pg=-0.0325  vf=0.0292  ent=1.4308  kl=0.0267
+  [phase ms/update]  rollout=510  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12723  total=13247
+  update  1490/1525  step 24,412,160  SPS   1,222  pg=-0.0277  vf=0.0320  ent=1.5203  kl=0.0211
+  [phase ms/update]  rollout=522  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12726  total=13262
+
+[eval] step 24,510,464...
+  train=6.38±10.28  test=2.09±2.45  gap=4.29
+[checkpoint] Saved step 24,510,464 → checkpoints/bigfish/bigfish__impala__seed2__20260509_202927/step_24510464.pt  (latest.pt updated)
+  update  1500/1525  step 24,576,000  SPS   1,222  pg=-0.0297  vf=0.0323  ent=1.5137  kl=0.0229
+  [phase ms/update]  rollout=530  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12727  total=13271
+  update  1510/1525  step 24,739,840  SPS   1,222  pg=-0.0279  vf=0.0377  ent=1.4759  kl=0.0250
+  [phase ms/update]  rollout=521  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12729  total=13264
+  update  1520/1525  step 24,903,680  SPS   1,222  pg=-0.0305  vf=0.0338  ent=1.5084  kl=0.0273
+  [phase ms/update]  rollout=521  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12729  total=13263
+[checkpoint] Saved step 24,985,600 → checkpoints/bigfish/bigfish__impala__seed2__20260509_202927/step_24985600_final.pt  (latest.pt updated)
+
+[done] Training complete.
+
+[final eval]
+
+=================================================================
+  bigfish | none+uniform | seed=2
+  train=5.16  test=2.05  gap=3.11
+  expected=[10.0,20.0]  outside range
+=================================================================
+
+wandb: updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading history steps 1523-1524, summary, console lines 513-523
+wandb: 
+wandb: Run history:
+wandb:                            charts/SPS ▁▇▇█████████████████████████████████████
+wandb:     charts/episodic_return_normalised ▂▂▂▄▂▁▂▃▃▄▂▄▄▅▃▂▂▅▆▂▄▃▅▄▄▇▄▃▃▁▇▃▄▅▄▄█▃▅▆
+wandb: charts/episodic_return_normalised_std ▃▁▃▃▂▂▂▂▄▃▃▅▆▂▂▆▄▂▂▅▂▂▅▄▅▅▅▇▃▄▃▃▁█▃▃▄▅▄▃
+wandb:                  charts/learning_rate ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:               eval/generalization_gap ▁▁▂▂▃▃▃▃▂▃▄▃▄▄▄▅▅▄▄▄▄▅▄▃▅▄▃▅▅▆▆▆▄▆▅▅█▅▅█
+wandb:                      eval/test_return ▁▁▂▁▂▂▃▃▃▃▂▃▃▃▅▂▄▄▅▅▆▄▄▅▃▅▅▄▄▃▃▃▄▅▅█▅▄▅▅
+wandb:                  eval/test_return_std ▁▁▁▂▂▂▂▃▃▂▃▃▃▃▃▂▃▃▃▃▄▃▂▃▃▃▄▃▃▂▃▂▃▄▃█▃▄▄▃
+wandb:                     eval/train_return ▁▁▂▂▃▃▃▃▃▃▄▃▄▄▅▅▅▅▄▅▅▅▅▄▅▅▄▅▅▆▆▅▅▆▅▆█▆▆█
+wandb:                 eval/train_return_std ▁▁▁▁▂▂▂▂▂▂▂▂▃▃▃▃▃▅▃▅▃▄▅▄▃▅▄▄▄▄▄▅▄▆▅▆▇▅▅█
+wandb:                      losses/approx_kl ▁▁▃▃▄▅▅▅▅▅▆▆▆▆▆▆▆▆▆▆▆▆▆▆▇▆█▇▇▆▇▇▇▆▇▇▆▇▇▆
+wandb:                                    +6 ...
+wandb: 
+wandb: Run summary:
+wandb:                            charts/SPS 1222.13612
+wandb:     charts/episodic_return_normalised 1.72884
+wandb: charts/episodic_return_normalised_std 2.25404
+wandb:                  charts/learning_rate 0.0005
+wandb:               eval/generalization_gap 4.29
+wandb:                      eval/test_return 2.09
+wandb:                  eval/test_return_std 2.44988
+wandb:                     eval/train_return 6.38
+wandb:                 eval/train_return_std 10.27889
+wandb:                      losses/approx_kl 0.02625
+wandb:                                    +6 ...
+wandb: 
+wandb: 🚀 View run bigfish__impala__seed2__20260509_202927 at: https://wandb.ai/staanagnostou-/thesis-rl-baselines/runs/4ch0lnye
+wandb: ⭐️ View project at: https://wandb.ai/staanagnostou-/thesis-rl-baselines
+wandb: Synced 6 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260509_202928-4ch0lnye/logs

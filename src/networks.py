@@ -32,9 +32,18 @@ def _layer_init(layer: nn.Module, std: float = 0.01, bias_const: float = 0.0) ->
 
 
 def _obs_to_float(obs: Tensor) -> Tensor:
-    """Convert uint8 HWC observation to float32 CHW in [0, 1]."""
-    # obs: (B, H, W, C) uint8  →  (B, C, H, W) float32
-    return obs.permute(0, 3, 1, 2).float() / 255.0
+    """Convert observations to float32 CHW [0, 1] regardless of input format.
+
+    Handles both (B, H, W, C) uint8 from the rollout buffer and
+    (B, C, H, W) float32 from augmentation pipelines (e.g. DrAC, RAD).
+    """
+    if obs.dtype == torch.uint8:
+        return obs.permute(0, 3, 1, 2).float() / 255.0
+    # Already float: if channel dim is small (1 or 3), assume CHW.
+    if obs.ndim == 4 and obs.shape[1] in (1, 3):
+        return obs.float()
+    # Float but HWC layout — transpose.
+    return obs.permute(0, 3, 1, 2).float()
 
 
 # ---------------------------------------------------------------------------

@@ -1,0 +1,569 @@
+[device] GPU detected:   (24.0 GB VRAM)
+[device] Backend: NVIDIA CUDA
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from WANDB_API_KEY.
+wandb: Currently logged in as: stayrosanang (staanagnostou-) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: setting up run qtt4nuxf
+wandb: Tracking run with wandb version 0.26.1
+wandb: Run data is saved locally in /workspace/wandb/run-20260512_110420-qtt4nuxf
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run fruitbot__impala__seed1__20260512_110420
+wandb: ⭐️ View project at https://wandb.ai/staanagnostou-/thesis-rl-baselines
+wandb: 🚀 View run at https://wandb.ai/staanagnostou-/thesis-rl-baselines/runs/qtt4nuxf
+[wandb] Run ID: qtt4nuxf  tags=['none', 'fruitbot', 'seed_1', 'impala']
+[env] fruitbot  64 envs  200 levels  mode=easy  backend=auto
+[env] obs_space=(64, 64, 3)  num_actions=15
+[model] torch.compile applied (mode=reduce-overhead)
+[model] IMPALA-CNN  params=626,256
+
+=================================================================
+  Starting PPO  |  env=fruitbot  aug=none  lvl=uniform
+  total_steps=25,000,000  updates=1,525  device=cuda
+=================================================================
+
+  update     1/1525  step     16,384  SPS     309  pg=-0.0002  vf=0.2474  ent=2.7080  kl=0.0000
+  [phase ms/update]  rollout=1671  bulk_xfer=0.1  gae=6.3  ppo_xfer=11  ppo_grad=51361  total=53049
+  update    10/1525  step    163,840  SPS     950  pg=-0.0048  vf=0.0639  ent=2.6747  kl=0.0040
+  [phase ms/update]  rollout=520  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12735  total=13269
+  update    20/1525  step    327,680  SPS   1,074  pg=-0.0110  vf=0.0372  ent=2.5607  kl=0.0062
+  [phase ms/update]  rollout=526  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12734  total=13274
+  update    30/1525  step    491,520  SPS   1,122  pg=-0.0152  vf=0.0380  ent=2.4768  kl=0.0080
+  [phase ms/update]  rollout=529  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12733  total=13276
+
+[eval] step 507,904...
+  train=0.18±2.43  test=-0.16±2.25  gap=0.34
+[checkpoint] Saved step 507,904 → checkpoints/fruitbot/fruitbot__impala__seed1__20260512_110420/step_507904.pt  (latest.pt updated)
+  update    40/1525  step    655,360  SPS   1,144  pg=-0.0194  vf=0.0309  ent=2.4022  kl=0.0110
+  [phase ms/update]  rollout=544  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12737  total=13295
+  update    50/1525  step    819,200  SPS   1,161  pg=-0.0186  vf=0.0403  ent=2.3792  kl=0.0119
+  [phase ms/update]  rollout=537  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12724  total=13276
+  update    60/1525  step    983,040  SPS   1,173  pg=-0.0187  vf=0.0396  ent=2.3228  kl=0.0122
+  [phase ms/update]  rollout=529  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12723  total=13266
+
+[eval] step 1,015,808...
+  train=2.07±2.36  test=1.18±2.41  gap=0.89
+[checkpoint] Saved step 1,015,808 → checkpoints/fruitbot/fruitbot__impala__seed1__20260512_110420/step_1015808.pt  (latest.pt updated)
+  update    70/1525  step  1,146,880  SPS   1,179  pg=-0.0186  vf=0.0930  ent=2.1802  kl=0.0132
+  [phase ms/update]  rollout=544  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12725  total=13283
+  update    80/1525  step  1,310,720  SPS   1,185  pg=-0.0223  vf=0.0643  ent=2.1697  kl=0.0128
+  [phase ms/update]  rollout=536  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12733  total=13284
+  update    90/1525  step  1,474,560  SPS   1,191  pg=-0.0161  vf=0.1201  ent=2.1217  kl=0.0128
+  [phase ms/update]  rollout=535  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12730  total=13279
+
+[eval] step 1,507,328...
+  train=6.07±7.30  test=4.56±7.27  gap=1.51
+[checkpoint] Saved step 1,507,328 → checkpoints/fruitbot/fruitbot__impala__seed1__20260512_110420/step_1507328.pt  (latest.pt updated)
+  update   100/1525  step  1,638,400  SPS   1,191  pg=-0.0158  vf=0.1500  ent=2.0482  kl=0.0120
+  [phase ms/update]  rollout=553  bulk_xfer=0.1  gae=6.2  ppo_xfer=8  ppo_grad=12723  total=13290
+  update   110/1525  step  1,802,240  SPS   1,195  pg=-0.0279  vf=0.1160  ent=2.0606  kl=0.0172
+  [phase ms/update]  rollout=534  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12722  total=13271
+  update   120/1525  step  1,966,080  SPS   1,198  pg=-0.0248  vf=0.1355  ent=2.0601  kl=0.0154
+  [phase ms/update]  rollout=547  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12724  total=13285
+
+[eval] step 2,015,232...
+  train=10.53±10.57  test=8.53±9.83  gap=2.00
+[checkpoint] Saved step 2,015,232 → checkpoints/fruitbot/fruitbot__impala__seed1__20260512_110420/step_2015232.pt  (latest.pt updated)
+  update   130/1525  step  2,129,920  SPS   1,197  pg=-0.0274  vf=0.1499  ent=2.0226  kl=0.0150
+  [phase ms/update]  rollout=536  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12723  total=13273
+  update   140/1525  step  2,293,760  SPS   1,199  pg=-0.0283  vf=0.1505  ent=1.9473  kl=0.0147
+  [phase ms/update]  rollout=532  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12722  total=13269
+  update   150/1525  step  2,457,600  SPS   1,202  pg=-0.0241  vf=0.1280  ent=1.9723  kl=0.0143
+  [phase ms/update]  rollout=535  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12738  total=13288
+
+[eval] step 2,506,752...
+  train=12.21±10.92  test=8.51±10.52  gap=3.70
+[checkpoint] Saved step 2,506,752 → checkpoints/fruitbot/fruitbot__impala__seed1__20260512_110420/step_2506752.pt  (latest.pt updated)
+  update   160/1525  step  2,621,440  SPS   1,200  pg=-0.0323  vf=0.1016  ent=1.9197  kl=0.0177
+  [phase ms/update]  rollout=542  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12735  total=13291
+  update   170/1525  step  2,785,280  SPS   1,202  pg=-0.0282  vf=0.1192  ent=1.8768  kl=0.0162
+  [phase ms/update]  rollout=515  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12735  total=13264
+  update   180/1525  step  2,949,120  SPS   1,204  pg=-0.0243  vf=0.1444  ent=1.9235  kl=0.0160
+  [phase ms/update]  rollout=537  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12737  total=13287
+
+[eval] step 3,014,656...
+  train=12.03±11.08  test=10.47±11.49  gap=1.56
+[checkpoint] Saved step 3,014,656 → checkpoints/fruitbot/fruitbot__impala__seed1__20260512_110420/step_3014656.pt  (latest.pt updated)
+  update   190/1525  step  3,112,960  SPS   1,202  pg=-0.0284  vf=0.1053  ent=1.9282  kl=0.0170
+  [phase ms/update]  rollout=548  bulk_xfer=0.1  gae=6.2  ppo_xfer=8  ppo_grad=12735  total=13297
+  update   200/1525  step  3,276,800  SPS   1,204  pg=-0.0288  vf=0.1119  ent=1.9077  kl=0.0168
+  [phase ms/update]  rollout=529  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12736  total=13279
+  update   210/1525  step  3,440,640  SPS   1,205  pg=-0.0258  vf=0.1291  ent=1.8432  kl=0.0160
+  [phase ms/update]  rollout=539  bulk_xfer=0.1  gae=6.2  ppo_xfer=8  ppo_grad=12734  total=13287
+
+[eval] step 3,506,176...
+  train=19.56±11.05  test=12.83±11.30  gap=6.73
+[checkpoint] Saved step 3,506,176 → checkpoints/fruitbot/fruitbot__impala__seed1__20260512_110420/step_3506176.pt  (latest.pt updated)
+  update   220/1525  step  3,604,480  SPS   1,204  pg=-0.0235  vf=0.1264  ent=1.7924  kl=0.0183
+  [phase ms/update]  rollout=540  bulk_xfer=0.1  gae=6.2  ppo_xfer=8  ppo_grad=12736  total=13290
+  update   230/1525  step  3,768,320  SPS   1,205  pg=-0.0294  vf=0.1046  ent=1.8427  kl=0.0187
+  [phase ms/update]  rollout=532  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12736  total=13282
+  update   240/1525  step  3,932,160  SPS   1,206  pg=-0.0226  vf=0.0802  ent=1.8592  kl=0.0135
+  [phase ms/update]  rollout=530  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12733  total=13277
+
+[eval] step 4,014,080...
+  train=20.85±11.06  test=14.47±12.06  gap=6.38
+[checkpoint] Saved step 4,014,080 → checkpoints/fruitbot/fruitbot__impala__seed1__20260512_110420/step_4014080.pt  (latest.pt updated)
+  update   250/1525  step  4,096,000  SPS   1,204  pg=-0.0236  vf=0.1631  ent=1.8398  kl=0.0154
+  [phase ms/update]  rollout=521  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12738  total=13272
+  update   260/1525  step  4,259,840  SPS   1,205  pg=-0.0279  vf=0.0840  ent=1.8777  kl=0.0167
+  [phase ms/update]  rollout=545  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12730  total=13290
+  update   270/1525  step  4,423,680  SPS   1,207  pg=-0.0240  vf=0.1203  ent=1.8284  kl=0.0171
+  [phase ms/update]  rollout=532  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12721  total=13267
+
+[eval] step 4,505,600...
+  train=19.45±10.17  test=15.78±12.20  gap=3.67
+[checkpoint] Saved step 4,505,600 → checkpoints/fruitbot/fruitbot__impala__seed1__20260512_110420/step_4505600.pt  (latest.pt updated)
+  update   280/1525  step  4,587,520  SPS   1,205  pg=-0.0201  vf=0.1338  ent=1.7892  kl=0.0103
+  [phase ms/update]  rollout=524  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12730  total=13268
+  update   290/1525  step  4,751,360  SPS   1,206  pg=-0.0239  vf=0.0998  ent=1.7742  kl=0.0174
+  [phase ms/update]  rollout=534  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12725  total=13274
+  update   300/1525  step  4,915,200  SPS   1,207  pg=-0.0180  vf=0.0978  ent=1.7655  kl=0.0164
+  [phase ms/update]  rollout=544  bulk_xfer=0.1  gae=6.2  ppo_xfer=8  ppo_grad=12726  total=13285
+
+[eval] step 5,013,504...
+  train=22.02±9.64  test=17.34±12.06  gap=4.68
+[checkpoint] Saved step 5,013,504 → checkpoints/fruitbot/fruitbot__impala__seed1__20260512_110420/step_5013504.pt  (latest.pt updated)
+  update   310/1525  step  5,079,040  SPS   1,206  pg=-0.0202  vf=0.1592  ent=1.7531  kl=0.0110
+  [phase ms/update]  rollout=541  bulk_xfer=0.1  gae=6.2  ppo_xfer=8  ppo_grad=12731  total=13287
+  update   320/1525  step  5,242,880  SPS   1,206  pg=-0.0225  vf=0.0878  ent=1.8178  kl=0.0169
+  [phase ms/update]  rollout=537  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12724  total=13275
+  update   330/1525  step  5,406,720  SPS   1,207  pg=-0.0256  vf=0.0916  ent=1.8347  kl=0.0167
+  [phase ms/update]  rollout=536  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12734  total=13284
+
+[eval] step 5,505,024...
+  train=19.56±11.54  test=18.60±11.67  gap=0.96
+[checkpoint] Saved step 5,505,024 → checkpoints/fruitbot/fruitbot__impala__seed1__20260512_110420/step_5505024.pt  (latest.pt updated)
+  update   340/1525  step  5,570,560  SPS   1,206  pg=-0.0250  vf=0.0943  ent=1.8591  kl=0.0140
+  [phase ms/update]  rollout=528  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12730  total=13272
+  update   350/1525  step  5,734,400  SPS   1,207  pg=-0.0244  vf=0.0676  ent=1.8292  kl=0.0189
+  [phase ms/update]  rollout=535  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12728  total=13277
+  update   360/1525  step  5,898,240  SPS   1,208  pg=-0.0255  vf=0.0660  ent=1.8085  kl=0.0160
+  [phase ms/update]  rollout=531  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12719  total=13264
+
+[eval] step 6,012,928...
+  train=21.37±9.90  test=16.94±11.50  gap=4.43
+[checkpoint] Saved step 6,012,928 → checkpoints/fruitbot/fruitbot__impala__seed1__20260512_110420/step_6012928.pt  (latest.pt updated)
+  update   370/1525  step  6,062,080  SPS   1,206  pg=-0.0224  vf=0.0819  ent=1.8537  kl=0.0126
+  [phase ms/update]  rollout=529  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12721  total=13265
+  update   380/1525  step  6,225,920  SPS   1,207  pg=-0.0276  vf=0.0609  ent=1.8808  kl=0.0158
+  [phase ms/update]  rollout=533  bulk_xfer=0.1  gae=6.2  ppo_xfer=8  ppo_grad=12717  total=13264
+  update   390/1525  step  6,389,760  SPS   1,208  pg=-0.0241  vf=0.1011  ent=1.8566  kl=0.0176
+  [phase ms/update]  rollout=537  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12731  total=13282
+
+[eval] step 6,504,448...
+  train=21.10±10.95  test=18.76±11.71  gap=2.34
+[checkpoint] Saved step 6,504,448 → checkpoints/fruitbot/fruitbot__impala__seed1__20260512_110420/step_6504448.pt  (latest.pt updated)
+  update   400/1525  step  6,553,600  SPS   1,207  pg=-0.0257  vf=0.0499  ent=1.8263  kl=0.0155
+  [phase ms/update]  rollout=539  bulk_xfer=0.1  gae=6.2  ppo_xfer=8  ppo_grad=12736  total=13288
+  update   410/1525  step  6,717,440  SPS   1,207  pg=-0.0240  vf=0.0714  ent=1.8184  kl=0.0155
+  [phase ms/update]  rollout=523  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12732  total=13269
+  update   420/1525  step  6,881,280  SPS   1,208  pg=-0.0222  vf=0.0774  ent=1.8396  kl=0.0153
+  [phase ms/update]  rollout=547  bulk_xfer=0.1  gae=6.2  ppo_xfer=8  ppo_grad=12732  total=13294
+
+[eval] step 7,012,352...
+  train=22.44±9.93  test=16.13±12.78  gap=6.31
+[checkpoint] Saved step 7,012,352 → checkpoints/fruitbot/fruitbot__impala__seed1__20260512_110420/step_7012352.pt  (latest.pt updated)
+  update   430/1525  step  7,045,120  SPS   1,207  pg=-0.0260  vf=0.0628  ent=1.8810  kl=0.0151
+  [phase ms/update]  rollout=543  bulk_xfer=0.1  gae=6.2  ppo_xfer=8  ppo_grad=12728  total=13285
+  update   440/1525  step  7,208,960  SPS   1,208  pg=-0.0262  vf=0.0556  ent=1.8850  kl=0.0149
+  [phase ms/update]  rollout=525  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12721  total=13259
+  update   450/1525  step  7,372,800  SPS   1,208  pg=-0.0201  vf=0.0743  ent=1.9071  kl=0.0157
+  [phase ms/update]  rollout=539  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12728  total=13281
+
+[eval] step 7,503,872...
+  train=23.34±9.48  test=20.42±11.55  gap=2.92
+[checkpoint] Saved step 7,503,872 → checkpoints/fruitbot/fruitbot__impala__seed1__20260512_110420/step_7503872.pt  (latest.pt updated)
+  update   460/1525  step  7,536,640  SPS   1,207  pg=-0.0206  vf=0.0770  ent=1.8794  kl=0.0122
+  [phase ms/update]  rollout=528  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12729  total=13271
+  update   470/1525  step  7,700,480  SPS   1,208  pg=-0.0191  vf=0.0784  ent=1.8751  kl=0.0188
+  [phase ms/update]  rollout=546  bulk_xfer=0.1  gae=6.2  ppo_xfer=8  ppo_grad=12732  total=13293
+  update   480/1525  step  7,864,320  SPS   1,208  pg=-0.0237  vf=0.0684  ent=1.8250  kl=0.0171
+  [phase ms/update]  rollout=536  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12730  total=13280
+
+[eval] step 8,011,776...
+  train=24.01±10.19  test=19.43±12.60  gap=4.58
+[checkpoint] Saved step 8,011,776 → checkpoints/fruitbot/fruitbot__impala__seed1__20260512_110420/step_8011776.pt  (latest.pt updated)
+  update   490/1525  step  8,028,160  SPS   1,207  pg=-0.0222  vf=0.0585  ent=1.8373  kl=0.0169
+  [phase ms/update]  rollout=541  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12731  total=13286
+  update   500/1525  step  8,192,000  SPS   1,208  pg=-0.0233  vf=0.0580  ent=1.8625  kl=0.0144
+  [phase ms/update]  rollout=549  bulk_xfer=0.1  gae=6.2  ppo_xfer=8  ppo_grad=12730  total=13293
+  update   510/1525  step  8,355,840  SPS   1,208  pg=-0.0241  vf=0.0513  ent=1.8427  kl=0.0141
+  [phase ms/update]  rollout=549  bulk_xfer=0.1  gae=6.2  ppo_xfer=8  ppo_grad=12733  total=13296
+
+[eval] step 8,503,296...
+  train=26.03±8.80  test=20.32±12.35  gap=5.71
+[checkpoint] Saved step 8,503,296 → checkpoints/fruitbot/fruitbot__impala__seed1__20260512_110420/step_8503296.pt  (latest.pt updated)
+  update   520/1525  step  8,519,680  SPS   1,207  pg=-0.0260  vf=0.0526  ent=1.8552  kl=0.0134
+  [phase ms/update]  rollout=539  bulk_xfer=0.1  gae=6.2  ppo_xfer=8  ppo_grad=12729  total=13282
+  update   530/1525  step  8,683,520  SPS   1,208  pg=-0.0214  vf=0.0504  ent=1.8666  kl=0.0180
+  [phase ms/update]  rollout=533  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12728  total=13276
+  update   540/1525  step  8,847,360  SPS   1,208  pg=-0.0203  vf=0.0684  ent=1.8458  kl=0.0143
+  [phase ms/update]  rollout=540  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12733  total=13287
+  update   550/1525  step  9,011,200  SPS   1,209  pg=-0.0182  vf=0.0750  ent=1.7940  kl=0.0141
+  [phase ms/update]  rollout=533  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12726  total=13273
+
+[eval] step 9,011,200...
+  train=25.41±8.82  test=21.86±11.27  gap=3.55
+[checkpoint] Saved step 9,011,200 → checkpoints/fruitbot/fruitbot__impala__seed1__20260512_110420/step_9011200.pt  (latest.pt updated)
+  update   560/1525  step  9,175,040  SPS   1,208  pg=-0.0278  vf=0.0347  ent=1.8618  kl=0.0157
+  [phase ms/update]  rollout=537  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12722  total=13273
+  update   570/1525  step  9,338,880  SPS   1,208  pg=-0.0189  vf=0.0947  ent=1.8787  kl=0.0139
+  [phase ms/update]  rollout=520  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12726  total=13260
+  update   580/1525  step  9,502,720  SPS   1,209  pg=-0.0223  vf=0.0406  ent=1.8587  kl=0.0138
+  [phase ms/update]  rollout=533  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12720  total=13267
+
+[eval] step 9,502,720...
+  train=25.08±8.58  test=23.32±10.46  gap=1.76
+[checkpoint] Saved step 9,502,720 → checkpoints/fruitbot/fruitbot__impala__seed1__20260512_110420/step_9502720.pt  (latest.pt updated)
+  update   590/1525  step  9,666,560  SPS   1,208  pg=-0.0292  vf=0.0298  ent=1.7688  kl=0.0168
+  [phase ms/update]  rollout=538  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12718  total=13271
+  update   600/1525  step  9,830,400  SPS   1,209  pg=-0.0296  vf=0.0361  ent=1.7610  kl=0.0189
+  [phase ms/update]  rollout=517  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12720  total=13251
+  update   610/1525  step  9,994,240  SPS   1,209  pg=-0.0244  vf=0.0396  ent=1.7396  kl=0.0162
+  [phase ms/update]  rollout=535  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12720  total=13269
+
+[eval] step 10,010,624...
+  train=26.47±7.94  test=22.69±11.32  gap=3.78
+[checkpoint] Saved step 10,010,624 → checkpoints/fruitbot/fruitbot__impala__seed1__20260512_110420/step_10010624.pt  (latest.pt updated)
+  update   620/1525  step 10,158,080  SPS   1,208  pg=-0.0264  vf=0.0474  ent=1.7216  kl=0.0143
+  [phase ms/update]  rollout=523  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12715  total=13252
+  update   630/1525  step 10,321,920  SPS   1,209  pg=-0.0207  vf=0.0685  ent=1.7192  kl=0.0193
+  [phase ms/update]  rollout=538  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12728  total=13280
+  update   640/1525  step 10,485,760  SPS   1,209  pg=-0.0251  vf=0.0495  ent=1.7014  kl=0.0154
+  [phase ms/update]  rollout=539  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12730  total=13284
+
+[eval] step 10,502,144...
+  train=25.96±10.08  test=20.79±11.93  gap=5.17
+[checkpoint] Saved step 10,502,144 → checkpoints/fruitbot/fruitbot__impala__seed1__20260512_110420/step_10502144.pt  (latest.pt updated)
+  update   650/1525  step 10,649,600  SPS   1,208  pg=-0.0242  vf=0.0450  ent=1.7305  kl=0.0160
+  [phase ms/update]  rollout=539  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12722  total=13275
+  update   660/1525  step 10,813,440  SPS   1,209  pg=-0.0294  vf=0.0309  ent=1.6773  kl=0.0175
+  [phase ms/update]  rollout=527  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12718  total=13260
+  update   670/1525  step 10,977,280  SPS   1,209  pg=-0.0233  vf=0.0568  ent=1.6319  kl=0.0175
+  [phase ms/update]  rollout=527  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12726  total=13267
+
+[eval] step 11,010,048...
+  train=28.01±6.68  test=23.27±11.72  gap=4.74
+[checkpoint] Saved step 11,010,048 → checkpoints/fruitbot/fruitbot__impala__seed1__20260512_110420/step_11010048.pt  (latest.pt updated)
+  update   680/1525  step 11,141,120  SPS   1,208  pg=-0.0346  vf=0.0176  ent=1.6263  kl=0.0207
+  [phase ms/update]  rollout=541  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12720  total=13275
+  update   690/1525  step 11,304,960  SPS   1,209  pg=-0.0224  vf=0.0333  ent=1.5970  kl=0.0187
+  [phase ms/update]  rollout=533  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12723  total=13270
+  update   700/1525  step 11,468,800  SPS   1,209  pg=-0.0204  vf=0.0403  ent=1.6277  kl=0.0195
+  [phase ms/update]  rollout=541  bulk_xfer=0.1  gae=6.2  ppo_xfer=8  ppo_grad=12732  total=13288
+
+[eval] step 11,501,568...
+  train=27.73±7.22  test=23.48±10.84  gap=4.25
+[checkpoint] Saved step 11,501,568 → checkpoints/fruitbot/fruitbot__impala__seed1__20260512_110420/step_11501568.pt  (latest.pt updated)
+  update   710/1525  step 11,632,640  SPS   1,208  pg=-0.0282  vf=0.0317  ent=1.6405  kl=0.0190
+  [phase ms/update]  rollout=535  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12720  total=13269
+  update   720/1525  step 11,796,480  SPS   1,209  pg=-0.0281  vf=0.0240  ent=1.6232  kl=0.0190
+  [phase ms/update]  rollout=520  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12720  total=13254
+  update   730/1525  step 11,960,320  SPS   1,209  pg=-0.0215  vf=0.0507  ent=1.6436  kl=0.0160
+  [phase ms/update]  rollout=532  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12732  total=13278
+
+[eval] step 12,009,472...
+  train=27.82±8.91  test=24.29±11.16  gap=3.53
+[checkpoint] Saved step 12,009,472 → checkpoints/fruitbot/fruitbot__impala__seed1__20260512_110420/step_12009472.pt  (latest.pt updated)
+  update   740/1525  step 12,124,160  SPS   1,208  pg=-0.0227  vf=0.0453  ent=1.6787  kl=0.0179
+  [phase ms/update]  rollout=530  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12727  total=13271
+  update   750/1525  step 12,288,000  SPS   1,209  pg=-0.0257  vf=0.0433  ent=1.6589  kl=0.0183
+  [phase ms/update]  rollout=541  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12728  total=13283
+  update   760/1525  step 12,451,840  SPS   1,209  pg=-0.0289  vf=0.0450  ent=1.6539  kl=0.0181
+  [phase ms/update]  rollout=556  bulk_xfer=0.1  gae=6.2  ppo_xfer=8  ppo_grad=12729  total=13299
+
+[eval] step 12,500,992...
+  train=27.28±8.85  test=24.22±10.60  gap=3.06
+[checkpoint] Saved step 12,500,992 → checkpoints/fruitbot/fruitbot__impala__seed1__20260512_110420/step_12500992.pt  (latest.pt updated)
+  update   770/1525  step 12,615,680  SPS   1,208  pg=-0.0244  vf=0.0380  ent=1.6634  kl=0.0185
+  [phase ms/update]  rollout=530  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12711  total=13255
+  update   780/1525  step 12,779,520  SPS   1,209  pg=-0.0251  vf=0.0408  ent=1.6652  kl=0.0163
+  [phase ms/update]  rollout=544  bulk_xfer=0.1  gae=6.2  ppo_xfer=8  ppo_grad=12714  total=13272
+  update   790/1525  step 12,943,360  SPS   1,209  pg=-0.0232  vf=0.0460  ent=1.6891  kl=0.0166
+  [phase ms/update]  rollout=528  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12714  total=13256
+
+[eval] step 13,008,896...
+  train=28.78±6.73  test=22.97±11.32  gap=5.81
+[checkpoint] Saved step 13,008,896 → checkpoints/fruitbot/fruitbot__impala__seed1__20260512_110420/step_13008896.pt  (latest.pt updated)
+  update   800/1525  step 13,107,200  SPS   1,208  pg=-0.0233  vf=0.0452  ent=1.6886  kl=0.0160
+  [phase ms/update]  rollout=541  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12724  total=13279
+  update   810/1525  step 13,271,040  SPS   1,209  pg=-0.0217  vf=0.0550  ent=1.7072  kl=0.0131
+  [phase ms/update]  rollout=536  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12727  total=13277
+  update   820/1525  step 13,434,880  SPS   1,209  pg=-0.0197  vf=0.0728  ent=1.6947  kl=0.0169
+  [phase ms/update]  rollout=525  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12729  total=13268
+
+[eval] step 13,500,416...
+  train=26.08±9.57  test=21.78±12.25  gap=4.30
+[checkpoint] Saved step 13,500,416 → checkpoints/fruitbot/fruitbot__impala__seed1__20260512_110420/step_13500416.pt  (latest.pt updated)
+  update   830/1525  step 13,598,720  SPS   1,208  pg=-0.0245  vf=0.0401  ent=1.6377  kl=0.0168
+  [phase ms/update]  rollout=521  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12730  total=13265
+  update   840/1525  step 13,762,560  SPS   1,209  pg=-0.0233  vf=0.0419  ent=1.6180  kl=0.0162
+  [phase ms/update]  rollout=531  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12731  total=13276
+  update   850/1525  step 13,926,400  SPS   1,209  pg=-0.0235  vf=0.0434  ent=1.6226  kl=0.0167
+  [phase ms/update]  rollout=545  bulk_xfer=0.1  gae=6.2  ppo_xfer=8  ppo_grad=12732  total=13291
+
+[eval] step 14,008,320...
+  train=27.95±7.81  test=24.98±10.07  gap=2.97
+[checkpoint] Saved step 14,008,320 → checkpoints/fruitbot/fruitbot__impala__seed1__20260512_110420/step_14008320.pt  (latest.pt updated)
+  update   860/1525  step 14,090,240  SPS   1,208  pg=-0.0294  vf=0.0312  ent=1.6264  kl=0.0178
+  [phase ms/update]  rollout=538  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12722  total=13274
+  update   870/1525  step 14,254,080  SPS   1,209  pg=-0.0256  vf=0.0414  ent=1.5684  kl=0.0193
+  [phase ms/update]  rollout=533  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12722  total=13269
+  update   880/1525  step 14,417,920  SPS   1,209  pg=-0.0305  vf=0.0203  ent=1.5513  kl=0.0205
+  [phase ms/update]  rollout=532  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12724  total=13271
+
+[eval] step 14,516,224...
+  train=27.39±8.59  test=23.11±11.96  gap=4.28
+[checkpoint] Saved step 14,516,224 → checkpoints/fruitbot/fruitbot__impala__seed1__20260512_110420/step_14516224.pt  (latest.pt updated)
+  update   890/1525  step 14,581,760  SPS   1,208  pg=-0.0306  vf=0.0212  ent=1.5608  kl=0.0169
+  [phase ms/update]  rollout=536  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12731  total=13282
+  update   900/1525  step 14,745,600  SPS   1,209  pg=-0.0322  vf=0.0179  ent=1.5778  kl=0.0146
+  [phase ms/update]  rollout=544  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12730  total=13288
+  update   910/1525  step 14,909,440  SPS   1,209  pg=-0.0196  vf=0.0647  ent=1.5655  kl=0.0159
+  [phase ms/update]  rollout=524  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12718  total=13256
+
+[eval] step 15,007,744...
+  train=29.47±6.76  test=22.75±12.11  gap=6.72
+[checkpoint] Saved step 15,007,744 → checkpoints/fruitbot/fruitbot__impala__seed1__20260512_110420/step_15007744.pt  (latest.pt updated)
+  update   920/1525  step 15,073,280  SPS   1,209  pg=-0.0181  vf=0.0618  ent=1.5178  kl=0.0190
+  [phase ms/update]  rollout=530  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12722  total=13266
+  update   930/1525  step 15,237,120  SPS   1,209  pg=-0.0182  vf=0.0452  ent=1.5318  kl=0.0198
+  [phase ms/update]  rollout=537  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12718  total=13269
+  update   940/1525  step 15,400,960  SPS   1,209  pg=-0.0292  vf=0.0234  ent=1.5610  kl=0.0187
+  [phase ms/update]  rollout=539  bulk_xfer=0.1  gae=6.2  ppo_xfer=8  ppo_grad=12719  total=13272
+
+[eval] step 15,515,648...
+  train=28.93±7.74  test=23.54±11.88  gap=5.39
+[checkpoint] Saved step 15,515,648 → checkpoints/fruitbot/fruitbot__impala__seed1__20260512_110420/step_15515648.pt  (latest.pt updated)
+  update   950/1525  step 15,564,800  SPS   1,209  pg=-0.0232  vf=0.0448  ent=1.5402  kl=0.0188
+  [phase ms/update]  rollout=538  bulk_xfer=0.1  gae=6.2  ppo_xfer=8  ppo_grad=12726  total=13279
+  update   960/1525  step 15,728,640  SPS   1,209  pg=-0.0245  vf=0.0316  ent=1.5341  kl=0.0194
+  [phase ms/update]  rollout=525  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12718  total=13258
+  update   970/1525  step 15,892,480  SPS   1,209  pg=-0.0220  vf=0.0382  ent=1.5380  kl=0.0165
+  [phase ms/update]  rollout=517  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12716  total=13247
+
+[eval] step 16,007,168...
+  train=28.39±7.85  test=24.62±11.46  gap=3.77
+[checkpoint] Saved step 16,007,168 → checkpoints/fruitbot/fruitbot__impala__seed1__20260512_110420/step_16007168.pt  (latest.pt updated)
+  update   980/1525  step 16,056,320  SPS   1,209  pg=-0.0326  vf=0.0176  ent=1.5499  kl=0.0195
+  [phase ms/update]  rollout=533  bulk_xfer=0.1  gae=6.2  ppo_xfer=8  ppo_grad=12718  total=13265
+  update   990/1525  step 16,220,160  SPS   1,209  pg=-0.0235  vf=0.0378  ent=1.5296  kl=0.0175
+  [phase ms/update]  rollout=535  bulk_xfer=0.1  gae=6.2  ppo_xfer=8  ppo_grad=12717  total=13266
+  update  1000/1525  step 16,384,000  SPS   1,209  pg=-0.0345  vf=0.0163  ent=1.5456  kl=0.0192
+  [phase ms/update]  rollout=523  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12718  total=13255
+
+[eval] step 16,515,072...
+  train=26.45±9.03  test=23.46±11.81  gap=2.99
+[checkpoint] Saved step 16,515,072 → checkpoints/fruitbot/fruitbot__impala__seed1__20260512_110420/step_16515072.pt  (latest.pt updated)
+  update  1010/1525  step 16,547,840  SPS   1,209  pg=-0.0232  vf=0.0424  ent=1.5248  kl=0.0160
+  [phase ms/update]  rollout=525  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12721  total=13261
+  update  1020/1525  step 16,711,680  SPS   1,209  pg=-0.0201  vf=0.0451  ent=1.5151  kl=0.0185
+  [phase ms/update]  rollout=540  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12722  total=13276
+  update  1030/1525  step 16,875,520  SPS   1,209  pg=-0.0277  vf=0.0274  ent=1.5188  kl=0.0184
+  [phase ms/update]  rollout=526  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12729  total=13268
+
+[eval] step 17,006,592...
+  train=28.50±7.57  test=23.43±11.11  gap=5.07
+[checkpoint] Saved step 17,006,592 → checkpoints/fruitbot/fruitbot__impala__seed1__20260512_110420/step_17006592.pt  (latest.pt updated)
+  update  1040/1525  step 17,039,360  SPS   1,209  pg=-0.0194  vf=0.0590  ent=1.4831  kl=0.0173
+  [phase ms/update]  rollout=526  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12722  total=13262
+  update  1050/1525  step 17,203,200  SPS   1,209  pg=-0.0229  vf=0.0402  ent=1.4692  kl=0.0183
+  [phase ms/update]  rollout=535  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12727  total=13276
+  update  1060/1525  step 17,367,040  SPS   1,209  pg=-0.0274  vf=0.0301  ent=1.4504  kl=0.0186
+  [phase ms/update]  rollout=538  bulk_xfer=0.1  gae=6.2  ppo_xfer=8  ppo_grad=12724  total=13276
+
+[eval] step 17,514,496...
+  train=27.60±8.31  test=24.35±11.15  gap=3.25
+[checkpoint] Saved step 17,514,496 → checkpoints/fruitbot/fruitbot__impala__seed1__20260512_110420/step_17514496.pt  (latest.pt updated)
+  update  1070/1525  step 17,530,880  SPS   1,209  pg=-0.0211  vf=0.0397  ent=1.4711  kl=0.0174
+  [phase ms/update]  rollout=548  bulk_xfer=0.1  gae=6.2  ppo_xfer=8  ppo_grad=12723  total=13286
+  update  1080/1525  step 17,694,720  SPS   1,209  pg=-0.0223  vf=0.0315  ent=1.4830  kl=0.0157
+  [phase ms/update]  rollout=531  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12717  total=13261
+  update  1090/1525  step 17,858,560  SPS   1,209  pg=-0.0215  vf=0.0338  ent=1.4646  kl=0.0176
+  [phase ms/update]  rollout=532  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12717  total=13264
+
+[eval] step 18,006,016...
+  train=29.78±6.44  test=23.61±12.31  gap=6.17
+[checkpoint] Saved step 18,006,016 → checkpoints/fruitbot/fruitbot__impala__seed1__20260512_110420/step_18006016.pt  (latest.pt updated)
+  update  1100/1525  step 18,022,400  SPS   1,209  pg=-0.0170  vf=0.0369  ent=1.4493  kl=0.0213
+  [phase ms/update]  rollout=535  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12718  total=13267
+  update  1110/1525  step 18,186,240  SPS   1,209  pg=-0.0231  vf=0.0309  ent=1.4434  kl=0.0174
+  [phase ms/update]  rollout=532  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12723  total=13269
+  update  1120/1525  step 18,350,080  SPS   1,209  pg=-0.0188  vf=0.0484  ent=1.5133  kl=0.0130
+  [phase ms/update]  rollout=544  bulk_xfer=0.1  gae=6.2  ppo_xfer=8  ppo_grad=12724  total=13282
+  update  1130/1525  step 18,513,920  SPS   1,209  pg=-0.0197  vf=0.0438  ent=1.4796  kl=0.0176
+  [phase ms/update]  rollout=532  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12727  total=13273
+
+[eval] step 18,513,920...
+  train=30.61±4.44  test=24.92±11.37  gap=5.69
+[checkpoint] Saved step 18,513,920 → checkpoints/fruitbot/fruitbot__impala__seed1__20260512_110420/step_18513920.pt  (latest.pt updated)
+  update  1140/1525  step 18,677,760  SPS   1,209  pg=-0.0272  vf=0.0242  ent=1.4120  kl=0.0213
+  [phase ms/update]  rollout=544  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12722  total=13280
+  update  1150/1525  step 18,841,600  SPS   1,209  pg=-0.0193  vf=0.0462  ent=1.4339  kl=0.0184
+  [phase ms/update]  rollout=524  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12716  total=13254
+  update  1160/1525  step 19,005,440  SPS   1,209  pg=-0.0277  vf=0.0252  ent=1.4507  kl=0.0190
+  [phase ms/update]  rollout=531  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12717  total=13262
+
+[eval] step 19,005,440...
+  train=29.39±7.03  test=23.39±11.43  gap=6.00
+[checkpoint] Saved step 19,005,440 → checkpoints/fruitbot/fruitbot__impala__seed1__20260512_110420/step_19005440.pt  (latest.pt updated)
+  update  1170/1525  step 19,169,280  SPS   1,209  pg=-0.0199  vf=0.0519  ent=1.4605  kl=0.0182
+  [phase ms/update]  rollout=546  bulk_xfer=0.1  gae=6.2  ppo_xfer=8  ppo_grad=12716  total=13276
+  update  1180/1525  step 19,333,120  SPS   1,209  pg=-0.0220  vf=0.0416  ent=1.4284  kl=0.0167
+  [phase ms/update]  rollout=532  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12719  total=13265
+  update  1190/1525  step 19,496,960  SPS   1,209  pg=-0.0215  vf=0.0417  ent=1.4381  kl=0.0126
+  [phase ms/update]  rollout=528  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12717  total=13259
+
+[eval] step 19,513,344...
+  train=29.43±6.89  test=26.24±9.92  gap=3.19
+[checkpoint] Saved step 19,513,344 → checkpoints/fruitbot/fruitbot__impala__seed1__20260512_110420/step_19513344.pt  (latest.pt updated)
+  update  1200/1525  step 19,660,800  SPS   1,209  pg=-0.0242  vf=0.0284  ent=1.4073  kl=0.0191
+  [phase ms/update]  rollout=539  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12720  total=13274
+  update  1210/1525  step 19,824,640  SPS   1,209  pg=-0.0260  vf=0.0275  ent=1.4295  kl=0.0211
+  [phase ms/update]  rollout=518  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12720  total=13252
+  update  1220/1525  step 19,988,480  SPS   1,209  pg=-0.0244  vf=0.0357  ent=1.4152  kl=0.0192
+  [phase ms/update]  rollout=540  bulk_xfer=0.1  gae=6.2  ppo_xfer=8  ppo_grad=12716  total=13270
+
+[eval] step 20,004,864...
+  train=30.34±5.97  test=25.70±10.06  gap=4.64
+[checkpoint] Saved step 20,004,864 → checkpoints/fruitbot/fruitbot__impala__seed1__20260512_110420/step_20004864.pt  (latest.pt updated)
+  update  1230/1525  step 20,152,320  SPS   1,209  pg=-0.0242  vf=0.0304  ent=1.3927  kl=0.0188
+  [phase ms/update]  rollout=532  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12712  total=13259
+  update  1240/1525  step 20,316,160  SPS   1,209  pg=-0.0194  vf=0.0458  ent=1.4576  kl=0.0171
+  [phase ms/update]  rollout=532  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12709  total=13256
+  update  1250/1525  step 20,480,000  SPS   1,209  pg=-0.0174  vf=0.0587  ent=1.4537  kl=0.0166
+  [phase ms/update]  rollout=540  bulk_xfer=0.1  gae=6.2  ppo_xfer=8  ppo_grad=12713  total=13268
+
+[eval] step 20,512,768...
+  train=29.84±6.95  test=27.33±8.71  gap=2.51
+[checkpoint] Saved step 20,512,768 → checkpoints/fruitbot/fruitbot__impala__seed1__20260512_110420/step_20512768.pt  (latest.pt updated)
+  update  1260/1525  step 20,643,840  SPS   1,209  pg=-0.0224  vf=0.0345  ent=1.3872  kl=0.0203
+  [phase ms/update]  rollout=533  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12713  total=13260
+  update  1270/1525  step 20,807,680  SPS   1,209  pg=-0.0310  vf=0.0173  ent=1.4079  kl=0.0184
+  [phase ms/update]  rollout=533  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12720  total=13267
+  update  1280/1525  step 20,971,520  SPS   1,209  pg=-0.0192  vf=0.0544  ent=1.3871  kl=0.0174
+  [phase ms/update]  rollout=533  bulk_xfer=0.1  gae=6.2  ppo_xfer=8  ppo_grad=12718  total=13266
+
+[eval] step 21,004,288...
+  train=28.11±8.98  test=24.00±11.62  gap=4.11
+[checkpoint] Saved step 21,004,288 → checkpoints/fruitbot/fruitbot__impala__seed1__20260512_110420/step_21004288.pt  (latest.pt updated)
+  update  1290/1525  step 21,135,360  SPS   1,209  pg=-0.0218  vf=0.0413  ent=1.4051  kl=0.0184
+  [phase ms/update]  rollout=549  bulk_xfer=0.1  gae=6.2  ppo_xfer=8  ppo_grad=12718  total=13282
+  update  1300/1525  step 21,299,200  SPS   1,209  pg=-0.0224  vf=0.0371  ent=1.4316  kl=0.0159
+  [phase ms/update]  rollout=535  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12723  total=13272
+  update  1310/1525  step 21,463,040  SPS   1,209  pg=-0.0214  vf=0.0398  ent=1.3710  kl=0.0202
+  [phase ms/update]  rollout=524  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12730  total=13268
+
+[eval] step 21,512,192...
+  train=29.20±7.84  test=24.27±11.16  gap=4.93
+[checkpoint] Saved step 21,512,192 → checkpoints/fruitbot/fruitbot__impala__seed1__20260512_110420/step_21512192.pt  (latest.pt updated)
+  update  1320/1525  step 21,626,880  SPS   1,209  pg=-0.0284  vf=0.0204  ent=1.4130  kl=0.0184
+  [phase ms/update]  rollout=520  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12708  total=13243
+  update  1330/1525  step 21,790,720  SPS   1,209  pg=-0.0218  vf=0.0436  ent=1.3886  kl=0.0195
+  [phase ms/update]  rollout=539  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12712  total=13266
+  update  1340/1525  step 21,954,560  SPS   1,209  pg=-0.0190  vf=0.0428  ent=1.4118  kl=0.0164
+  [phase ms/update]  rollout=520  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12718  total=13252
+
+[eval] step 22,003,712...
+  train=29.39±8.29  test=26.16±9.26  gap=3.23
+[checkpoint] Saved step 22,003,712 → checkpoints/fruitbot/fruitbot__impala__seed1__20260512_110420/step_22003712.pt  (latest.pt updated)
+  update  1350/1525  step 22,118,400  SPS   1,209  pg=-0.0216  vf=0.0527  ent=1.4127  kl=0.0179
+  [phase ms/update]  rollout=521  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12718  total=13254
+  update  1360/1525  step 22,282,240  SPS   1,209  pg=-0.0261  vf=0.0314  ent=1.4033  kl=0.0205
+  [phase ms/update]  rollout=542  bulk_xfer=0.1  gae=6.2  ppo_xfer=8  ppo_grad=12716  total=13272
+  update  1370/1525  step 22,446,080  SPS   1,209  pg=-0.0158  vf=0.0393  ent=1.3874  kl=0.0190
+  [phase ms/update]  rollout=547  bulk_xfer=0.1  gae=6.2  ppo_xfer=8  ppo_grad=12716  total=13278
+
+[eval] step 22,511,616...
+  train=29.36±7.95  test=25.99±10.51  gap=3.37
+[checkpoint] Saved step 22,511,616 → checkpoints/fruitbot/fruitbot__impala__seed1__20260512_110420/step_22511616.pt  (latest.pt updated)
+  update  1380/1525  step 22,609,920  SPS   1,209  pg=-0.0229  vf=0.0474  ent=1.4073  kl=0.0199
+  [phase ms/update]  rollout=537  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12715  total=13266
+  update  1390/1525  step 22,773,760  SPS   1,209  pg=-0.0229  vf=0.0441  ent=1.3852  kl=0.0183
+  [phase ms/update]  rollout=541  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12715  total=13270
+  update  1400/1525  step 22,937,600  SPS   1,209  pg=-0.0256  vf=0.0285  ent=1.3363  kl=0.0213
+  [phase ms/update]  rollout=520  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12720  total=13254
+
+[eval] step 23,003,136...
+  train=29.56±6.97  test=25.27±10.98  gap=4.29
+[checkpoint] Saved step 23,003,136 → checkpoints/fruitbot/fruitbot__impala__seed1__20260512_110420/step_23003136.pt  (latest.pt updated)
+  update  1410/1525  step 23,101,440  SPS   1,209  pg=-0.0226  vf=0.0378  ent=1.2776  kl=0.0243
+  [phase ms/update]  rollout=531  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12721  total=13267
+  update  1420/1525  step 23,265,280  SPS   1,209  pg=-0.0199  vf=0.0413  ent=1.2935  kl=0.0204
+  [phase ms/update]  rollout=530  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12727  total=13271
+  update  1430/1525  step 23,429,120  SPS   1,209  pg=-0.0200  vf=0.0383  ent=1.2766  kl=0.0206
+  [phase ms/update]  rollout=534  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12727  total=13275
+
+[eval] step 23,511,040...
+  train=28.75±8.20  test=23.77±11.44  gap=4.98
+[checkpoint] Saved step 23,511,040 → checkpoints/fruitbot/fruitbot__impala__seed1__20260512_110420/step_23511040.pt  (latest.pt updated)
+  update  1440/1525  step 23,592,960  SPS   1,209  pg=-0.0197  vf=0.0443  ent=1.3428  kl=0.0184
+  [phase ms/update]  rollout=516  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12726  total=13256
+  update  1450/1525  step 23,756,800  SPS   1,209  pg=-0.0196  vf=0.0527  ent=1.3361  kl=0.0191
+  [phase ms/update]  rollout=521  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12723  total=13258
+  update  1460/1525  step 23,920,640  SPS   1,209  pg=-0.0276  vf=0.0183  ent=1.3204  kl=0.0217
+  [phase ms/update]  rollout=516  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12725  total=13255
+
+[eval] step 24,002,560...
+  train=28.17±9.03  test=26.62±9.65  gap=1.55
+[checkpoint] Saved step 24,002,560 → checkpoints/fruitbot/fruitbot__impala__seed1__20260512_110420/step_24002560.pt  (latest.pt updated)
+  update  1470/1525  step 24,084,480  SPS   1,209  pg=-0.0216  vf=0.0382  ent=1.3356  kl=0.0197
+  [phase ms/update]  rollout=514  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12724  total=13253
+  update  1480/1525  step 24,248,320  SPS   1,209  pg=-0.0212  vf=0.0405  ent=1.3995  kl=0.0169
+  [phase ms/update]  rollout=528  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12724  total=13266
+  update  1490/1525  step 24,412,160  SPS   1,209  pg=-0.0253  vf=0.0284  ent=1.3786  kl=0.0215
+  [phase ms/update]  rollout=540  bulk_xfer=0.1  gae=6.2  ppo_xfer=8  ppo_grad=12724  total=13278
+
+[eval] step 24,510,464...
+  train=29.34±7.58  test=23.21±12.27  gap=6.13
+[checkpoint] Saved step 24,510,464 → checkpoints/fruitbot/fruitbot__impala__seed1__20260512_110420/step_24510464.pt  (latest.pt updated)
+  update  1500/1525  step 24,576,000  SPS   1,209  pg=-0.0211  vf=0.0365  ent=1.3468  kl=0.0197
+  [phase ms/update]  rollout=536  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12725  total=13276
+  update  1510/1525  step 24,739,840  SPS   1,209  pg=-0.0190  vf=0.0708  ent=1.3877  kl=0.0170
+  [phase ms/update]  rollout=521  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12724  total=13259
+  update  1520/1525  step 24,903,680  SPS   1,209  pg=-0.0270  vf=0.0236  ent=1.3922  kl=0.0214
+  [phase ms/update]  rollout=529  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12723  total=13266
+[checkpoint] Saved step 24,985,600 → checkpoints/fruitbot/fruitbot__impala__seed1__20260512_110420/step_24985600_final.pt  (latest.pt updated)
+
+[done] Training complete.
+
+[final eval]
+
+=================================================================
+  fruitbot | none+uniform | seed=1
+  train=29.19  test=25.92  gap=3.27
+=================================================================
+
+wandb: updating run metadata
+wandb: uploading wandb-summary.json; uploading config.yaml; uploading output.log
+wandb: uploading history steps 1524-1524, summary, console lines 518-522
+wandb: 
+wandb: Run history:
+wandb:                            charts/SPS ▁▆▇▇▇▇▇█████████████████████████████████
+wandb:     charts/episodic_return_normalised ▁▄▄▅▄▆▆▆▆▆▇▇▇▇▇▇▇▇▇██▇▇▇▇▇██████▇█▇█▇▇█▇
+wandb: charts/episodic_return_normalised_std ▁▃▇█▇▅▄▃▅▄▄▃▅▄▂▃▅▃▂▂▅▃▄▄▅▃▁▃▄▄▄▄▂▄▃▅▃▄▄▃
+wandb:                  charts/learning_rate ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:               eval/generalization_gap ▁▂▂▃▅█▅▆▂▅█▄▆▇▅▅▆▆▅▄▇▅▄▅█▅▄▆▄▇▇▄▆▃▅▄▄▅▆▇
+wandb:                      eval/test_return ▁▁▂▃▃▄▅▅▅▆▆▅▆▆▆▇▆▇▇▇▇▇▇▇▇▇▇▇▇▇▇███▇██▇▇▇
+wandb:                  eval/test_return_std ▁▁▄▆▆▇███▇▇█▇██▆▇▇▇▇▇▇█▆▇▇▇▇▇▇▇▇▆▆▅▇▆▇▇█
+wandb:                     eval/train_return ▁▁▂▃▄▅▆▅▆▅▆▆▇▇▇▇▇▇▇▇█▇▇▇██▇█▇█████▇█████
+wandb:                 eval/train_return_std ▁▁▅▇███▇▇██▇▆▇▆▆▅▇▄▅▆▄▆▆▄▅▆▅▆▄▅▄▄▄▆▆▅▅▅▅
+wandb:                      losses/approx_kl ▁▄▅▆▆▆▅▆▇▄▆▆▃▇▅▅▅▅▅▄▆▅▆▇▆▅▇█▆▆▆▆▇▅▅▇▇▆▇▆
+wandb:                                    +6 ...
+wandb: 
+wandb: Run summary:
+wandb:                            charts/SPS 1209.39463
+wandb:     charts/episodic_return_normalised 8.39943
+wandb: charts/episodic_return_normalised_std 1.39017
+wandb:                  charts/learning_rate 0.0005
+wandb:               eval/generalization_gap 6.13
+wandb:                      eval/test_return 23.21
+wandb:                  eval/test_return_std 12.2746
+wandb:                     eval/train_return 29.34
+wandb:                 eval/train_return_std 7.57657
+wandb:                      losses/approx_kl 0.01993
+wandb:                                    +6 ...
+wandb: 
+wandb: 🚀 View run fruitbot__impala__seed1__20260512_110420 at: https://wandb.ai/staanagnostou-/thesis-rl-baselines/runs/qtt4nuxf
+wandb: ⭐️ View project at: https://wandb.ai/staanagnostou-/thesis-rl-baselines
+wandb: Synced 6 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260512_110420-qtt4nuxf/logs

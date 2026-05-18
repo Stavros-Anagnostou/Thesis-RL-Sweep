@@ -1,0 +1,569 @@
+[device] GPU detected:   (24.0 GB VRAM)
+[device] Backend: NVIDIA CUDA
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from WANDB_API_KEY.
+wandb: Currently logged in as: stayrosanang (staanagnostou-) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.26.1
+wandb: Run data is saved locally in /workspace/wandb/run-20260511_005144-a6zpp5xq
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run ninja__impala__seed1__20260511_005144
+wandb: ⭐️ View project at https://wandb.ai/staanagnostou-/thesis-rl-baselines
+wandb: 🚀 View run at https://wandb.ai/staanagnostou-/thesis-rl-baselines/runs/a6zpp5xq
+[wandb] Run ID: a6zpp5xq  tags=['none', 'ninja', 'seed_1', 'impala']
+[env] ninja  64 envs  200 levels  mode=easy  backend=auto
+[env] obs_space=(64, 64, 3)  num_actions=15
+[model] torch.compile applied (mode=reduce-overhead)
+[model] IMPALA-CNN  params=626,256
+
+=================================================================
+  Starting PPO  |  env=ninja  aug=none  lvl=uniform
+  total_steps=25,000,000  updates=1,525  device=cuda
+=================================================================
+
+  update     1/1525  step     16,384  SPS     307  pg=-0.0005  vf=6.5523  ent=2.7079  kl=0.0002
+  [phase ms/update]  rollout=1638  bulk_xfer=0.1  gae=5.9  ppo_xfer=11  ppo_grad=51690  total=53346
+  update    10/1525  step    163,840  SPS     949  pg=-0.0019  vf=7.6181  ent=2.4296  kl=0.0035
+  [phase ms/update]  rollout=505  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12727  total=13247
+  update    20/1525  step    327,680  SPS   1,073  pg=-0.0019  vf=3.2527  ent=2.2191  kl=0.0042
+  [phase ms/update]  rollout=531  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12729  total=13274
+  update    30/1525  step    491,520  SPS   1,122  pg=-0.0023  vf=2.9337  ent=2.1364  kl=0.0036
+  [phase ms/update]  rollout=529  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12731  total=13275
+
+[eval] step 507,904...
+  train=4.10±4.92  test=4.10±4.92  gap=0.00
+[checkpoint] Saved step 507,904 → checkpoints/ninja/ninja__impala__seed1__20260511_005144/step_507904.pt  (latest.pt updated)
+  update    40/1525  step    655,360  SPS   1,146  pg=-0.0027  vf=1.9172  ent=2.2066  kl=0.0052
+  [phase ms/update]  rollout=534  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12728  total=13276
+  update    50/1525  step    819,200  SPS   1,163  pg=-0.0044  vf=1.2596  ent=2.2861  kl=0.0061
+  [phase ms/update]  rollout=517  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12722  total=13253
+  update    60/1525  step    983,040  SPS   1,175  pg=-0.0015  vf=0.7674  ent=2.4197  kl=0.0065
+  [phase ms/update]  rollout=525  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12719  total=13258
+
+[eval] step 1,015,808...
+  train=5.80±4.94  test=4.70±4.99  gap=1.10
+[checkpoint] Saved step 1,015,808 → checkpoints/ninja/ninja__impala__seed1__20260511_005144/step_1015808.pt  (latest.pt updated)
+  update    70/1525  step  1,146,880  SPS   1,180  pg=-0.0036  vf=0.6191  ent=2.4563  kl=0.0075
+  [phase ms/update]  rollout=525  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12718  total=13257
+  update    80/1525  step  1,310,720  SPS   1,187  pg=-0.0062  vf=0.5678  ent=2.4115  kl=0.0074
+  [phase ms/update]  rollout=529  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12731  total=13275
+  update    90/1525  step  1,474,560  SPS   1,192  pg=-0.0043  vf=0.3006  ent=2.5144  kl=0.0090
+  [phase ms/update]  rollout=537  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12732  total=13284
+
+[eval] step 1,507,328...
+  train=5.30±4.99  test=4.90±5.00  gap=0.40
+[checkpoint] Saved step 1,507,328 → checkpoints/ninja/ninja__impala__seed1__20260511_005144/step_1507328.pt  (latest.pt updated)
+  update   100/1525  step  1,638,400  SPS   1,191  pg=-0.0066  vf=0.3894  ent=2.5308  kl=0.0054
+  [phase ms/update]  rollout=537  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12722  total=13274
+  update   110/1525  step  1,802,240  SPS   1,195  pg=-0.0050  vf=0.3730  ent=2.5716  kl=0.0049
+  [phase ms/update]  rollout=532  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12719  total=13266
+  update   120/1525  step  1,966,080  SPS   1,198  pg=-0.0019  vf=1.2097  ent=2.4741  kl=0.0069
+  [phase ms/update]  rollout=529  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12727  total=13270
+
+[eval] step 2,015,232...
+  train=4.70±4.99  test=4.60±4.98  gap=0.10
+[checkpoint] Saved step 2,015,232 → checkpoints/ninja/ninja__impala__seed1__20260511_005144/step_2015232.pt  (latest.pt updated)
+  update   130/1525  step  2,129,920  SPS   1,198  pg=-0.0076  vf=0.4568  ent=2.5581  kl=0.0068
+  [phase ms/update]  rollout=530  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12731  total=13275
+  update   140/1525  step  2,293,760  SPS   1,201  pg=-0.0040  vf=0.4762  ent=2.5426  kl=0.0052
+  [phase ms/update]  rollout=532  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12729  total=13275
+  update   150/1525  step  2,457,600  SPS   1,203  pg=-0.0060  vf=0.3469  ent=2.5219  kl=0.0060
+  [phase ms/update]  rollout=527  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12732  total=13274
+
+[eval] step 2,506,752...
+  train=4.70±4.99  test=4.70±4.99  gap=0.00
+[checkpoint] Saved step 2,506,752 → checkpoints/ninja/ninja__impala__seed1__20260511_005144/step_2506752.pt  (latest.pt updated)
+  update   160/1525  step  2,621,440  SPS   1,201  pg=-0.0049  vf=0.5223  ent=2.5297  kl=0.0055
+  [phase ms/update]  rollout=537  bulk_xfer=0.1  gae=6.2  ppo_xfer=8  ppo_grad=12733  total=13283
+  update   170/1525  step  2,785,280  SPS   1,203  pg=-0.0049  vf=0.5449  ent=2.5175  kl=0.0053
+  [phase ms/update]  rollout=527  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12734  total=13275
+  update   180/1525  step  2,949,120  SPS   1,205  pg=-0.0049  vf=0.5232  ent=2.5188  kl=0.0054
+  [phase ms/update]  rollout=529  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12732  total=13274
+
+[eval] step 3,014,656...
+  train=5.10±5.00  test=4.90±5.00  gap=0.20
+[checkpoint] Saved step 3,014,656 → checkpoints/ninja/ninja__impala__seed1__20260511_005144/step_3014656.pt  (latest.pt updated)
+  update   190/1525  step  3,112,960  SPS   1,204  pg=-0.0053  vf=0.5950  ent=2.5118  kl=0.0058
+  [phase ms/update]  rollout=529  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12723  total=13266
+  update   200/1525  step  3,276,800  SPS   1,206  pg=-0.0062  vf=0.5667  ent=2.5211  kl=0.0067
+  [phase ms/update]  rollout=513  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12728  total=13255
+  update   210/1525  step  3,440,640  SPS   1,207  pg=-0.0044  vf=0.8942  ent=2.5367  kl=0.0042
+  [phase ms/update]  rollout=514  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12726  total=13254
+
+[eval] step 3,506,176...
+  train=5.20±5.00  test=4.30±4.95  gap=0.90
+[checkpoint] Saved step 3,506,176 → checkpoints/ninja/ninja__impala__seed1__20260511_005144/step_3506176.pt  (latest.pt updated)
+  update   220/1525  step  3,604,480  SPS   1,206  pg=-0.0059  vf=0.3339  ent=2.5766  kl=0.0058
+  [phase ms/update]  rollout=519  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12715  total=13248
+  update   230/1525  step  3,768,320  SPS   1,207  pg=-0.0065  vf=0.7948  ent=2.5469  kl=0.0045
+  [phase ms/update]  rollout=523  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12722  total=13259
+  update   240/1525  step  3,932,160  SPS   1,208  pg=-0.0055  vf=0.7684  ent=2.5355  kl=0.0052
+  [phase ms/update]  rollout=519  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12717  total=13249
+
+[eval] step 4,014,080...
+  train=5.00±5.00  test=4.50±4.97  gap=0.50
+[checkpoint] Saved step 4,014,080 → checkpoints/ninja/ninja__impala__seed1__20260511_005144/step_4014080.pt  (latest.pt updated)
+  update   250/1525  step  4,096,000  SPS   1,207  pg=-0.0048  vf=0.6338  ent=2.6007  kl=0.0047
+  [phase ms/update]  rollout=527  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12724  total=13266
+  update   260/1525  step  4,259,840  SPS   1,208  pg=-0.0058  vf=0.7525  ent=2.5533  kl=0.0055
+  [phase ms/update]  rollout=516  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12729  total=13259
+  update   270/1525  step  4,423,680  SPS   1,209  pg=-0.0077  vf=0.8770  ent=2.5307  kl=0.0058
+  [phase ms/update]  rollout=530  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12730  total=13274
+
+[eval] step 4,505,600...
+  train=5.20±5.00  test=4.70±4.99  gap=0.50
+[checkpoint] Saved step 4,505,600 → checkpoints/ninja/ninja__impala__seed1__20260511_005144/step_4505600.pt  (latest.pt updated)
+  update   280/1525  step  4,587,520  SPS   1,208  pg=-0.0064  vf=0.7859  ent=2.5126  kl=0.0046
+  [phase ms/update]  rollout=528  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12734  total=13277
+  update   290/1525  step  4,751,360  SPS   1,209  pg=-0.0066  vf=0.7977  ent=2.5269  kl=0.0056
+  [phase ms/update]  rollout=529  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12732  total=13275
+  update   300/1525  step  4,915,200  SPS   1,210  pg=-0.0064  vf=0.4171  ent=2.5344  kl=0.0081
+  [phase ms/update]  rollout=525  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12725  total=13264
+
+[eval] step 5,013,504...
+  train=4.80±5.00  test=4.40±4.96  gap=0.40
+[checkpoint] Saved step 5,013,504 → checkpoints/ninja/ninja__impala__seed1__20260511_005144/step_5013504.pt  (latest.pt updated)
+  update   310/1525  step  5,079,040  SPS   1,209  pg=-0.0042  vf=0.7651  ent=2.5472  kl=0.0053
+  [phase ms/update]  rollout=516  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12726  total=13256
+  update   320/1525  step  5,242,880  SPS   1,210  pg=-0.0066  vf=0.9752  ent=2.5152  kl=0.0058
+  [phase ms/update]  rollout=529  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12719  total=13262
+  update   330/1525  step  5,406,720  SPS   1,211  pg=-0.0058  vf=1.2145  ent=2.5062  kl=0.0036
+  [phase ms/update]  rollout=536  bulk_xfer=0.1  gae=6.2  ppo_xfer=8  ppo_grad=12721  total=13272
+
+[eval] step 5,505,024...
+  train=5.20±5.00  test=4.80±5.00  gap=0.40
+[checkpoint] Saved step 5,505,024 → checkpoints/ninja/ninja__impala__seed1__20260511_005144/step_5505024.pt  (latest.pt updated)
+  update   340/1525  step  5,570,560  SPS   1,210  pg=-0.0048  vf=1.2693  ent=2.4696  kl=0.0053
+  [phase ms/update]  rollout=534  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12721  total=13270
+  update   350/1525  step  5,734,400  SPS   1,211  pg=-0.0057  vf=1.4380  ent=2.4214  kl=0.0043
+  [phase ms/update]  rollout=524  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12719  total=13257
+  update   360/1525  step  5,898,240  SPS   1,212  pg=-0.0066  vf=1.1023  ent=2.4302  kl=0.0068
+  [phase ms/update]  rollout=528  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12728  total=13270
+
+[eval] step 6,012,928...
+  train=5.30±4.99  test=4.40±4.96  gap=0.90
+[checkpoint] Saved step 6,012,928 → checkpoints/ninja/ninja__impala__seed1__20260511_005144/step_6012928.pt  (latest.pt updated)
+  update   370/1525  step  6,062,080  SPS   1,211  pg=-0.0075  vf=0.9025  ent=2.4829  kl=0.0053
+  [phase ms/update]  rollout=527  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12729  total=13270
+  update   380/1525  step  6,225,920  SPS   1,212  pg=-0.0075  vf=0.6745  ent=2.5247  kl=0.0081
+  [phase ms/update]  rollout=508  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12717  total=13239
+  update   390/1525  step  6,389,760  SPS   1,213  pg=-0.0066  vf=1.0196  ent=2.5006  kl=0.0056
+  [phase ms/update]  rollout=526  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12722  total=13262
+
+[eval] step 6,504,448...
+  train=5.70±4.95  test=4.40±4.96  gap=1.30
+[checkpoint] Saved step 6,504,448 → checkpoints/ninja/ninja__impala__seed1__20260511_005144/step_6504448.pt  (latest.pt updated)
+  update   400/1525  step  6,553,600  SPS   1,212  pg=-0.0076  vf=0.5592  ent=2.5065  kl=0.0060
+  [phase ms/update]  rollout=520  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12720  total=13254
+  update   410/1525  step  6,717,440  SPS   1,213  pg=-0.0072  vf=0.7595  ent=2.4902  kl=0.0068
+  [phase ms/update]  rollout=530  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12729  total=13274
+  update   420/1525  step  6,881,280  SPS   1,213  pg=-0.0079  vf=0.6626  ent=2.5097  kl=0.0068
+  [phase ms/update]  rollout=521  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12729  total=13264
+
+[eval] step 7,012,352...
+  train=5.40±4.98  test=4.50±4.97  gap=0.90
+[checkpoint] Saved step 7,012,352 → checkpoints/ninja/ninja__impala__seed1__20260511_005144/step_7012352.pt  (latest.pt updated)
+  update   430/1525  step  7,045,120  SPS   1,213  pg=-0.0068  vf=0.6430  ent=2.5170  kl=0.0076
+  [phase ms/update]  rollout=534  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12730  total=13278
+  update   440/1525  step  7,208,960  SPS   1,213  pg=-0.0072  vf=0.6011  ent=2.5049  kl=0.0071
+  [phase ms/update]  rollout=524  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12732  total=13270
+  update   450/1525  step  7,372,800  SPS   1,214  pg=-0.0066  vf=1.1301  ent=2.4663  kl=0.0072
+  [phase ms/update]  rollout=528  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12722  total=13265
+
+[eval] step 7,503,872...
+  train=6.10±4.88  test=4.70±4.99  gap=1.40
+[checkpoint] Saved step 7,503,872 → checkpoints/ninja/ninja__impala__seed1__20260511_005144/step_7503872.pt  (latest.pt updated)
+  update   460/1525  step  7,536,640  SPS   1,214  pg=-0.0048  vf=1.0609  ent=2.4515  kl=0.0079
+  [phase ms/update]  rollout=526  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12718  total=13257
+  update   470/1525  step  7,700,480  SPS   1,214  pg=-0.0050  vf=1.4333  ent=2.4350  kl=0.0061
+  [phase ms/update]  rollout=529  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12715  total=13258
+  update   480/1525  step  7,864,320  SPS   1,215  pg=-0.0082  vf=1.0252  ent=2.4796  kl=0.0055
+  [phase ms/update]  rollout=530  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12720  total=13264
+
+[eval] step 8,011,776...
+  train=5.10±5.00  test=5.00±5.00  gap=0.10
+[checkpoint] Saved step 8,011,776 → checkpoints/ninja/ninja__impala__seed1__20260511_005144/step_8011776.pt  (latest.pt updated)
+  update   490/1525  step  8,028,160  SPS   1,215  pg=-0.0079  vf=1.4271  ent=2.4160  kl=0.0070
+  [phase ms/update]  rollout=516  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12724  total=13254
+  update   500/1525  step  8,192,000  SPS   1,215  pg=-0.0067  vf=1.7221  ent=2.4187  kl=0.0063
+  [phase ms/update]  rollout=522  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12719  total=13255
+  update   510/1525  step  8,355,840  SPS   1,215  pg=-0.0070  vf=1.1725  ent=2.4811  kl=0.0065
+  [phase ms/update]  rollout=526  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12718  total=13258
+
+[eval] step 8,503,296...
+  train=5.30±4.99  test=5.40±4.98  gap=-0.10
+[checkpoint] Saved step 8,503,296 → checkpoints/ninja/ninja__impala__seed1__20260511_005144/step_8503296.pt  (latest.pt updated)
+  update   520/1525  step  8,519,680  SPS   1,215  pg=-0.0055  vf=1.3654  ent=2.4200  kl=0.0074
+  [phase ms/update]  rollout=511  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12729  total=13254
+  update   530/1525  step  8,683,520  SPS   1,216  pg=-0.0046  vf=1.3637  ent=2.4367  kl=0.0071
+  [phase ms/update]  rollout=514  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12725  total=13253
+  update   540/1525  step  8,847,360  SPS   1,216  pg=-0.0087  vf=0.9322  ent=2.4894  kl=0.0067
+  [phase ms/update]  rollout=511  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12724  total=13249
+  update   550/1525  step  9,011,200  SPS   1,216  pg=-0.0052  vf=1.7396  ent=2.3927  kl=0.0050
+  [phase ms/update]  rollout=519  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12722  total=13255
+
+[eval] step 9,011,200...
+  train=6.10±4.88  test=5.40±4.98  gap=0.70
+[checkpoint] Saved step 9,011,200 → checkpoints/ninja/ninja__impala__seed1__20260511_005144/step_9011200.pt  (latest.pt updated)
+  update   560/1525  step  9,175,040  SPS   1,216  pg=-0.0074  vf=1.6090  ent=2.4032  kl=0.0057
+  [phase ms/update]  rollout=510  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12724  total=13248
+  update   570/1525  step  9,338,880  SPS   1,217  pg=-0.0091  vf=0.7743  ent=2.4804  kl=0.0073
+  [phase ms/update]  rollout=522  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12724  total=13260
+  update   580/1525  step  9,502,720  SPS   1,217  pg=-0.0092  vf=0.9302  ent=2.4597  kl=0.0071
+  [phase ms/update]  rollout=520  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12724  total=13258
+
+[eval] step 9,502,720...
+  train=6.20±4.85  test=5.70±4.95  gap=0.50
+[checkpoint] Saved step 9,502,720 → checkpoints/ninja/ninja__impala__seed1__20260511_005144/step_9502720.pt  (latest.pt updated)
+  update   590/1525  step  9,666,560  SPS   1,217  pg=-0.0077  vf=1.4436  ent=2.4266  kl=0.0061
+  [phase ms/update]  rollout=530  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12731  total=13275
+  update   600/1525  step  9,830,400  SPS   1,217  pg=-0.0074  vf=1.2053  ent=2.4654  kl=0.0071
+  [phase ms/update]  rollout=525  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12732  total=13270
+  update   610/1525  step  9,994,240  SPS   1,217  pg=-0.0069  vf=1.0842  ent=2.4454  kl=0.0071
+  [phase ms/update]  rollout=517  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12732  total=13263
+
+[eval] step 10,010,624...
+  train=6.60±4.74  test=4.90±5.00  gap=1.70
+[checkpoint] Saved step 10,010,624 → checkpoints/ninja/ninja__impala__seed1__20260511_005144/step_10010624.pt  (latest.pt updated)
+  update   620/1525  step 10,158,080  SPS   1,217  pg=-0.0078  vf=1.2705  ent=2.4680  kl=0.0077
+  [phase ms/update]  rollout=523  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12727  total=13264
+  update   630/1525  step 10,321,920  SPS   1,217  pg=-0.0087  vf=1.5104  ent=2.3707  kl=0.0074
+  [phase ms/update]  rollout=526  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12728  total=13268
+  update   640/1525  step 10,485,760  SPS   1,218  pg=-0.0075  vf=1.1675  ent=2.4339  kl=0.0087
+  [phase ms/update]  rollout=525  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12733  total=13273
+
+[eval] step 10,502,144...
+  train=6.50±4.77  test=5.40±4.98  gap=1.10
+[checkpoint] Saved step 10,502,144 → checkpoints/ninja/ninja__impala__seed1__20260511_005144/step_10502144.pt  (latest.pt updated)
+  update   650/1525  step 10,649,600  SPS   1,217  pg=-0.0088  vf=0.8223  ent=2.4526  kl=0.0066
+  [phase ms/update]  rollout=518  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12731  total=13262
+  update   660/1525  step 10,813,440  SPS   1,218  pg=-0.0068  vf=0.8928  ent=2.4533  kl=0.0050
+  [phase ms/update]  rollout=524  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12721  total=13259
+  update   670/1525  step 10,977,280  SPS   1,218  pg=-0.0090  vf=0.7853  ent=2.4278  kl=0.0066
+  [phase ms/update]  rollout=522  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12735  total=13271
+
+[eval] step 11,010,048...
+  train=7.10±4.54  test=5.70±4.95  gap=1.40
+[checkpoint] Saved step 11,010,048 → checkpoints/ninja/ninja__impala__seed1__20260511_005144/step_11010048.pt  (latest.pt updated)
+  update   680/1525  step 11,141,120  SPS   1,218  pg=-0.0080  vf=0.9076  ent=2.4167  kl=0.0060
+  [phase ms/update]  rollout=530  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12730  total=13274
+  update   690/1525  step 11,304,960  SPS   1,218  pg=-0.0071  vf=1.0774  ent=2.3932  kl=0.0075
+  [phase ms/update]  rollout=513  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12731  total=13258
+  update   700/1525  step 11,468,800  SPS   1,218  pg=-0.0114  vf=0.5475  ent=2.4312  kl=0.0078
+  [phase ms/update]  rollout=529  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12724  total=13268
+
+[eval] step 11,501,568...
+  train=7.00±4.58  test=5.80±4.94  gap=1.20
+[checkpoint] Saved step 11,501,568 → checkpoints/ninja/ninja__impala__seed1__20260511_005144/step_11501568.pt  (latest.pt updated)
+  update   710/1525  step 11,632,640  SPS   1,218  pg=-0.0080  vf=0.6848  ent=2.4877  kl=0.0073
+  [phase ms/update]  rollout=514  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12728  total=13256
+  update   720/1525  step 11,796,480  SPS   1,218  pg=-0.0074  vf=0.9475  ent=2.4013  kl=0.0089
+  [phase ms/update]  rollout=514  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12736  total=13264
+  update   730/1525  step 11,960,320  SPS   1,218  pg=-0.0087  vf=0.7205  ent=2.5019  kl=0.0064
+  [phase ms/update]  rollout=517  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12733  total=13264
+
+[eval] step 12,009,472...
+  train=6.50±4.77  test=5.50±4.97  gap=1.00
+[checkpoint] Saved step 12,009,472 → checkpoints/ninja/ninja__impala__seed1__20260511_005144/step_12009472.pt  (latest.pt updated)
+  update   740/1525  step 12,124,160  SPS   1,218  pg=-0.0091  vf=0.4820  ent=2.5106  kl=0.0073
+  [phase ms/update]  rollout=519  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12731  total=13264
+  update   750/1525  step 12,288,000  SPS   1,218  pg=-0.0082  vf=0.7919  ent=2.3975  kl=0.0060
+  [phase ms/update]  rollout=531  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12732  total=13278
+  update   760/1525  step 12,451,840  SPS   1,218  pg=-0.0029  vf=1.4140  ent=2.3731  kl=0.0062
+  [phase ms/update]  rollout=516  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12731  total=13261
+
+[eval] step 12,500,992...
+  train=6.40±4.80  test=6.20±4.85  gap=0.20
+[checkpoint] Saved step 12,500,992 → checkpoints/ninja/ninja__impala__seed1__20260511_005144/step_12500992.pt  (latest.pt updated)
+  update   770/1525  step 12,615,680  SPS   1,218  pg=-0.0097  vf=0.7929  ent=2.4352  kl=0.0091
+  [phase ms/update]  rollout=521  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12725  total=13260
+  update   780/1525  step 12,779,520  SPS   1,218  pg=-0.0055  vf=0.7037  ent=2.4649  kl=0.0079
+  [phase ms/update]  rollout=515  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12726  total=13255
+  update   790/1525  step 12,943,360  SPS   1,219  pg=-0.0090  vf=0.8250  ent=2.4571  kl=0.0070
+  [phase ms/update]  rollout=517  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12723  total=13255
+
+[eval] step 13,008,896...
+  train=7.30±4.44  test=5.50±4.97  gap=1.80
+[checkpoint] Saved step 13,008,896 → checkpoints/ninja/ninja__impala__seed1__20260511_005144/step_13008896.pt  (latest.pt updated)
+  update   800/1525  step 13,107,200  SPS   1,219  pg=-0.0071  vf=1.1744  ent=2.4618  kl=0.0076
+  [phase ms/update]  rollout=525  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12716  total=13256
+  update   810/1525  step 13,271,040  SPS   1,219  pg=-0.0082  vf=0.8529  ent=2.3703  kl=0.0060
+  [phase ms/update]  rollout=525  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12714  total=13253
+  update   820/1525  step 13,434,880  SPS   1,219  pg=-0.0078  vf=0.7580  ent=2.4494  kl=0.0081
+  [phase ms/update]  rollout=526  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12717  total=13257
+
+[eval] step 13,500,416...
+  train=6.80±4.66  test=5.60±4.96  gap=1.20
+[checkpoint] Saved step 13,500,416 → checkpoints/ninja/ninja__impala__seed1__20260511_005144/step_13500416.pt  (latest.pt updated)
+  update   830/1525  step 13,598,720  SPS   1,219  pg=-0.0086  vf=0.4611  ent=2.4499  kl=0.0061
+  [phase ms/update]  rollout=516  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12718  total=13247
+  update   840/1525  step 13,762,560  SPS   1,219  pg=-0.0090  vf=1.0680  ent=2.3650  kl=0.0067
+  [phase ms/update]  rollout=528  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12718  total=13260
+  update   850/1525  step 13,926,400  SPS   1,219  pg=-0.0068  vf=1.1025  ent=2.4435  kl=0.0069
+  [phase ms/update]  rollout=515  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12716  total=13245
+
+[eval] step 14,008,320...
+  train=6.70±4.70  test=5.80±4.94  gap=0.90
+[checkpoint] Saved step 14,008,320 → checkpoints/ninja/ninja__impala__seed1__20260511_005144/step_14008320.pt  (latest.pt updated)
+  update   860/1525  step 14,090,240  SPS   1,219  pg=-0.0058  vf=0.9525  ent=2.4230  kl=0.0059
+  [phase ms/update]  rollout=517  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12720  total=13251
+  update   870/1525  step 14,254,080  SPS   1,219  pg=-0.0103  vf=0.5517  ent=2.4913  kl=0.0068
+  [phase ms/update]  rollout=536  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12726  total=13276
+  update   880/1525  step 14,417,920  SPS   1,219  pg=-0.0094  vf=0.7862  ent=2.3955  kl=0.0065
+  [phase ms/update]  rollout=523  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12719  total=13256
+
+[eval] step 14,516,224...
+  train=6.90±4.62  test=5.40±4.98  gap=1.50
+[checkpoint] Saved step 14,516,224 → checkpoints/ninja/ninja__impala__seed1__20260511_005144/step_14516224.pt  (latest.pt updated)
+  update   890/1525  step 14,581,760  SPS   1,219  pg=-0.0101  vf=0.7681  ent=2.3716  kl=0.0078
+  [phase ms/update]  rollout=524  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12714  total=13253
+  update   900/1525  step 14,745,600  SPS   1,219  pg=-0.0080  vf=0.9152  ent=2.3956  kl=0.0073
+  [phase ms/update]  rollout=525  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12721  total=13260
+  update   910/1525  step 14,909,440  SPS   1,219  pg=-0.0089  vf=0.8707  ent=2.3915  kl=0.0071
+  [phase ms/update]  rollout=513  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12722  total=13248
+
+[eval] step 15,007,744...
+  train=7.60±4.27  test=5.40±4.98  gap=2.20
+[checkpoint] Saved step 15,007,744 → checkpoints/ninja/ninja__impala__seed1__20260511_005144/step_15007744.pt  (latest.pt updated)
+  update   920/1525  step 15,073,280  SPS   1,219  pg=-0.0117  vf=0.9547  ent=2.3944  kl=0.0059
+  [phase ms/update]  rollout=537  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12726  total=13277
+  update   930/1525  step 15,237,120  SPS   1,219  pg=-0.0075  vf=1.1428  ent=2.3781  kl=0.0057
+  [phase ms/update]  rollout=515  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12723  total=13252
+  update   940/1525  step 15,400,960  SPS   1,220  pg=-0.0068  vf=0.8440  ent=2.3397  kl=0.0055
+  [phase ms/update]  rollout=516  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12723  total=13253
+
+[eval] step 15,515,648...
+  train=7.50±4.33  test=5.50±4.97  gap=2.00
+[checkpoint] Saved step 15,515,648 → checkpoints/ninja/ninja__impala__seed1__20260511_005144/step_15515648.pt  (latest.pt updated)
+  update   950/1525  step 15,564,800  SPS   1,220  pg=-0.0097  vf=0.6025  ent=2.3518  kl=0.0071
+  [phase ms/update]  rollout=527  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12720  total=13262
+  update   960/1525  step 15,728,640  SPS   1,220  pg=-0.0081  vf=0.4783  ent=2.4318  kl=0.0084
+  [phase ms/update]  rollout=527  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12726  total=13267
+  update   970/1525  step 15,892,480  SPS   1,220  pg=-0.0093  vf=0.6577  ent=2.4164  kl=0.0082
+  [phase ms/update]  rollout=533  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12723  total=13270
+
+[eval] step 16,007,168...
+  train=7.30±4.44  test=5.20±5.00  gap=2.10
+[checkpoint] Saved step 16,007,168 → checkpoints/ninja/ninja__impala__seed1__20260511_005144/step_16007168.pt  (latest.pt updated)
+  update   980/1525  step 16,056,320  SPS   1,220  pg=-0.0089  vf=0.8384  ent=2.3898  kl=0.0069
+  [phase ms/update]  rollout=529  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12726  total=13269
+  update   990/1525  step 16,220,160  SPS   1,220  pg=-0.0112  vf=0.7301  ent=2.3675  kl=0.0063
+  [phase ms/update]  rollout=521  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12726  total=13261
+  update  1000/1525  step 16,384,000  SPS   1,220  pg=-0.0100  vf=0.8879  ent=2.3695  kl=0.0080
+  [phase ms/update]  rollout=529  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12715  total=13258
+
+[eval] step 16,515,072...
+  train=7.30±4.44  test=6.30±4.83  gap=1.00
+[checkpoint] Saved step 16,515,072 → checkpoints/ninja/ninja__impala__seed1__20260511_005144/step_16515072.pt  (latest.pt updated)
+  update  1010/1525  step 16,547,840  SPS   1,220  pg=-0.0108  vf=0.9763  ent=2.4309  kl=0.0081
+  [phase ms/update]  rollout=529  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12713  total=13256
+  update  1020/1525  step 16,711,680  SPS   1,220  pg=-0.0094  vf=0.4437  ent=2.4409  kl=0.0061
+  [phase ms/update]  rollout=531  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12714  total=13259
+  update  1030/1525  step 16,875,520  SPS   1,220  pg=-0.0061  vf=1.0264  ent=2.3800  kl=0.0096
+  [phase ms/update]  rollout=525  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12719  total=13257
+
+[eval] step 17,006,592...
+  train=7.60±4.27  test=5.90±4.92  gap=1.70
+[checkpoint] Saved step 17,006,592 → checkpoints/ninja/ninja__impala__seed1__20260511_005144/step_17006592.pt  (latest.pt updated)
+  update  1040/1525  step 17,039,360  SPS   1,220  pg=-0.0102  vf=0.7083  ent=2.4955  kl=0.0066
+  [phase ms/update]  rollout=526  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12730  total=13271
+  update  1050/1525  step 17,203,200  SPS   1,220  pg=-0.0109  vf=0.7631  ent=2.4004  kl=0.0078
+  [phase ms/update]  rollout=523  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12719  total=13257
+  update  1060/1525  step 17,367,040  SPS   1,220  pg=-0.0095  vf=0.7989  ent=2.3428  kl=0.0083
+  [phase ms/update]  rollout=514  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12718  total=13247
+
+[eval] step 17,514,496...
+  train=7.70±4.21  test=5.80±4.94  gap=1.90
+[checkpoint] Saved step 17,514,496 → checkpoints/ninja/ninja__impala__seed1__20260511_005144/step_17514496.pt  (latest.pt updated)
+  update  1070/1525  step 17,530,880  SPS   1,220  pg=-0.0099  vf=0.6253  ent=2.4100  kl=0.0063
+  [phase ms/update]  rollout=529  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12729  total=13273
+  update  1080/1525  step 17,694,720  SPS   1,220  pg=-0.0100  vf=0.7846  ent=2.3760  kl=0.0080
+  [phase ms/update]  rollout=523  bulk_xfer=0.1  gae=6.3  ppo_xfer=8  ppo_grad=12730  total=13268
+  update  1090/1525  step 17,858,560  SPS   1,220  pg=-0.0070  vf=0.5640  ent=2.3232  kl=0.0062
+  [phase ms/update]  rollout=510  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12729  total=13253
+
+[eval] step 18,006,016...
+  train=7.30±4.44  test=5.30±4.99  gap=2.00
+[checkpoint] Saved step 18,006,016 → checkpoints/ninja/ninja__impala__seed1__20260511_005144/step_18006016.pt  (latest.pt updated)
+  update  1100/1525  step 18,022,400  SPS   1,220  pg=-0.0095  vf=0.6591  ent=2.4192  kl=0.0063
+  [phase ms/update]  rollout=530  bulk_xfer=0.1  gae=6.2  ppo_xfer=8  ppo_grad=12726  total=13270
+  update  1110/1525  step 18,186,240  SPS   1,220  pg=-0.0087  vf=0.7382  ent=2.3130  kl=0.0067
+  [phase ms/update]  rollout=526  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12726  total=13266
+  update  1120/1525  step 18,350,080  SPS   1,220  pg=-0.0108  vf=0.7103  ent=2.3854  kl=0.0069
+  [phase ms/update]  rollout=526  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12727  total=13267
+  update  1130/1525  step 18,513,920  SPS   1,221  pg=-0.0094  vf=0.7704  ent=2.4064  kl=0.0067
+  [phase ms/update]  rollout=522  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12725  total=13260
+
+[eval] step 18,513,920...
+  train=7.60±4.27  test=5.50±4.97  gap=2.10
+[checkpoint] Saved step 18,513,920 → checkpoints/ninja/ninja__impala__seed1__20260511_005144/step_18513920.pt  (latest.pt updated)
+  update  1140/1525  step 18,677,760  SPS   1,220  pg=-0.0087  vf=0.6810  ent=2.3624  kl=0.0071
+  [phase ms/update]  rollout=524  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12731  total=13268
+  update  1150/1525  step 18,841,600  SPS   1,221  pg=-0.0042  vf=0.7855  ent=2.3806  kl=0.0072
+  [phase ms/update]  rollout=524  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12724  total=13262
+  update  1160/1525  step 19,005,440  SPS   1,221  pg=-0.0090  vf=0.8503  ent=2.4251  kl=0.0064
+  [phase ms/update]  rollout=521  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12715  total=13251
+
+[eval] step 19,005,440...
+  train=7.80±4.14  test=6.20±4.85  gap=1.60
+[checkpoint] Saved step 19,005,440 → checkpoints/ninja/ninja__impala__seed1__20260511_005144/step_19005440.pt  (latest.pt updated)
+  update  1170/1525  step 19,169,280  SPS   1,221  pg=-0.0071  vf=0.8568  ent=2.4062  kl=0.0063
+  [phase ms/update]  rollout=514  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12723  total=13251
+  update  1180/1525  step 19,333,120  SPS   1,221  pg=-0.0095  vf=0.8285  ent=2.3526  kl=0.0066
+  [phase ms/update]  rollout=521  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12721  total=13255
+  update  1190/1525  step 19,496,960  SPS   1,221  pg=-0.0092  vf=0.5800  ent=2.4411  kl=0.0072
+  [phase ms/update]  rollout=528  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12734  total=13276
+
+[eval] step 19,513,344...
+  train=7.90±4.07  test=5.10±5.00  gap=2.80
+[checkpoint] Saved step 19,513,344 → checkpoints/ninja/ninja__impala__seed1__20260511_005144/step_19513344.pt  (latest.pt updated)
+  update  1200/1525  step 19,660,800  SPS   1,220  pg=-0.0084  vf=0.7727  ent=2.3718  kl=0.0069
+  [phase ms/update]  rollout=516  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12727  total=13257
+  update  1210/1525  step 19,824,640  SPS   1,221  pg=-0.0067  vf=0.7673  ent=2.4201  kl=0.0065
+  [phase ms/update]  rollout=533  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12719  total=13267
+  update  1220/1525  step 19,988,480  SPS   1,221  pg=-0.0071  vf=0.7412  ent=2.4297  kl=0.0055
+  [phase ms/update]  rollout=527  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12720  total=13261
+
+[eval] step 20,004,864...
+  train=8.00±4.00  test=5.80±4.94  gap=2.20
+[checkpoint] Saved step 20,004,864 → checkpoints/ninja/ninja__impala__seed1__20260511_005144/step_20004864.pt  (latest.pt updated)
+  update  1230/1525  step 20,152,320  SPS   1,221  pg=-0.0072  vf=0.7339  ent=2.2975  kl=0.0092
+  [phase ms/update]  rollout=534  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12718  total=13266
+  update  1240/1525  step 20,316,160  SPS   1,221  pg=-0.0092  vf=0.7341  ent=2.3331  kl=0.0069
+  [phase ms/update]  rollout=525  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12719  total=13259
+  update  1250/1525  step 20,480,000  SPS   1,221  pg=-0.0072  vf=0.7581  ent=2.3105  kl=0.0061
+  [phase ms/update]  rollout=528  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12719  total=13261
+
+[eval] step 20,512,768...
+  train=7.60±4.27  test=6.00±4.90  gap=1.60
+[checkpoint] Saved step 20,512,768 → checkpoints/ninja/ninja__impala__seed1__20260511_005144/step_20512768.pt  (latest.pt updated)
+  update  1260/1525  step 20,643,840  SPS   1,221  pg=-0.0091  vf=0.5453  ent=2.4088  kl=0.0089
+  [phase ms/update]  rollout=527  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12724  total=13266
+  update  1270/1525  step 20,807,680  SPS   1,221  pg=-0.0085  vf=0.4028  ent=2.4431  kl=0.0079
+  [phase ms/update]  rollout=525  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12728  total=13267
+  update  1280/1525  step 20,971,520  SPS   1,221  pg=-0.0087  vf=0.6588  ent=2.3926  kl=0.0070
+  [phase ms/update]  rollout=524  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12719  total=13257
+
+[eval] step 21,004,288...
+  train=8.40±3.67  test=5.20±5.00  gap=3.20
+[checkpoint] Saved step 21,004,288 → checkpoints/ninja/ninja__impala__seed1__20260511_005144/step_21004288.pt  (latest.pt updated)
+  update  1290/1525  step 21,135,360  SPS   1,221  pg=-0.0108  vf=0.4710  ent=2.3663  kl=0.0070
+  [phase ms/update]  rollout=525  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12721  total=13260
+  update  1300/1525  step 21,299,200  SPS   1,221  pg=-0.0086  vf=0.4233  ent=2.4426  kl=0.0075
+  [phase ms/update]  rollout=522  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12726  total=13262
+  update  1310/1525  step 21,463,040  SPS   1,221  pg=-0.0096  vf=0.9541  ent=2.4463  kl=0.0068
+  [phase ms/update]  rollout=521  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12723  total=13258
+
+[eval] step 21,512,192...
+  train=8.00±4.00  test=5.80±4.94  gap=2.20
+[checkpoint] Saved step 21,512,192 → checkpoints/ninja/ninja__impala__seed1__20260511_005144/step_21512192.pt  (latest.pt updated)
+  update  1320/1525  step 21,626,880  SPS   1,221  pg=-0.0097  vf=0.8388  ent=2.3205  kl=0.0083
+  [phase ms/update]  rollout=525  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12710  total=13249
+  update  1330/1525  step 21,790,720  SPS   1,221  pg=-0.0089  vf=0.7159  ent=2.2881  kl=0.0075
+  [phase ms/update]  rollout=520  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12727  total=13260
+  update  1340/1525  step 21,954,560  SPS   1,221  pg=-0.0072  vf=0.5024  ent=2.3937  kl=0.0047
+  [phase ms/update]  rollout=529  bulk_xfer=0.1  gae=6.3  ppo_xfer=8  ppo_grad=12728  total=13272
+
+[eval] step 22,003,712...
+  train=7.50±4.33  test=5.10±5.00  gap=2.40
+[checkpoint] Saved step 22,003,712 → checkpoints/ninja/ninja__impala__seed1__20260511_005144/step_22003712.pt  (latest.pt updated)
+  update  1350/1525  step 22,118,400  SPS   1,221  pg=-0.0104  vf=0.3527  ent=2.4445  kl=0.0068
+  [phase ms/update]  rollout=515  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12724  total=13253
+  update  1360/1525  step 22,282,240  SPS   1,221  pg=-0.0079  vf=0.4719  ent=2.4627  kl=0.0067
+  [phase ms/update]  rollout=531  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12735  total=13280
+  update  1370/1525  step 22,446,080  SPS   1,221  pg=-0.0071  vf=0.9410  ent=2.4102  kl=0.0063
+  [phase ms/update]  rollout=526  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12735  total=13275
+
+[eval] step 22,511,616...
+  train=8.50±3.57  test=5.00±5.00  gap=3.50
+[checkpoint] Saved step 22,511,616 → checkpoints/ninja/ninja__impala__seed1__20260511_005144/step_22511616.pt  (latest.pt updated)
+  update  1380/1525  step 22,609,920  SPS   1,221  pg=-0.0089  vf=0.8974  ent=2.3874  kl=0.0071
+  [phase ms/update]  rollout=512  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12724  total=13250
+  update  1390/1525  step 22,773,760  SPS   1,221  pg=-0.0084  vf=0.7053  ent=2.4728  kl=0.0064
+  [phase ms/update]  rollout=521  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12729  total=13264
+  update  1400/1525  step 22,937,600  SPS   1,221  pg=-0.0071  vf=0.4397  ent=2.5152  kl=0.0060
+  [phase ms/update]  rollout=533  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12731  total=13278
+
+[eval] step 23,003,136...
+  train=7.80±4.14  test=5.50±4.97  gap=2.30
+[checkpoint] Saved step 23,003,136 → checkpoints/ninja/ninja__impala__seed1__20260511_005144/step_23003136.pt  (latest.pt updated)
+  update  1410/1525  step 23,101,440  SPS   1,221  pg=-0.0093  vf=0.5417  ent=2.4365  kl=0.0055
+  [phase ms/update]  rollout=523  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12730  total=13267
+  update  1420/1525  step 23,265,280  SPS   1,221  pg=-0.0084  vf=0.6554  ent=2.4126  kl=0.0082
+  [phase ms/update]  rollout=536  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12723  total=13273
+  update  1430/1525  step 23,429,120  SPS   1,221  pg=-0.0077  vf=0.6379  ent=2.4102  kl=0.0066
+  [phase ms/update]  rollout=529  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12722  total=13266
+
+[eval] step 23,511,040...
+  train=8.30±3.76  test=5.00±5.00  gap=3.30
+[checkpoint] Saved step 23,511,040 → checkpoints/ninja/ninja__impala__seed1__20260511_005144/step_23511040.pt  (latest.pt updated)
+  update  1440/1525  step 23,592,960  SPS   1,221  pg=-0.0085  vf=0.9064  ent=2.3936  kl=0.0058
+  [phase ms/update]  rollout=526  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12733  total=13274
+  update  1450/1525  step 23,756,800  SPS   1,221  pg=-0.0093  vf=0.9250  ent=2.4107  kl=0.0063
+  [phase ms/update]  rollout=540  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12729  total=13283
+  update  1460/1525  step 23,920,640  SPS   1,221  pg=-0.0106  vf=0.7773  ent=2.2546  kl=0.0077
+  [phase ms/update]  rollout=532  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12729  total=13275
+
+[eval] step 24,002,560...
+  train=7.50±4.33  test=5.90±4.92  gap=1.60
+[checkpoint] Saved step 24,002,560 → checkpoints/ninja/ninja__impala__seed1__20260511_005144/step_24002560.pt  (latest.pt updated)
+  update  1470/1525  step 24,084,480  SPS   1,221  pg=-0.0060  vf=0.6656  ent=2.3926  kl=0.0057
+  [phase ms/update]  rollout=528  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12730  total=13272
+  update  1480/1525  step 24,248,320  SPS   1,221  pg=-0.0093  vf=0.5072  ent=2.3986  kl=0.0076
+  [phase ms/update]  rollout=532  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12730  total=13276
+  update  1490/1525  step 24,412,160  SPS   1,221  pg=-0.0092  vf=0.5421  ent=2.3593  kl=0.0062
+  [phase ms/update]  rollout=528  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12731  total=13272
+
+[eval] step 24,510,464...
+  train=8.00±4.00  test=5.50±4.97  gap=2.50
+[checkpoint] Saved step 24,510,464 → checkpoints/ninja/ninja__impala__seed1__20260511_005144/step_24510464.pt  (latest.pt updated)
+  update  1500/1525  step 24,576,000  SPS   1,221  pg=-0.0095  vf=0.6088  ent=2.3747  kl=0.0062
+  [phase ms/update]  rollout=518  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12722  total=13254
+  update  1510/1525  step 24,739,840  SPS   1,221  pg=-0.0101  vf=0.7785  ent=2.3478  kl=0.0072
+  [phase ms/update]  rollout=523  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12726  total=13263
+  update  1520/1525  step 24,903,680  SPS   1,221  pg=-0.0073  vf=0.5585  ent=2.3971  kl=0.0071
+  [phase ms/update]  rollout=515  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12730  total=13259
+[checkpoint] Saved step 24,985,600 → checkpoints/ninja/ninja__impala__seed1__20260511_005144/step_24985600_final.pt  (latest.pt updated)
+
+[done] Training complete.
+
+[final eval]
+
+=================================================================
+  ninja | none+uniform | seed=1
+  train=8.00  test=5.00  gap=3.00
+  expected=[6.0,8.0]  outside range
+=================================================================
+
+wandb: updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading output.log
+wandb: 
+wandb: Run history:
+wandb:                            charts/SPS ▁▂▆▇▇▇▇▇▇▇▇▇▇███████████████████████████
+wandb:     charts/episodic_return_normalised ▁▂▁▁▃▅▆▅▂▂▄▅▅▆▅▅▆▅▇▅▆▇▆█▇▇▇▇▇▆▇▇▇▆▆▇▇▆█▇
+wandb: charts/episodic_return_normalised_std ▃▁▁▂▃▃▅▅▆▇█████████████▇▇█▇▇▇▇█▇▇▇▆▆▆▅▆▆
+wandb:                  charts/learning_rate ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:               eval/generalization_gap ▁▃▂▁▁▃▂▂▂▂▄▃▄▁▁▂▅▃▄▄▂▅▄▃▄▅▅▃▅▅▄▇▅▄▇▆█▆█▆
+wandb:                      eval/test_return ▁▃▄▃▃▂▂▃▂▃▂▂▃▄▅▆▄▅▆▇█▆▆▇▅▆▅▇▇▅█▄▇▇▅▄▄▆▄▆
+wandb:                  eval/test_return_std ▅██▇█▆▇█▇█▇▇██▇▆█▇▆▅▂▇▇▅▇▇█▁▅▅▇█▅▄███▇█▇
+wandb:                     eval/train_return ▁▄▃▂▂▃▂▃▂▃▄▃▄▃▃▄▅▅▆▆▅▆▅▅▇▆▆▇▇▆▇▇▇▇█▆█▇█▇
+wandb:                 eval/train_return_std ████████████▇██▇▇▇▆▆▇▅▆▇▆▅▅▅▄▄▄▄▃▄▁▅▁▄▂▃
+wandb:                      losses/approx_kl ▄▃▆▆▂▁▂▃▃▄▇▅▄▅▅▄▆▆▅▄▅▅▅█▅█▇▇▅▆▄▅▆▇▅▆▆▄▆▆
+wandb:                                    +6 ...
+wandb: 
+wandb: Run summary:
+wandb:                            charts/SPS 1221.21303
+wandb:     charts/episodic_return_normalised 11.85871
+wandb: charts/episodic_return_normalised_std 9.00734
+wandb:                  charts/learning_rate 0.0005
+wandb:               eval/generalization_gap 2.5
+wandb:                      eval/test_return 5.5
+wandb:                  eval/test_return_std 4.97494
+wandb:                     eval/train_return 8
+wandb:                 eval/train_return_std 4
+wandb:                      losses/approx_kl 0.00736
+wandb:                                    +6 ...
+wandb: 
+wandb: 🚀 View run ninja__impala__seed1__20260511_005144 at: https://wandb.ai/staanagnostou-/thesis-rl-baselines/runs/a6zpp5xq
+wandb: ⭐️ View project at: https://wandb.ai/staanagnostou-/thesis-rl-baselines
+wandb: Synced 6 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260511_005144-a6zpp5xq/logs

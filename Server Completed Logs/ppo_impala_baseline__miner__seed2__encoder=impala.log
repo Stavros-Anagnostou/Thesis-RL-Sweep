@@ -1,0 +1,24 @@
+[device] GPU detected:   (24.0 GB VRAM)
+[device] Backend: NVIDIA CUDA
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from WANDB_API_KEY.
+wandb: Currently logged in as: stayrosanang (staanagnostou-) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.26.1
+wandb: Run data is saved locally in /workspace/wandb/run-20260508_113713-fpdoh7fx
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run miner__impala__seed2__20260508_113712
+wandb: ⭐️ View project at https://wandb.ai/staanagnostou-/thesis-rl-baselines
+wandb: 🚀 View run at https://wandb.ai/staanagnostou-/thesis-rl-baselines/runs/fpdoh7fx
+[wandb] Run ID: fpdoh7fx  tags=['none', 'miner', 'seed_2', 'impala']
+[env] miner  64 envs  200 levels  mode=easy  backend=auto
+[env] obs_space=(64, 64, 3)  num_actions=15
+[model] torch.compile applied (mode=reduce-overhead)
+[amp] Mixed precision (FP16) enabled
+[model] IMPALA-CNN  params=626,256
+
+=================================================================
+  Starting PPO  |  env=miner  aug=none  lvl=uniform
+  total_steps=25,000,000  updates=1,525  device=cuda
+=================================================================
+
+  update     1/1525  step     16,384  SPS     403  pg=-0.0002  vf=0.0767  ent=2.7080  kl=0.0000
+  [phase ms/update]  rollout=1548  bulk_xfer=0.1  gae=6.2  ppo_xfer=17  ppo_grad=39129  total=40701

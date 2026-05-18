@@ -1,0 +1,582 @@
+[device] GPU detected:   (24.0 GB VRAM)
+[device] Backend: NVIDIA CUDA
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from WANDB_API_KEY.
+wandb: Currently logged in as: stayrosanang (staanagnostou-) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.26.1
+wandb: Run data is saved locally in /workspace/wandb/run-20260509_090605-f7bgn6si
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run starpilot__impala__seed3__20260509_090605
+wandb: ⭐️ View project at https://wandb.ai/staanagnostou-/thesis-rl-baselines
+wandb: 🚀 View run at https://wandb.ai/staanagnostou-/thesis-rl-baselines/runs/f7bgn6si
+[wandb] Run ID: f7bgn6si  tags=['none', 'starpilot', 'seed_3', 'impala']
+[env] starpilot  64 envs  200 levels  mode=easy  backend=auto
+[env] obs_space=(64, 64, 3)  num_actions=15
+[model] torch.compile applied (mode=reduce-overhead)
+[model] IMPALA-CNN  params=626,256
+
+=================================================================
+  Starting PPO  |  env=starpilot  aug=none  lvl=uniform
+  total_steps=25,000,000  updates=1,525  device=cuda
+=================================================================
+
+  update     1/1525  step     16,384  SPS     308  pg=-0.0002  vf=0.8530  ent=2.7080  kl=0.0001
+  [phase ms/update]  rollout=1605  bulk_xfer=0.1  gae=5.6  ppo_xfer=66  ppo_grad=51528  total=53204
+  update    10/1525  step    163,840  SPS     950  pg=-0.0017  vf=0.1167  ent=2.5317  kl=0.0038
+  [phase ms/update]  rollout=528  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12715  total=13258
+  update    20/1525  step    327,680  SPS   1,074  pg=-0.0048  vf=0.1286  ent=2.3102  kl=0.0069
+  [phase ms/update]  rollout=523  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12726  total=13263
+  update    30/1525  step    491,520  SPS   1,123  pg=-0.0061  vf=0.0853  ent=2.2993  kl=0.0057
+  [phase ms/update]  rollout=527  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12727  total=13268
+
+[eval] step 507,904...
+  train=5.12±4.14  test=4.83±4.31  gap=0.29
+[checkpoint] Saved step 507,904 → checkpoints/starpilot/starpilot__impala__seed3__20260509_090605/step_507904.pt  (latest.pt updated)
+  update    40/1525  step    655,360  SPS   1,144  pg=-0.0090  vf=0.0888  ent=2.2517  kl=0.0083
+  [phase ms/update]  rollout=531  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12723  total=13268
+  update    50/1525  step    819,200  SPS   1,161  pg=-0.0123  vf=0.0822  ent=2.1543  kl=0.0079
+  [phase ms/update]  rollout=522  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12720  total=13256
+  update    60/1525  step    983,040  SPS   1,173  pg=-0.0115  vf=0.0929  ent=2.0944  kl=0.0083
+  [phase ms/update]  rollout=537  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12731  total=13282
+
+[eval] step 1,015,808...
+  train=6.82±5.13  test=8.00±5.54  gap=-1.18
+[checkpoint] Saved step 1,015,808 → checkpoints/starpilot/starpilot__impala__seed3__20260509_090605/step_1015808.pt  (latest.pt updated)
+  update    70/1525  step  1,146,880  SPS   1,178  pg=-0.0132  vf=0.0740  ent=2.1581  kl=0.0083
+  [phase ms/update]  rollout=544  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12730  total=13288
+  update    80/1525  step  1,310,720  SPS   1,184  pg=-0.0161  vf=0.0798  ent=2.0641  kl=0.0099
+  [phase ms/update]  rollout=529  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12732  total=13275
+  update    90/1525  step  1,474,560  SPS   1,190  pg=-0.0169  vf=0.0782  ent=2.0454  kl=0.0105
+  [phase ms/update]  rollout=539  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12728  total=13282
+
+[eval] step 1,507,328...
+  train=9.36±6.07  test=9.59±8.40  gap=-0.23
+[checkpoint] Saved step 1,507,328 → checkpoints/starpilot/starpilot__impala__seed3__20260509_090605/step_1507328.pt  (latest.pt updated)
+  update   100/1525  step  1,638,400  SPS   1,191  pg=-0.0181  vf=0.0843  ent=2.0075  kl=0.0102
+  [phase ms/update]  rollout=537  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12730  total=13280
+  update   110/1525  step  1,802,240  SPS   1,195  pg=-0.0165  vf=0.0836  ent=2.0063  kl=0.0118
+  [phase ms/update]  rollout=531  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12721  total=13266
+  update   120/1525  step  1,966,080  SPS   1,198  pg=-0.0189  vf=0.0697  ent=1.9351  kl=0.0113
+  [phase ms/update]  rollout=540  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12721  total=13275
+
+[eval] step 2,015,232...
+  train=10.75±8.70  test=11.20±8.47  gap=-0.45
+[checkpoint] Saved step 2,015,232 → checkpoints/starpilot/starpilot__impala__seed3__20260509_090605/step_2015232.pt  (latest.pt updated)
+  update   130/1525  step  2,129,920  SPS   1,199  pg=-0.0224  vf=0.0733  ent=1.9774  kl=0.0110
+  [phase ms/update]  rollout=537  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12730  total=13281
+  update   140/1525  step  2,293,760  SPS   1,201  pg=-0.0229  vf=0.0676  ent=1.9778  kl=0.0116
+  [phase ms/update]  rollout=527  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12731  total=13271
+  update   150/1525  step  2,457,600  SPS   1,203  pg=-0.0225  vf=0.0856  ent=1.9460  kl=0.0122
+  [phase ms/update]  rollout=524  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12735  total=13273
+
+[eval] step 2,506,752...
+  train=12.78±10.36  test=14.73±13.61  gap=-1.95
+[checkpoint] Saved step 2,506,752 → checkpoints/starpilot/starpilot__impala__seed3__20260509_090605/step_2506752.pt  (latest.pt updated)
+  update   160/1525  step  2,621,440  SPS   1,203  pg=-0.0227  vf=0.0680  ent=1.9757  kl=0.0122
+  [phase ms/update]  rollout=529  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12732  total=13276
+  update   170/1525  step  2,785,280  SPS   1,205  pg=-0.0242  vf=0.0764  ent=1.9216  kl=0.0116
+  [phase ms/update]  rollout=522  bulk_xfer=0.1  gae=5.8  ppo_xfer=8  ppo_grad=12732  total=13268
+  update   180/1525  step  2,949,120  SPS   1,206  pg=-0.0256  vf=0.0808  ent=1.9371  kl=0.0127
+  [phase ms/update]  rollout=537  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12724  total=13274
+
+[eval] step 3,014,656...
+  train=14.28±11.40  test=15.29±13.43  gap=-1.01
+[checkpoint] Saved step 3,014,656 → checkpoints/starpilot/starpilot__impala__seed3__20260509_090605/step_3014656.pt  (latest.pt updated)
+  update   190/1525  step  3,112,960  SPS   1,206  pg=-0.0252  vf=0.0672  ent=1.9734  kl=0.0124
+  [phase ms/update]  rollout=515  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12728  total=13257
+  update   200/1525  step  3,276,800  SPS   1,207  pg=-0.0250  vf=0.0725  ent=1.8969  kl=0.0135
+  [phase ms/update]  rollout=534  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12732  total=13279
+  update   210/1525  step  3,440,640  SPS   1,208  pg=-0.0247  vf=0.0706  ent=1.8689  kl=0.0144
+  [phase ms/update]  rollout=536  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12728  total=13278
+
+[eval] step 3,506,176...
+  train=18.52±14.21  test=14.97±10.87  gap=3.55
+[checkpoint] Saved step 3,506,176 → checkpoints/starpilot/starpilot__impala__seed3__20260509_090605/step_3506176.pt  (latest.pt updated)
+  update   220/1525  step  3,604,480  SPS   1,208  pg=-0.0277  vf=0.0732  ent=1.8229  kl=0.0148
+  [phase ms/update]  rollout=533  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12725  total=13272
+  update   230/1525  step  3,768,320  SPS   1,209  pg=-0.0238  vf=0.0662  ent=1.8195  kl=0.0135
+  [phase ms/update]  rollout=534  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12717  total=13265
+  update   240/1525  step  3,932,160  SPS   1,210  pg=-0.0247  vf=0.0717  ent=1.7767  kl=0.0134
+  [phase ms/update]  rollout=541  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12718  total=13273
+
+[eval] step 4,014,080...
+  train=18.21±16.31  test=15.47±12.71  gap=2.74
+[checkpoint] Saved step 4,014,080 → checkpoints/starpilot/starpilot__impala__seed3__20260509_090605/step_4014080.pt  (latest.pt updated)
+  update   250/1525  step  4,096,000  SPS   1,209  pg=-0.0248  vf=0.0725  ent=1.8065  kl=0.0145
+  [phase ms/update]  rollout=540  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12720  total=13273
+  update   260/1525  step  4,259,840  SPS   1,210  pg=-0.0252  vf=0.0614  ent=1.7281  kl=0.0163
+  [phase ms/update]  rollout=543  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12720  total=13277
+  update   270/1525  step  4,423,680  SPS   1,211  pg=-0.0288  vf=0.0578  ent=1.7582  kl=0.0156
+  [phase ms/update]  rollout=536  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12720  total=13270
+
+[eval] step 4,505,600...
+  train=19.34±15.87  test=16.41±12.93  gap=2.93
+[checkpoint] Saved step 4,505,600 → checkpoints/starpilot/starpilot__impala__seed3__20260509_090605/step_4505600.pt  (latest.pt updated)
+  update   280/1525  step  4,587,520  SPS   1,210  pg=-0.0300  vf=0.0545  ent=1.8044  kl=0.0156
+  [phase ms/update]  rollout=545  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12723  total=13282
+  update   290/1525  step  4,751,360  SPS   1,211  pg=-0.0266  vf=0.0664  ent=1.8120  kl=0.0155
+  [phase ms/update]  rollout=540  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12718  total=13272
+  update   300/1525  step  4,915,200  SPS   1,212  pg=-0.0288  vf=0.0625  ent=1.8176  kl=0.0136
+  [phase ms/update]  rollout=553  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12715  total=13283
+
+[eval] step 5,013,504...
+  train=19.96±15.59  test=18.09±14.43  gap=1.87
+[checkpoint] Saved step 5,013,504 → checkpoints/starpilot/starpilot__impala__seed3__20260509_090605/step_5013504.pt  (latest.pt updated)
+  update   310/1525  step  5,079,040  SPS   1,211  pg=-0.0276  vf=0.0488  ent=1.8122  kl=0.0159
+  [phase ms/update]  rollout=544  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12721  total=13279
+  update   320/1525  step  5,242,880  SPS   1,212  pg=-0.0240  vf=0.0562  ent=1.6830  kl=0.0174
+  [phase ms/update]  rollout=541  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12725  total=13280
+  update   330/1525  step  5,406,720  SPS   1,212  pg=-0.0281  vf=0.0571  ent=1.6929  kl=0.0171
+  [phase ms/update]  rollout=540  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12721  total=13276
+
+[eval] step 5,505,024...
+  train=23.17±18.46  test=20.78±17.94  gap=2.39
+[checkpoint] Saved step 5,505,024 → checkpoints/starpilot/starpilot__impala__seed3__20260509_090605/step_5505024.pt  (latest.pt updated)
+  update   340/1525  step  5,570,560  SPS   1,211  pg=-0.0294  vf=0.0446  ent=1.7150  kl=0.0190
+  [phase ms/update]  rollout=542  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12720  total=13276
+  update   350/1525  step  5,734,400  SPS   1,212  pg=-0.0306  vf=0.0507  ent=1.6927  kl=0.0183
+  [phase ms/update]  rollout=547  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12720  total=13280
+  update   360/1525  step  5,898,240  SPS   1,213  pg=-0.0272  vf=0.0464  ent=1.6077  kl=0.0178
+  [phase ms/update]  rollout=534  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12719  total=13267
+
+[eval] step 6,012,928...
+  train=23.79±18.55  test=21.31±18.59  gap=2.48
+[checkpoint] Saved step 6,012,928 → checkpoints/starpilot/starpilot__impala__seed3__20260509_090605/step_6012928.pt  (latest.pt updated)
+  update   370/1525  step  6,062,080  SPS   1,212  pg=-0.0285  vf=0.0573  ent=1.6364  kl=0.0175
+  [phase ms/update]  rollout=551  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12720  total=13285
+  update   380/1525  step  6,225,920  SPS   1,212  pg=-0.0225  vf=0.0610  ent=1.7266  kl=0.0164
+  [phase ms/update]  rollout=551  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12718  total=13283
+  update   390/1525  step  6,389,760  SPS   1,213  pg=-0.0306  vf=0.0428  ent=1.7525  kl=0.0188
+  [phase ms/update]  rollout=548  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12724  total=13286
+
+[eval] step 6,504,448...
+  train=18.87±14.76  test=19.43±15.86  gap=-0.56
+[checkpoint] Saved step 6,504,448 → checkpoints/starpilot/starpilot__impala__seed3__20260509_090605/step_6504448.pt  (latest.pt updated)
+  update   400/1525  step  6,553,600  SPS   1,212  pg=-0.0319  vf=0.0481  ent=1.7349  kl=0.0166
+  [phase ms/update]  rollout=546  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12724  total=13284
+  update   410/1525  step  6,717,440  SPS   1,213  pg=-0.0324  vf=0.0519  ent=1.7152  kl=0.0183
+  [phase ms/update]  rollout=545  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12720  total=13279
+  update   420/1525  step  6,881,280  SPS   1,213  pg=-0.0309  vf=0.0551  ent=1.6714  kl=0.0162
+  [phase ms/update]  rollout=532  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12717  total=13262
+
+[eval] step 7,012,352...
+  train=20.53±17.95  test=22.59±17.73  gap=-2.06
+[checkpoint] Saved step 7,012,352 → checkpoints/starpilot/starpilot__impala__seed3__20260509_090605/step_7012352.pt  (latest.pt updated)
+  update   430/1525  step  7,045,120  SPS   1,213  pg=-0.0291  vf=0.0523  ent=1.6834  kl=0.0192
+  [phase ms/update]  rollout=535  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12719  total=13268
+  update   440/1525  step  7,208,960  SPS   1,213  pg=-0.0322  vf=0.0571  ent=1.5364  kl=0.0209
+  [phase ms/update]  rollout=522  bulk_xfer=0.1  gae=5.8  ppo_xfer=8  ppo_grad=12732  total=13268
+  update   450/1525  step  7,372,800  SPS   1,214  pg=-0.0299  vf=0.0553  ent=1.5837  kl=0.0180
+  [phase ms/update]  rollout=523  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12732  total=13269
+
+[eval] step 7,503,872...
+  train=24.25±19.76  test=24.36±18.49  gap=-0.11
+[checkpoint] Saved step 7,503,872 → checkpoints/starpilot/starpilot__impala__seed3__20260509_090605/step_7503872.pt  (latest.pt updated)
+  update   460/1525  step  7,536,640  SPS   1,213  pg=-0.0280  vf=0.0467  ent=1.6015  kl=0.0190
+  [phase ms/update]  rollout=534  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12731  total=13280
+  update   470/1525  step  7,700,480  SPS   1,213  pg=-0.0277  vf=0.0704  ent=1.5358  kl=0.0172
+  [phase ms/update]  rollout=529  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12730  total=13273
+  update   480/1525  step  7,864,320  SPS   1,214  pg=-0.0284  vf=0.0518  ent=1.4904  kl=0.0199
+  [phase ms/update]  rollout=528  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12730  total=13271
+
+[eval] step 8,011,776...
+  train=25.20±17.25  test=23.41±19.49  gap=1.79
+[checkpoint] Saved step 8,011,776 → checkpoints/starpilot/starpilot__impala__seed3__20260509_090605/step_8011776.pt  (latest.pt updated)
+  update   490/1525  step  8,028,160  SPS   1,213  pg=-0.0287  vf=0.0490  ent=1.5261  kl=0.0191
+  [phase ms/update]  rollout=524  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12730  total=13267
+  update   500/1525  step  8,192,000  SPS   1,214  pg=-0.0287  vf=0.0495  ent=1.4932  kl=0.0206
+  [phase ms/update]  rollout=528  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12721  total=13263
+  update   510/1525  step  8,355,840  SPS   1,214  pg=-0.0288  vf=0.0523  ent=1.5392  kl=0.0199
+  [phase ms/update]  rollout=546  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12717  total=13278
+
+[eval] step 8,503,296...
+  train=24.26±16.87  test=25.56±19.12  gap=-1.30
+[checkpoint] Saved step 8,503,296 → checkpoints/starpilot/starpilot__impala__seed3__20260509_090605/step_8503296.pt  (latest.pt updated)
+  update   520/1525  step  8,519,680  SPS   1,213  pg=-0.0281  vf=0.0537  ent=1.6139  kl=0.0191
+  [phase ms/update]  rollout=536  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12727  total=13276
+  update   530/1525  step  8,683,520  SPS   1,214  pg=-0.0314  vf=0.0494  ent=1.5068  kl=0.0204
+  [phase ms/update]  rollout=535  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12726  total=13275
+  update   540/1525  step  8,847,360  SPS   1,214  pg=-0.0305  vf=0.0582  ent=1.4515  kl=0.0220
+  [phase ms/update]  rollout=527  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12722  total=13263
+  update   550/1525  step  9,011,200  SPS   1,214  pg=-0.0285  vf=0.0487  ent=1.4356  kl=0.0211
+  [phase ms/update]  rollout=539  bulk_xfer=0.1  gae=5.8  ppo_xfer=8  ppo_grad=12716  total=13269
+
+[eval] step 9,011,200...
+  train=31.74±19.79  test=28.05±20.40  gap=3.69
+[checkpoint] Saved step 9,011,200 → checkpoints/starpilot/starpilot__impala__seed3__20260509_090605/step_9011200.pt  (latest.pt updated)
+  update   560/1525  step  9,175,040  SPS   1,214  pg=-0.0292  vf=0.0548  ent=1.5189  kl=0.0200
+  [phase ms/update]  rollout=532  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12725  total=13271
+  update   570/1525  step  9,338,880  SPS   1,214  pg=-0.0311  vf=0.0492  ent=1.5655  kl=0.0201
+  [phase ms/update]  rollout=532  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12733  total=13279
+  update   580/1525  step  9,502,720  SPS   1,214  pg=-0.0295  vf=0.0502  ent=1.5439  kl=0.0194
+  [phase ms/update]  rollout=537  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12733  total=13284
+
+[eval] step 9,502,720...
+  train=24.63±18.97  test=22.88±17.62  gap=1.75
+[checkpoint] Saved step 9,502,720 → checkpoints/starpilot/starpilot__impala__seed3__20260509_090605/step_9502720.pt  (latest.pt updated)
+  update   590/1525  step  9,666,560  SPS   1,214  pg=-0.0294  vf=0.0478  ent=1.5083  kl=0.0192
+  [phase ms/update]  rollout=541  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12724  total=13279
+  update   600/1525  step  9,830,400  SPS   1,214  pg=-0.0293  vf=0.0385  ent=1.5100  kl=0.0218
+  [phase ms/update]  rollout=549  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12719  total=13282
+  update   610/1525  step  9,994,240  SPS   1,214  pg=-0.0263  vf=0.0508  ent=1.4371  kl=0.0232
+  [phase ms/update]  rollout=540  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12717  total=13271
+
+[eval] step 10,010,624...
+  train=30.04±21.40  test=27.43±20.42  gap=2.61
+[checkpoint] Saved step 10,010,624 → checkpoints/starpilot/starpilot__impala__seed3__20260509_090605/step_10010624.pt  (latest.pt updated)
+  update   620/1525  step 10,158,080  SPS   1,214  pg=-0.0289  vf=0.0490  ent=1.4665  kl=0.0213
+  [phase ms/update]  rollout=544  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12727  total=13285
+  update   630/1525  step 10,321,920  SPS   1,214  pg=-0.0296  vf=0.0538  ent=1.4410  kl=0.0211
+  [phase ms/update]  rollout=541  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12727  total=13282
+  update   640/1525  step 10,485,760  SPS   1,214  pg=-0.0291  vf=0.0621  ent=1.4692  kl=0.0198
+  [phase ms/update]  rollout=534  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12728  total=13276
+
+[eval] step 10,502,144...
+  train=24.99±19.27  test=24.93±20.44  gap=0.06
+[checkpoint] Saved step 10,502,144 → checkpoints/starpilot/starpilot__impala__seed3__20260509_090605/step_10502144.pt  (latest.pt updated)
+  update   650/1525  step 10,649,600  SPS   1,214  pg=-0.0287  vf=0.0530  ent=1.4095  kl=0.0214
+  [phase ms/update]  rollout=533  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12729  total=13276
+  update   660/1525  step 10,813,440  SPS   1,214  pg=-0.0319  vf=0.0520  ent=1.3950  kl=0.0210
+  [phase ms/update]  rollout=550  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12729  total=13293
+  update   670/1525  step 10,977,280  SPS   1,214  pg=-0.0319  vf=0.0433  ent=1.4583  kl=0.0208
+  [phase ms/update]  rollout=529  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12731  total=13274
+
+[eval] step 11,010,048...
+  train=25.90±18.78  test=23.28±18.55  gap=2.62
+[checkpoint] Saved step 11,010,048 → checkpoints/starpilot/starpilot__impala__seed3__20260509_090605/step_11010048.pt  (latest.pt updated)
+  update   680/1525  step 11,141,120  SPS   1,214  pg=-0.0305  vf=0.0504  ent=1.5144  kl=0.0200
+  [phase ms/update]  rollout=536  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12732  total=13282
+  update   690/1525  step 11,304,960  SPS   1,214  pg=-0.0296  vf=0.0455  ent=1.4707  kl=0.0200
+  [phase ms/update]  rollout=555  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12729  total=13298
+  update   700/1525  step 11,468,800  SPS   1,214  pg=-0.0277  vf=0.0582  ent=1.4751  kl=0.0223
+  [phase ms/update]  rollout=536  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12729  total=13280
+
+[eval] step 11,501,568...
+  train=25.75±18.63  test=26.33±19.35  gap=-0.58
+[checkpoint] Saved step 11,501,568 → checkpoints/starpilot/starpilot__impala__seed3__20260509_090605/step_11501568.pt  (latest.pt updated)
+  update   710/1525  step 11,632,640  SPS   1,214  pg=-0.0288  vf=0.0394  ent=1.4285  kl=0.0222
+  [phase ms/update]  rollout=527  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12725  total=13265
+  update   720/1525  step 11,796,480  SPS   1,214  pg=-0.0291  vf=0.0430  ent=1.4144  kl=0.0219
+  [phase ms/update]  rollout=534  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12720  total=13268
+  update   730/1525  step 11,960,320  SPS   1,214  pg=-0.0296  vf=0.0433  ent=1.4799  kl=0.0232
+  [phase ms/update]  rollout=538  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12720  total=13272
+
+[eval] step 12,009,472...
+  train=28.41±20.60  test=25.08±18.86  gap=3.33
+[checkpoint] Saved step 12,009,472 → checkpoints/starpilot/starpilot__impala__seed3__20260509_090605/step_12009472.pt  (latest.pt updated)
+  update   740/1525  step 12,124,160  SPS   1,214  pg=-0.0299  vf=0.0467  ent=1.4304  kl=0.0233
+  [phase ms/update]  rollout=537  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12719  total=13270
+  update   750/1525  step 12,288,000  SPS   1,214  pg=-0.0301  vf=0.0497  ent=1.4011  kl=0.0242
+  [phase ms/update]  rollout=541  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12717  total=13271
+  update   760/1525  step 12,451,840  SPS   1,214  pg=-0.0292  vf=0.0483  ent=1.3345  kl=0.0257
+  [phase ms/update]  rollout=532  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12718  total=13263
+
+[eval] step 12,500,992...
+  train=31.19±19.67  test=27.68±19.39  gap=3.51
+[checkpoint] Saved step 12,500,992 → checkpoints/starpilot/starpilot__impala__seed3__20260509_090605/step_12500992.pt  (latest.pt updated)
+  update   770/1525  step 12,615,680  SPS   1,214  pg=-0.0278  vf=0.0497  ent=1.3343  kl=0.0270
+  [phase ms/update]  rollout=536  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12714  total=13264
+  update   780/1525  step 12,779,520  SPS   1,214  pg=-0.0291  vf=0.0503  ent=1.3046  kl=0.0264
+  [phase ms/update]  rollout=527  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12716  total=13257
+  update   790/1525  step 12,943,360  SPS   1,214  pg=-0.0266  vf=0.0560  ent=1.3292  kl=0.0233
+  [phase ms/update]  rollout=528  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12714  total=13255
+
+[eval] step 13,008,896...
+  train=28.46±20.71  test=29.01±20.26  gap=-0.55
+[checkpoint] Saved step 13,008,896 → checkpoints/starpilot/starpilot__impala__seed3__20260509_090605/step_13008896.pt  (latest.pt updated)
+  update   800/1525  step 13,107,200  SPS   1,214  pg=-0.0303  vf=0.0528  ent=1.3686  kl=0.0235
+  [phase ms/update]  rollout=524  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12717  total=13256
+  update   810/1525  step 13,271,040  SPS   1,214  pg=-0.0294  vf=0.0510  ent=1.4179  kl=0.0228
+  [phase ms/update]  rollout=536  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12719  total=13269
+  update   820/1525  step 13,434,880  SPS   1,214  pg=-0.0264  vf=0.0553  ent=1.4001  kl=0.0247
+  [phase ms/update]  rollout=533  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12718  total=13265
+
+[eval] step 13,500,416...
+  train=27.68±19.32  test=24.75±19.35  gap=2.93
+[checkpoint] Saved step 13,500,416 → checkpoints/starpilot/starpilot__impala__seed3__20260509_090605/step_13500416.pt  (latest.pt updated)
+  update   830/1525  step 13,598,720  SPS   1,214  pg=-0.0301  vf=0.0492  ent=1.3188  kl=0.0264
+  [phase ms/update]  rollout=548  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12722  total=13284
+  update   840/1525  step 13,762,560  SPS   1,214  pg=-0.0287  vf=0.0429  ent=1.3267  kl=0.0240
+  [phase ms/update]  rollout=532  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12720  total=13266
+  update   850/1525  step 13,926,400  SPS   1,214  pg=-0.0298  vf=0.0507  ent=1.3680  kl=0.0243
+  [phase ms/update]  rollout=545  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12731  total=13290
+
+[eval] step 14,008,320...
+  train=29.97±19.97  test=26.15±21.27  gap=3.82
+[checkpoint] Saved step 14,008,320 → checkpoints/starpilot/starpilot__impala__seed3__20260509_090605/step_14008320.pt  (latest.pt updated)
+  update   860/1525  step 14,090,240  SPS   1,214  pg=-0.0260  vf=0.0513  ent=1.3377  kl=0.0267
+  [phase ms/update]  rollout=542  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12733  total=13289
+  update   870/1525  step 14,254,080  SPS   1,214  pg=-0.0281  vf=0.0483  ent=1.3167  kl=0.0257
+  [phase ms/update]  rollout=538  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12728  total=13280
+  update   880/1525  step 14,417,920  SPS   1,214  pg=-0.0277  vf=0.0515  ent=1.3082  kl=0.0249
+  [phase ms/update]  rollout=543  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12722  total=13279
+
+[eval] step 14,516,224...
+  train=28.70±20.73  test=27.81±20.57  gap=0.89
+[checkpoint] Saved step 14,516,224 → checkpoints/starpilot/starpilot__impala__seed3__20260509_090605/step_14516224.pt  (latest.pt updated)
+  update   890/1525  step 14,581,760  SPS   1,214  pg=-0.0276  vf=0.0442  ent=1.3080  kl=0.0244
+  [phase ms/update]  rollout=529  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12721  total=13264
+  update   900/1525  step 14,745,600  SPS   1,214  pg=-0.0290  vf=0.0534  ent=1.3047  kl=0.0255
+  [phase ms/update]  rollout=530  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12722  total=13266
+  update   910/1525  step 14,909,440  SPS   1,214  pg=-0.0277  vf=0.0528  ent=1.3817  kl=0.0230
+  [phase ms/update]  rollout=531  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12716  total=13261
+  ⚠  approx_kl=0.0323 > 0.03 at step 14,974,976
+
+[eval] step 15,007,744...
+  train=26.44±21.78  test=22.60±19.44  gap=3.84
+[checkpoint] Saved step 15,007,744 → checkpoints/starpilot/starpilot__impala__seed3__20260509_090605/step_15007744.pt  (latest.pt updated)
+  update   920/1525  step 15,073,280  SPS   1,214  pg=-0.0294  vf=0.0495  ent=1.3868  kl=0.0269
+  [phase ms/update]  rollout=526  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12716  total=13256
+  update   930/1525  step 15,237,120  SPS   1,214  pg=-0.0313  vf=0.0482  ent=1.3664  kl=0.0243
+  [phase ms/update]  rollout=539  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12718  total=13271
+  update   940/1525  step 15,400,960  SPS   1,215  pg=-0.0309  vf=0.0475  ent=1.3638  kl=0.0242
+  [phase ms/update]  rollout=540  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12726  total=13280
+
+[eval] step 15,515,648...
+  train=28.99±20.26  test=24.20±18.52  gap=4.79
+[checkpoint] Saved step 15,515,648 → checkpoints/starpilot/starpilot__impala__seed3__20260509_090605/step_15515648.pt  (latest.pt updated)
+  update   950/1525  step 15,564,800  SPS   1,214  pg=-0.0284  vf=0.0487  ent=1.3613  kl=0.0226
+  [phase ms/update]  rollout=543  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12726  total=13284
+  update   960/1525  step 15,728,640  SPS   1,214  pg=-0.0292  vf=0.0533  ent=1.2734  kl=0.0252
+  [phase ms/update]  rollout=546  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12722  total=13282
+  update   970/1525  step 15,892,480  SPS   1,215  pg=-0.0312  vf=0.0639  ent=1.2927  kl=0.0261
+  [phase ms/update]  rollout=538  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12730  total=13282
+
+[eval] step 16,007,168...
+  train=27.48±19.21  test=27.31±21.40  gap=0.17
+[checkpoint] Saved step 16,007,168 → checkpoints/starpilot/starpilot__impala__seed3__20260509_090605/step_16007168.pt  (latest.pt updated)
+  ⚠  approx_kl=0.0357 > 0.03 at step 16,039,936
+  update   980/1525  step 16,056,320  SPS   1,214  pg=-0.0263  vf=0.0541  ent=1.2877  kl=0.0256
+  [phase ms/update]  rollout=548  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12733  total=13294
+  update   990/1525  step 16,220,160  SPS   1,214  pg=-0.0283  vf=0.0496  ent=1.3326  kl=0.0253
+  [phase ms/update]  rollout=527  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12733  total=13274
+  update  1000/1525  step 16,384,000  SPS   1,215  pg=-0.0277  vf=0.0489  ent=1.2847  kl=0.0252
+  [phase ms/update]  rollout=536  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12726  total=13276
+
+[eval] step 16,515,072...
+  train=32.97±24.03  test=29.35±19.91  gap=3.62
+[checkpoint] Saved step 16,515,072 → checkpoints/starpilot/starpilot__impala__seed3__20260509_090605/step_16515072.pt  (latest.pt updated)
+  update  1010/1525  step 16,547,840  SPS   1,214  pg=-0.0286  vf=0.0517  ent=1.3332  kl=0.0251
+  [phase ms/update]  rollout=534  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12727  total=13275
+  update  1020/1525  step 16,711,680  SPS   1,214  pg=-0.0294  vf=0.0536  ent=1.3451  kl=0.0236
+  [phase ms/update]  rollout=535  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12732  total=13281
+  update  1030/1525  step 16,875,520  SPS   1,214  pg=-0.0282  vf=0.0405  ent=1.4109  kl=0.0259
+  [phase ms/update]  rollout=539  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12729  total=13283
+
+[eval] step 17,006,592...
+  train=28.10±20.49  test=28.97±22.57  gap=-0.87
+[checkpoint] Saved step 17,006,592 → checkpoints/starpilot/starpilot__impala__seed3__20260509_090605/step_17006592.pt  (latest.pt updated)
+  update  1040/1525  step 17,039,360  SPS   1,214  pg=-0.0283  vf=0.0492  ent=1.3351  kl=0.0235
+  [phase ms/update]  rollout=534  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12724  total=13272
+  update  1050/1525  step 17,203,200  SPS   1,214  pg=-0.0287  vf=0.0457  ent=1.4415  kl=0.0214
+  [phase ms/update]  rollout=543  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12717  total=13274
+  update  1060/1525  step 17,367,040  SPS   1,214  pg=-0.0303  vf=0.0431  ent=1.4284  kl=0.0275
+  [phase ms/update]  rollout=528  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12728  total=13271
+
+[eval] step 17,514,496...
+  train=31.60±22.72  test=28.64±20.66  gap=2.96
+[checkpoint] Saved step 17,514,496 → checkpoints/starpilot/starpilot__impala__seed3__20260509_090605/step_17514496.pt  (latest.pt updated)
+  update  1070/1525  step 17,530,880  SPS   1,214  pg=-0.0280  vf=0.0385  ent=1.3565  kl=0.0240
+  [phase ms/update]  rollout=535  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12722  total=13271
+  update  1080/1525  step 17,694,720  SPS   1,214  pg=-0.0271  vf=0.0552  ent=1.3463  kl=0.0245
+  [phase ms/update]  rollout=533  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12734  total=13282
+  update  1090/1525  step 17,858,560  SPS   1,214  pg=-0.0312  vf=0.0485  ent=1.4327  kl=0.0223
+  [phase ms/update]  rollout=537  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12732  total=13283
+
+[eval] step 18,006,016...
+  train=32.98±20.94  test=25.17±19.64  gap=7.81
+[checkpoint] Saved step 18,006,016 → checkpoints/starpilot/starpilot__impala__seed3__20260509_090605/step_18006016.pt  (latest.pt updated)
+  update  1100/1525  step 18,022,400  SPS   1,214  pg=-0.0297  vf=0.0437  ent=1.4215  kl=0.0253
+  [phase ms/update]  rollout=544  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12735  total=13293
+  update  1110/1525  step 18,186,240  SPS   1,214  pg=-0.0322  vf=0.0540  ent=1.4724  kl=0.0218
+  [phase ms/update]  rollout=535  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12721  total=13269
+  update  1120/1525  step 18,350,080  SPS   1,214  pg=-0.0298  vf=0.0470  ent=1.4021  kl=0.0218
+  [phase ms/update]  rollout=526  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12733  total=13273
+  update  1130/1525  step 18,513,920  SPS   1,215  pg=-0.0301  vf=0.0500  ent=1.3601  kl=0.0237
+  [phase ms/update]  rollout=539  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12734  total=13287
+
+[eval] step 18,513,920...
+  train=33.41±20.78  test=29.46±20.70  gap=3.95
+[checkpoint] Saved step 18,513,920 → checkpoints/starpilot/starpilot__impala__seed3__20260509_090605/step_18513920.pt  (latest.pt updated)
+  ⚠  approx_kl=0.0314 > 0.03 at step 18,644,992
+  update  1140/1525  step 18,677,760  SPS   1,214  pg=-0.0299  vf=0.0536  ent=1.2933  kl=0.0246
+  [phase ms/update]  rollout=520  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12724  total=13258
+  update  1150/1525  step 18,841,600  SPS   1,214  pg=-0.0261  vf=0.0489  ent=1.3382  kl=0.0252
+  [phase ms/update]  rollout=532  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12724  total=13269
+  update  1160/1525  step 19,005,440  SPS   1,214  pg=-0.0290  vf=0.0527  ent=1.2501  kl=0.0246
+  [phase ms/update]  rollout=543  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12726  total=13284
+
+[eval] step 19,005,440...
+  train=30.54±19.96  test=28.88±19.88  gap=1.66
+[checkpoint] Saved step 19,005,440 → checkpoints/starpilot/starpilot__impala__seed3__20260509_090605/step_19005440.pt  (latest.pt updated)
+  ⚠  approx_kl=0.0310 > 0.03 at step 19,169,280
+  update  1170/1525  step 19,169,280  SPS   1,214  pg=-0.0281  vf=0.0517  ent=1.3338  kl=0.0310
+  [phase ms/update]  rollout=542  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12733  total=13288
+  update  1180/1525  step 19,333,120  SPS   1,214  pg=-0.0294  vf=0.0521  ent=1.2846  kl=0.0259
+  [phase ms/update]  rollout=533  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12729  total=13276
+  update  1190/1525  step 19,496,960  SPS   1,214  pg=-0.0315  vf=0.0571  ent=1.3638  kl=0.0257
+  [phase ms/update]  rollout=539  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12719  total=13272
+
+[eval] step 19,513,344...
+  train=28.07±19.88  test=29.21±19.89  gap=-1.14
+[checkpoint] Saved step 19,513,344 → checkpoints/starpilot/starpilot__impala__seed3__20260509_090605/step_19513344.pt  (latest.pt updated)
+  update  1200/1525  step 19,660,800  SPS   1,214  pg=-0.0309  vf=0.0453  ent=1.3897  kl=0.0242
+  [phase ms/update]  rollout=523  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12718  total=13254
+  update  1210/1525  step 19,824,640  SPS   1,214  pg=-0.0294  vf=0.0497  ent=1.3490  kl=0.0248
+  [phase ms/update]  rollout=546  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12736  total=13296
+  update  1220/1525  step 19,988,480  SPS   1,214  pg=-0.0270  vf=0.0515  ent=1.3693  kl=0.0229
+  [phase ms/update]  rollout=543  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12730  total=13287
+
+[eval] step 20,004,864...
+  train=32.12±22.01  test=25.25±18.35  gap=6.87
+[checkpoint] Saved step 20,004,864 → checkpoints/starpilot/starpilot__impala__seed3__20260509_090605/step_20004864.pt  (latest.pt updated)
+  update  1230/1525  step 20,152,320  SPS   1,214  pg=-0.0297  vf=0.0660  ent=1.4213  kl=0.0224
+  [phase ms/update]  rollout=550  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12730  total=13294
+  update  1240/1525  step 20,316,160  SPS   1,214  pg=-0.0288  vf=0.0434  ent=1.3646  kl=0.0228
+  [phase ms/update]  rollout=533  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12720  total=13267
+  update  1250/1525  step 20,480,000  SPS   1,214  pg=-0.0280  vf=0.0541  ent=1.3188  kl=0.0248
+  [phase ms/update]  rollout=544  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12713  total=13272
+
+[eval] step 20,512,768...
+  train=29.96±21.39  test=24.93±18.50  gap=5.03
+[checkpoint] Saved step 20,512,768 → checkpoints/starpilot/starpilot__impala__seed3__20260509_090605/step_20512768.pt  (latest.pt updated)
+  update  1260/1525  step 20,643,840  SPS   1,214  pg=-0.0307  vf=0.0415  ent=1.3719  kl=0.0240
+  [phase ms/update]  rollout=537  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12711  total=13262
+  update  1270/1525  step 20,807,680  SPS   1,214  pg=-0.0277  vf=0.0517  ent=1.3721  kl=0.0249
+  [phase ms/update]  rollout=544  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12718  total=13276
+  update  1280/1525  step 20,971,520  SPS   1,214  pg=-0.0313  vf=0.0497  ent=1.3413  kl=0.0253
+  [phase ms/update]  rollout=542  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12731  total=13287
+
+[eval] step 21,004,288...
+  train=33.32±21.68  test=28.98±18.53  gap=4.34
+[checkpoint] Saved step 21,004,288 → checkpoints/starpilot/starpilot__impala__seed3__20260509_090605/step_21004288.pt  (latest.pt updated)
+  update  1290/1525  step 21,135,360  SPS   1,214  pg=-0.0297  vf=0.0482  ent=1.3304  kl=0.0263
+  [phase ms/update]  rollout=533  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12731  total=13278
+  update  1300/1525  step 21,299,200  SPS   1,214  pg=-0.0288  vf=0.0530  ent=1.3791  kl=0.0242
+  [phase ms/update]  rollout=528  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12723  total=13264
+  update  1310/1525  step 21,463,040  SPS   1,214  pg=-0.0277  vf=0.0487  ent=1.3289  kl=0.0271
+  [phase ms/update]  rollout=544  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12723  total=13281
+
+[eval] step 21,512,192...
+  train=31.85±20.46  test=30.23±21.20  gap=1.62
+[checkpoint] Saved step 21,512,192 → checkpoints/starpilot/starpilot__impala__seed3__20260509_090605/step_21512192.pt  (latest.pt updated)
+  update  1320/1525  step 21,626,880  SPS   1,214  pg=-0.0310  vf=0.0506  ent=1.3010  kl=0.0250
+  [phase ms/update]  rollout=523  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12720  total=13257
+  update  1330/1525  step 21,790,720  SPS   1,214  pg=-0.0299  vf=0.0483  ent=1.3120  kl=0.0267
+  [phase ms/update]  rollout=542  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12731  total=13287
+  ⚠  approx_kl=0.0302 > 0.03 at step 21,921,792
+  update  1340/1525  step 21,954,560  SPS   1,214  pg=-0.0305  vf=0.0470  ent=1.2791  kl=0.0253
+  [phase ms/update]  rollout=530  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12736  total=13281
+
+[eval] step 22,003,712...
+  train=29.29±20.28  test=24.67±19.46  gap=4.62
+[checkpoint] Saved step 22,003,712 → checkpoints/starpilot/starpilot__impala__seed3__20260509_090605/step_22003712.pt  (latest.pt updated)
+  update  1350/1525  step 22,118,400  SPS   1,214  pg=-0.0302  vf=0.0459  ent=1.3294  kl=0.0269
+  [phase ms/update]  rollout=539  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12733  total=13287
+  update  1360/1525  step 22,282,240  SPS   1,214  pg=-0.0283  vf=0.0462  ent=1.4122  kl=0.0280
+  [phase ms/update]  rollout=534  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12732  total=13280
+  update  1370/1525  step 22,446,080  SPS   1,214  pg=-0.0283  vf=0.0418  ent=1.4032  kl=0.0256
+  [phase ms/update]  rollout=542  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12733  total=13288
+
+[eval] step 22,511,616...
+  train=27.23±19.91  test=29.06±20.03  gap=-1.83
+[checkpoint] Saved step 22,511,616 → checkpoints/starpilot/starpilot__impala__seed3__20260509_090605/step_22511616.pt  (latest.pt updated)
+  update  1380/1525  step 22,609,920  SPS   1,214  pg=-0.0291  vf=0.0478  ent=1.4152  kl=0.0257
+  [phase ms/update]  rollout=534  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12717  total=13264
+  update  1390/1525  step 22,773,760  SPS   1,214  pg=-0.0294  vf=0.0478  ent=1.3862  kl=0.0245
+  [phase ms/update]  rollout=542  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12719  total=13274
+  update  1400/1525  step 22,937,600  SPS   1,214  pg=-0.0297  vf=0.0475  ent=1.3715  kl=0.0255
+  [phase ms/update]  rollout=538  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12722  total=13275
+
+[eval] step 23,003,136...
+  train=30.03±20.17  test=25.94±19.62  gap=4.09
+[checkpoint] Saved step 23,003,136 → checkpoints/starpilot/starpilot__impala__seed3__20260509_090605/step_23003136.pt  (latest.pt updated)
+  update  1410/1525  step 23,101,440  SPS   1,214  pg=-0.0266  vf=0.0459  ent=1.3461  kl=0.0236
+  [phase ms/update]  rollout=542  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12731  total=13287
+  update  1420/1525  step 23,265,280  SPS   1,214  pg=-0.0275  vf=0.0437  ent=1.2745  kl=0.0277
+  [phase ms/update]  rollout=535  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12731  total=13280
+  ⚠  approx_kl=0.0335 > 0.03 at step 23,298,048
+  update  1430/1525  step 23,429,120  SPS   1,214  pg=-0.0308  vf=0.0567  ent=1.3142  kl=0.0263
+  [phase ms/update]  rollout=542  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12725  total=13281
+
+[eval] step 23,511,040...
+  train=30.30±21.97  test=28.37±20.41  gap=1.93
+[checkpoint] Saved step 23,511,040 → checkpoints/starpilot/starpilot__impala__seed3__20260509_090605/step_23511040.pt  (latest.pt updated)
+  update  1440/1525  step 23,592,960  SPS   1,214  pg=-0.0266  vf=0.0485  ent=1.3055  kl=0.0291
+  [phase ms/update]  rollout=541  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12723  total=13277
+  ⚠  approx_kl=0.0305 > 0.03 at step 23,674,880
+  ⚠  approx_kl=0.0301 > 0.03 at step 23,691,264
+  ⚠  approx_kl=0.0317 > 0.03 at step 23,740,416
+  ⚠  approx_kl=0.0304 > 0.03 at step 23,756,800
+  update  1450/1525  step 23,756,800  SPS   1,214  pg=-0.0265  vf=0.0511  ent=1.2612  kl=0.0304
+  [phase ms/update]  rollout=531  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12721  total=13265
+  update  1460/1525  step 23,920,640  SPS   1,214  pg=-0.0297  vf=0.0503  ent=1.3416  kl=0.0237
+  [phase ms/update]  rollout=520  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12720  total=13254
+  ⚠  approx_kl=0.0316 > 0.03 at step 23,986,176
+
+[eval] step 24,002,560...
+  train=30.96±21.10  test=26.35±18.51  gap=4.61
+[checkpoint] Saved step 24,002,560 → checkpoints/starpilot/starpilot__impala__seed3__20260509_090605/step_24002560.pt  (latest.pt updated)
+  update  1470/1525  step 24,084,480  SPS   1,214  pg=-0.0280  vf=0.0462  ent=1.3015  kl=0.0288
+  [phase ms/update]  rollout=542  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12725  total=13281
+  ⚠  approx_kl=0.0320 > 0.03 at step 24,199,168
+  update  1480/1525  step 24,248,320  SPS   1,214  pg=-0.0291  vf=0.0416  ent=1.3131  kl=0.0251
+  [phase ms/update]  rollout=539  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12734  total=13287
+  update  1490/1525  step 24,412,160  SPS   1,214  pg=-0.0287  vf=0.0519  ent=1.3196  kl=0.0232
+  [phase ms/update]  rollout=545  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12731  total=13290
+
+[eval] step 24,510,464...
+  train=29.69±20.22  test=27.14±19.62  gap=2.55
+[checkpoint] Saved step 24,510,464 → checkpoints/starpilot/starpilot__impala__seed3__20260509_090605/step_24510464.pt  (latest.pt updated)
+  update  1500/1525  step 24,576,000  SPS   1,214  pg=-0.0285  vf=0.0495  ent=1.3348  kl=0.0243
+  [phase ms/update]  rollout=534  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12729  total=13278
+  update  1510/1525  step 24,739,840  SPS   1,214  pg=-0.0290  vf=0.0528  ent=1.3625  kl=0.0281
+  [phase ms/update]  rollout=540  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12725  total=13278
+  ⚠  approx_kl=0.0306 > 0.03 at step 24,854,528
+  update  1520/1525  step 24,903,680  SPS   1,214  pg=-0.0312  vf=0.0471  ent=1.3287  kl=0.0281
+  [phase ms/update]  rollout=530  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12719  total=13263
+[checkpoint] Saved step 24,985,600 → checkpoints/starpilot/starpilot__impala__seed3__20260509_090605/step_24985600_final.pt  (latest.pt updated)
+
+[done] Training complete.
+
+[final eval]
+
+=================================================================
+  starpilot | none+uniform | seed=3
+  train=27.35  test=23.20  gap=4.15
+  expected=[25.0,35.0]  outside range
+=================================================================
+
+wandb: updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading history steps 1524-1524, summary, console lines 531-536
+wandb: 
+wandb: Run history:
+wandb:                            charts/SPS ▁▁▆▇▇███████████████████████████████████
+wandb:     charts/episodic_return_normalised ▁▃▄▄▂▃▄▅▆▅▄▄▅▄▄▃▄▅▅▅▅▆▅▃▅▄▆▄▅▄▄▅▇▇▄▆█▅▆▇
+wandb: charts/episodic_return_normalised_std ▁▇██▃▆▆▃▇▄▄█▃▂▃▃▅▆█▄▄▅▆▅▄▆▇▆▅▄▃▃▄▄▅▂▄▅▅▄
+wandb:                  charts/learning_rate ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:               eval/generalization_gap ▃▂▂▂▁▅▅▅▄▄▂▁▃▄▂▄▅▃▅▂▅▂▅▆▃▆▃▅▂▅▆▄▂█▇▄▆▁▆▆
+wandb:                      eval/test_return ▁▂▂▃▄▄▄▄▅▆▅▆▇▆▇▆▇▇▆▇██▇▇█▇███▇██▇▇█▇█▇█▇
+wandb:                  eval/test_return_std ▁▁▃▃▅▄▄▄▅▆▅▆▆▇▇▆▇▇▆▇▇▇█▇▇█▇█▇▇▇▇▆▆▆▇▇▇▇▇
+wandb:                     eval/train_return ▁▁▂▂▃▄▄▅▅▅▄▅▆▆▆▆▇▆▆▇▇▇▇▇▆▇█▇██▇▇█▇█▇▆▇▇▇
+wandb:                 eval/train_return_std ▁▁▂▃▃▅▅▅▅▆▅▆▆▆▅▆▇▆▆▆▆▇▆▇▇▇▆█▇█▇▇▇▇▇▇▇▇▇▇
+wandb:                      losses/approx_kl ▁▂▂▂▃▃▃▃▄▄▆▅▅▆▅▆▅▅▅▇▇▇▇█▆▆▇█▇▇▆▆▇▇▇█▇█▇█
+wandb:                                    +6 ...
+wandb: 
+wandb: Run summary:
+wandb:                            charts/SPS 1214.21955
+wandb:     charts/episodic_return_normalised 2.14875
+wandb: charts/episodic_return_normalised_std 1.57576
+wandb:                  charts/learning_rate 0.0005
+wandb:               eval/generalization_gap 2.55
+wandb:                      eval/test_return 27.14
+wandb:                  eval/test_return_std 19.61582
+wandb:                     eval/train_return 29.69
+wandb:                 eval/train_return_std 20.22113
+wandb:                      losses/approx_kl 0.02957
+wandb:                                    +6 ...
+wandb: 
+wandb: 🚀 View run starpilot__impala__seed3__20260509_090605 at: https://wandb.ai/staanagnostou-/thesis-rl-baselines/runs/f7bgn6si
+wandb: ⭐️ View project at: https://wandb.ai/staanagnostou-/thesis-rl-baselines
+wandb: Synced 6 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260509_090605-f7bgn6si/logs

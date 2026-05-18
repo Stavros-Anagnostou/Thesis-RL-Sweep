@@ -1,0 +1,569 @@
+[device] GPU detected:   (24.0 GB VRAM)
+[device] Backend: NVIDIA CUDA
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from WANDB_API_KEY.
+wandb: Currently logged in as: stayrosanang (staanagnostou-) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: setting up run ntuibpxe
+wandb: Tracking run with wandb version 0.26.1
+wandb: Run data is saved locally in /workspace/wandb/run-20260510_133118-ntuibpxe
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run coinrun__impala__seed2__20260510_133118
+wandb: ⭐️ View project at https://wandb.ai/staanagnostou-/thesis-rl-baselines
+wandb: 🚀 View run at https://wandb.ai/staanagnostou-/thesis-rl-baselines/runs/ntuibpxe
+[wandb] Run ID: ntuibpxe  tags=['none', 'coinrun', 'seed_2', 'impala']
+[env] coinrun  64 envs  200 levels  mode=easy  backend=auto
+[env] obs_space=(64, 64, 3)  num_actions=15
+[model] torch.compile applied (mode=reduce-overhead)
+[model] IMPALA-CNN  params=626,256
+
+=================================================================
+  Starting PPO  |  env=coinrun  aug=none  lvl=uniform
+  total_steps=25,000,000  updates=1,525  device=cuda
+=================================================================
+
+  update     1/1525  step     16,384  SPS     302  pg=-0.0004  vf=5.3857  ent=2.7080  kl=0.0001
+  [phase ms/update]  rollout=1690  bulk_xfer=0.1  gae=6.2  ppo_xfer=52  ppo_grad=52477  total=54225
+  update    10/1525  step    163,840  SPS     944  pg=-0.0033  vf=6.8108  ent=2.5307  kl=0.0060
+  [phase ms/update]  rollout=533  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12719  total=13267
+  update    20/1525  step    327,680  SPS   1,071  pg=-0.0011  vf=3.0536  ent=2.2763  kl=0.0030
+  [phase ms/update]  rollout=516  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12716  total=13246
+  update    30/1525  step    491,520  SPS   1,121  pg=-0.0017  vf=2.5596  ent=2.0064  kl=0.0064
+  [phase ms/update]  rollout=526  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12716  total=13256
+
+[eval] step 507,904...
+  train=7.50±4.33  test=6.50±4.77  gap=1.00
+[checkpoint] Saved step 507,904 → checkpoints/coinrun/coinrun__impala__seed2__20260510_133118/step_507904.pt  (latest.pt updated)
+  update    40/1525  step    655,360  SPS   1,145  pg=-0.0035  vf=2.0872  ent=2.0112  kl=0.0053
+  [phase ms/update]  rollout=526  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12719  total=13258
+  update    50/1525  step    819,200  SPS   1,162  pg=-0.0047  vf=1.4165  ent=2.0799  kl=0.0033
+  [phase ms/update]  rollout=517  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12725  total=13257
+  update    60/1525  step    983,040  SPS   1,173  pg=-0.0065  vf=1.0699  ent=2.0895  kl=0.0054
+  [phase ms/update]  rollout=519  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12723  total=13255
+
+[eval] step 1,015,808...
+  train=8.10±3.92  test=7.90±4.07  gap=0.20
+[checkpoint] Saved step 1,015,808 → checkpoints/coinrun/coinrun__impala__seed2__20260510_133118/step_1015808.pt  (latest.pt updated)
+  update    70/1525  step  1,146,880  SPS   1,180  pg=-0.0063  vf=1.0436  ent=2.0632  kl=0.0063
+  [phase ms/update]  rollout=530  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12728  total=13272
+  update    80/1525  step  1,310,720  SPS   1,187  pg=-0.0072  vf=0.9141  ent=1.9905  kl=0.0080
+  [phase ms/update]  rollout=533  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12729  total=13276
+  update    90/1525  step  1,474,560  SPS   1,192  pg=-0.0082  vf=0.9868  ent=1.9949  kl=0.0084
+  [phase ms/update]  rollout=521  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12723  total=13258
+
+[eval] step 1,507,328...
+  train=8.50±3.57  test=8.10±3.92  gap=0.40
+[checkpoint] Saved step 1,507,328 → checkpoints/coinrun/coinrun__impala__seed2__20260510_133118/step_1507328.pt  (latest.pt updated)
+  update   100/1525  step  1,638,400  SPS   1,195  pg=-0.0059  vf=0.6760  ent=2.0845  kl=0.0072
+  [phase ms/update]  rollout=515  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12723  total=13252
+  update   110/1525  step  1,802,240  SPS   1,199  pg=-0.0078  vf=0.6650  ent=2.1771  kl=0.0064
+  [phase ms/update]  rollout=523  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12719  total=13256
+  update   120/1525  step  1,966,080  SPS   1,202  pg=-0.0073  vf=0.5826  ent=2.2604  kl=0.0042
+  [phase ms/update]  rollout=523  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12719  total=13256
+
+[eval] step 2,015,232...
+  train=8.90±3.13  test=8.30±3.76  gap=0.60
+[checkpoint] Saved step 2,015,232 → checkpoints/coinrun/coinrun__impala__seed2__20260510_133118/step_2015232.pt  (latest.pt updated)
+  update   130/1525  step  2,129,920  SPS   1,202  pg=-0.0056  vf=0.5739  ent=2.2367  kl=0.0061
+  [phase ms/update]  rollout=539  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12725  total=13278
+  update   140/1525  step  2,293,760  SPS   1,205  pg=-0.0062  vf=0.3501  ent=2.3155  kl=0.0073
+  [phase ms/update]  rollout=533  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12726  total=13273
+  update   150/1525  step  2,457,600  SPS   1,207  pg=-0.0064  vf=0.4645  ent=2.2731  kl=0.0091
+  [phase ms/update]  rollout=529  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12718  total=13261
+
+[eval] step 2,506,752...
+  train=7.30±4.44  test=6.00±4.90  gap=1.30
+[checkpoint] Saved step 2,506,752 → checkpoints/coinrun/coinrun__impala__seed2__20260510_133118/step_2506752.pt  (latest.pt updated)
+  update   160/1525  step  2,621,440  SPS   1,203  pg=-0.0038  vf=0.4317  ent=2.3855  kl=0.0100
+  [phase ms/update]  rollout=521  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12719  total=13254
+  update   170/1525  step  2,785,280  SPS   1,205  pg=-0.0036  vf=0.2926  ent=2.4128  kl=0.0049
+  [phase ms/update]  rollout=532  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12730  total=13275
+  update   180/1525  step  2,949,120  SPS   1,206  pg=-0.0068  vf=0.3492  ent=2.3705  kl=0.0064
+  [phase ms/update]  rollout=560  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12729  total=13303
+
+[eval] step 3,014,656...
+  train=9.10±2.86  test=8.00±4.00  gap=1.10
+[checkpoint] Saved step 3,014,656 → checkpoints/coinrun/coinrun__impala__seed2__20260510_133118/step_3014656.pt  (latest.pt updated)
+  update   190/1525  step  3,112,960  SPS   1,206  pg=-0.0067  vf=0.4437  ent=2.3349  kl=0.0069
+  [phase ms/update]  rollout=553  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12728  total=13295
+  update   200/1525  step  3,276,800  SPS   1,207  pg=-0.0066  vf=0.5181  ent=2.1729  kl=0.0061
+  [phase ms/update]  rollout=523  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12733  total=13270
+  update   210/1525  step  3,440,640  SPS   1,208  pg=-0.0078  vf=0.4339  ent=2.2883  kl=0.0089
+  [phase ms/update]  rollout=541  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12730  total=13285
+
+[eval] step 3,506,176...
+  train=9.20±2.71  test=8.20±3.84  gap=1.00
+[checkpoint] Saved step 3,506,176 → checkpoints/coinrun/coinrun__impala__seed2__20260510_133118/step_3506176.pt  (latest.pt updated)
+  update   220/1525  step  3,604,480  SPS   1,208  pg=-0.0076  vf=0.5087  ent=2.2016  kl=0.0065
+  [phase ms/update]  rollout=564  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12717  total=13295
+  update   230/1525  step  3,768,320  SPS   1,209  pg=-0.0073  vf=0.4896  ent=2.2634  kl=0.0050
+  [phase ms/update]  rollout=557  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12726  total=13297
+  update   240/1525  step  3,932,160  SPS   1,210  pg=-0.0087  vf=0.5891  ent=2.2316  kl=0.0061
+  [phase ms/update]  rollout=546  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12723  total=13283
+
+[eval] step 4,014,080...
+  train=9.70±1.71  test=8.10±3.92  gap=1.60
+[checkpoint] Saved step 4,014,080 → checkpoints/coinrun/coinrun__impala__seed2__20260510_133118/step_4014080.pt  (latest.pt updated)
+  update   250/1525  step  4,096,000  SPS   1,210  pg=-0.0095  vf=0.4871  ent=2.1534  kl=0.0049
+  [phase ms/update]  rollout=567  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12722  total=13303
+  update   260/1525  step  4,259,840  SPS   1,211  pg=-0.0078  vf=0.5522  ent=2.1943  kl=0.0104
+  [phase ms/update]  rollout=549  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12712  total=13275
+  update   270/1525  step  4,423,680  SPS   1,211  pg=-0.0092  vf=0.5695  ent=2.2111  kl=0.0077
+  [phase ms/update]  rollout=562  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12714  total=13290
+
+[eval] step 4,505,600...
+  train=9.00±3.00  test=8.20±3.84  gap=0.80
+[checkpoint] Saved step 4,505,600 → checkpoints/coinrun/coinrun__impala__seed2__20260510_133118/step_4505600.pt  (latest.pt updated)
+  update   280/1525  step  4,587,520  SPS   1,211  pg=-0.0052  vf=0.4495  ent=2.2667  kl=0.0079
+  [phase ms/update]  rollout=549  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12714  total=13277
+  update   290/1525  step  4,751,360  SPS   1,212  pg=-0.0102  vf=0.2751  ent=2.2870  kl=0.0063
+  [phase ms/update]  rollout=567  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12720  total=13301
+  update   300/1525  step  4,915,200  SPS   1,213  pg=-0.0114  vf=0.3680  ent=2.2513  kl=0.0097
+  [phase ms/update]  rollout=565  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12723  total=13303
+
+[eval] step 5,013,504...
+  train=9.50±2.18  test=7.30±4.44  gap=2.20
+[checkpoint] Saved step 5,013,504 → checkpoints/coinrun/coinrun__impala__seed2__20260510_133118/step_5013504.pt  (latest.pt updated)
+  update   310/1525  step  5,079,040  SPS   1,212  pg=-0.0095  vf=0.3365  ent=2.2209  kl=0.0072
+  [phase ms/update]  rollout=556  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12718  total=13287
+  update   320/1525  step  5,242,880  SPS   1,213  pg=-0.0110  vf=0.3127  ent=2.2863  kl=0.0068
+  [phase ms/update]  rollout=551  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12714  total=13279
+  update   330/1525  step  5,406,720  SPS   1,213  pg=-0.0127  vf=0.4737  ent=2.1233  kl=0.0075
+  [phase ms/update]  rollout=556  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12728  total=13298
+
+[eval] step 5,505,024...
+  train=9.60±1.96  test=8.40±3.67  gap=1.20
+[checkpoint] Saved step 5,505,024 → checkpoints/coinrun/coinrun__impala__seed2__20260510_133118/step_5505024.pt  (latest.pt updated)
+  update   340/1525  step  5,570,560  SPS   1,213  pg=-0.0127  vf=0.3855  ent=2.2102  kl=0.0090
+  [phase ms/update]  rollout=553  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12730  total=13297
+  update   350/1525  step  5,734,400  SPS   1,214  pg=-0.0138  vf=0.5223  ent=2.1693  kl=0.0069
+  [phase ms/update]  rollout=556  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12725  total=13295
+  update   360/1525  step  5,898,240  SPS   1,214  pg=-0.0129  vf=0.5166  ent=2.1664  kl=0.0083
+  [phase ms/update]  rollout=561  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12717  total=13293
+
+[eval] step 6,012,928...
+  train=9.20±2.71  test=7.80±4.14  gap=1.40
+[checkpoint] Saved step 6,012,928 → checkpoints/coinrun/coinrun__impala__seed2__20260510_133118/step_6012928.pt  (latest.pt updated)
+  update   370/1525  step  6,062,080  SPS   1,214  pg=-0.0102  vf=0.3664  ent=2.1855  kl=0.0063
+  [phase ms/update]  rollout=558  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12714  total=13286
+  update   380/1525  step  6,225,920  SPS   1,215  pg=-0.0120  vf=0.2322  ent=2.1708  kl=0.0081
+  [phase ms/update]  rollout=556  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12715  total=13285
+  update   390/1525  step  6,389,760  SPS   1,215  pg=-0.0113  vf=0.4909  ent=2.0706  kl=0.0077
+  [phase ms/update]  rollout=525  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12716  total=13255
+
+[eval] step 6,504,448...
+  train=9.00±3.00  test=7.80±4.14  gap=1.20
+[checkpoint] Saved step 6,504,448 → checkpoints/coinrun/coinrun__impala__seed2__20260510_133118/step_6504448.pt  (latest.pt updated)
+  update   400/1525  step  6,553,600  SPS   1,215  pg=-0.0099  vf=0.4876  ent=2.1606  kl=0.0066
+  [phase ms/update]  rollout=535  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12719  total=13268
+  update   410/1525  step  6,717,440  SPS   1,216  pg=-0.0090  vf=0.4982  ent=2.1083  kl=0.0069
+  [phase ms/update]  rollout=531  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12723  total=13268
+  update   420/1525  step  6,881,280  SPS   1,216  pg=-0.0137  vf=0.5464  ent=2.0051  kl=0.0080
+  [phase ms/update]  rollout=536  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12715  total=13265
+
+[eval] step 7,012,352...
+  train=9.40±2.37  test=7.90±4.07  gap=1.50
+[checkpoint] Saved step 7,012,352 → checkpoints/coinrun/coinrun__impala__seed2__20260510_133118/step_7012352.pt  (latest.pt updated)
+  update   430/1525  step  7,045,120  SPS   1,216  pg=-0.0115  vf=0.4014  ent=2.0422  kl=0.0064
+  [phase ms/update]  rollout=548  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12719  total=13280
+  update   440/1525  step  7,208,960  SPS   1,216  pg=-0.0121  vf=0.4936  ent=2.0131  kl=0.0101
+  [phase ms/update]  rollout=534  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12720  total=13267
+  update   450/1525  step  7,372,800  SPS   1,217  pg=-0.0120  vf=0.4038  ent=2.0283  kl=0.0070
+  [phase ms/update]  rollout=527  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12717  total=13257
+
+[eval] step 7,503,872...
+  train=9.20±2.71  test=7.90±4.07  gap=1.30
+[checkpoint] Saved step 7,503,872 → checkpoints/coinrun/coinrun__impala__seed2__20260510_133118/step_7503872.pt  (latest.pt updated)
+  update   460/1525  step  7,536,640  SPS   1,217  pg=-0.0111  vf=0.4737  ent=2.1124  kl=0.0060
+  [phase ms/update]  rollout=538  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12718  total=13270
+  update   470/1525  step  7,700,480  SPS   1,217  pg=-0.0137  vf=0.4597  ent=1.9939  kl=0.0084
+  [phase ms/update]  rollout=530  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12720  total=13264
+  update   480/1525  step  7,864,320  SPS   1,218  pg=-0.0122  vf=0.5129  ent=2.0796  kl=0.0068
+  [phase ms/update]  rollout=534  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12716  total=13264
+
+[eval] step 8,011,776...
+  train=9.30±2.55  test=8.30±3.76  gap=1.00
+[checkpoint] Saved step 8,011,776 → checkpoints/coinrun/coinrun__impala__seed2__20260510_133118/step_8011776.pt  (latest.pt updated)
+  update   490/1525  step  8,028,160  SPS   1,218  pg=-0.0151  vf=0.3870  ent=2.0388  kl=0.0084
+  [phase ms/update]  rollout=533  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12721  total=13268
+  update   500/1525  step  8,192,000  SPS   1,218  pg=-0.0095  vf=0.3079  ent=2.1374  kl=0.0077
+  [phase ms/update]  rollout=517  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12719  total=13250
+  update   510/1525  step  8,355,840  SPS   1,218  pg=-0.0109  vf=0.4589  ent=2.1632  kl=0.0055
+  [phase ms/update]  rollout=533  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12726  total=13273
+
+[eval] step 8,503,296...
+  train=9.40±2.37  test=8.00±4.00  gap=1.40
+[checkpoint] Saved step 8,503,296 → checkpoints/coinrun/coinrun__impala__seed2__20260510_133118/step_8503296.pt  (latest.pt updated)
+  update   520/1525  step  8,519,680  SPS   1,218  pg=-0.0114  vf=0.3499  ent=2.0674  kl=0.0073
+  [phase ms/update]  rollout=536  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12726  total=13275
+  update   530/1525  step  8,683,520  SPS   1,219  pg=-0.0124  vf=0.3982  ent=2.0279  kl=0.0076
+  [phase ms/update]  rollout=532  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12717  total=13263
+  update   540/1525  step  8,847,360  SPS   1,219  pg=-0.0098  vf=0.7217  ent=2.0593  kl=0.0053
+  [phase ms/update]  rollout=537  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12717  total=13269
+  update   550/1525  step  9,011,200  SPS   1,219  pg=-0.0112  vf=0.4956  ent=2.0585  kl=0.0067
+  [phase ms/update]  rollout=547  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12721  total=13282
+
+[eval] step 9,011,200...
+  train=9.60±1.96  test=8.50±3.57  gap=1.10
+[checkpoint] Saved step 9,011,200 → checkpoints/coinrun/coinrun__impala__seed2__20260510_133118/step_9011200.pt  (latest.pt updated)
+  update   560/1525  step  9,175,040  SPS   1,219  pg=-0.0144  vf=0.4580  ent=2.0896  kl=0.0103
+  [phase ms/update]  rollout=539  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12713  total=13266
+  update   570/1525  step  9,338,880  SPS   1,219  pg=-0.0118  vf=0.6396  ent=2.0870  kl=0.0065
+  [phase ms/update]  rollout=539  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12715  total=13268
+  update   580/1525  step  9,502,720  SPS   1,220  pg=-0.0108  vf=0.6253  ent=2.0571  kl=0.0077
+  [phase ms/update]  rollout=524  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12715  total=13253
+
+[eval] step 9,502,720...
+  train=9.40±2.37  test=8.50±3.57  gap=0.90
+[checkpoint] Saved step 9,502,720 → checkpoints/coinrun/coinrun__impala__seed2__20260510_133118/step_9502720.pt  (latest.pt updated)
+  update   590/1525  step  9,666,560  SPS   1,220  pg=-0.0117  vf=0.7718  ent=2.0541  kl=0.0071
+  [phase ms/update]  rollout=532  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12712  total=13258
+  update   600/1525  step  9,830,400  SPS   1,220  pg=-0.0097  vf=0.3758  ent=2.1257  kl=0.0049
+  [phase ms/update]  rollout=534  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12717  total=13265
+  update   610/1525  step  9,994,240  SPS   1,220  pg=-0.0102  vf=0.3625  ent=2.1465  kl=0.0088
+  [phase ms/update]  rollout=541  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12729  total=13284
+
+[eval] step 10,010,624...
+  train=9.60±1.96  test=8.30±3.76  gap=1.30
+[checkpoint] Saved step 10,010,624 → checkpoints/coinrun/coinrun__impala__seed2__20260510_133118/step_10010624.pt  (latest.pt updated)
+  update   620/1525  step 10,158,080  SPS   1,220  pg=-0.0099  vf=0.1648  ent=2.1447  kl=0.0059
+  [phase ms/update]  rollout=541  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12724  total=13279
+  update   630/1525  step 10,321,920  SPS   1,220  pg=-0.0149  vf=0.2431  ent=2.1740  kl=0.0083
+  [phase ms/update]  rollout=549  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12724  total=13288
+  update   640/1525  step 10,485,760  SPS   1,220  pg=-0.0137  vf=0.4912  ent=2.1551  kl=0.0074
+  [phase ms/update]  rollout=567  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12728  total=13308
+
+[eval] step 10,502,144...
+  train=9.70±1.71  test=7.90±4.07  gap=1.80
+[checkpoint] Saved step 10,502,144 → checkpoints/coinrun/coinrun__impala__seed2__20260510_133118/step_10502144.pt  (latest.pt updated)
+  update   650/1525  step 10,649,600  SPS   1,220  pg=-0.0138  vf=0.3010  ent=2.1257  kl=0.0087
+  [phase ms/update]  rollout=555  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12732  total=13301
+  update   660/1525  step 10,813,440  SPS   1,221  pg=-0.0098  vf=0.4677  ent=2.1223  kl=0.0062
+  [phase ms/update]  rollout=561  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12723  total=13298
+  update   670/1525  step 10,977,280  SPS   1,221  pg=-0.0087  vf=0.3869  ent=2.0868  kl=0.0067
+  [phase ms/update]  rollout=542  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12722  total=13278
+
+[eval] step 11,010,048...
+  train=9.60±1.96  test=8.40±3.67  gap=1.20
+[checkpoint] Saved step 11,010,048 → checkpoints/coinrun/coinrun__impala__seed2__20260510_133118/step_11010048.pt  (latest.pt updated)
+  update   680/1525  step 11,141,120  SPS   1,221  pg=-0.0126  vf=0.6568  ent=2.0327  kl=0.0060
+  [phase ms/update]  rollout=554  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12722  total=13290
+  update   690/1525  step 11,304,960  SPS   1,221  pg=-0.0095  vf=0.2300  ent=2.0667  kl=0.0078
+  [phase ms/update]  rollout=529  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12723  total=13266
+  update   700/1525  step 11,468,800  SPS   1,221  pg=-0.0140  vf=0.4604  ent=2.1265  kl=0.0083
+  [phase ms/update]  rollout=551  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12729  total=13294
+
+[eval] step 11,501,568...
+  train=9.50±2.18  test=8.20±3.84  gap=1.30
+[checkpoint] Saved step 11,501,568 → checkpoints/coinrun/coinrun__impala__seed2__20260510_133118/step_11501568.pt  (latest.pt updated)
+  update   710/1525  step 11,632,640  SPS   1,221  pg=-0.0117  vf=0.3779  ent=2.1583  kl=0.0068
+  [phase ms/update]  rollout=547  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12726  total=13288
+  update   720/1525  step 11,796,480  SPS   1,221  pg=-0.0116  vf=0.3410  ent=2.2033  kl=0.0089
+  [phase ms/update]  rollout=531  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12717  total=13262
+  update   730/1525  step 11,960,320  SPS   1,221  pg=-0.0129  vf=0.5048  ent=2.1917  kl=0.0080
+  [phase ms/update]  rollout=531  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12722  total=13267
+
+[eval] step 12,009,472...
+  train=9.70±1.71  test=8.60±3.47  gap=1.10
+[checkpoint] Saved step 12,009,472 → checkpoints/coinrun/coinrun__impala__seed2__20260510_133118/step_12009472.pt  (latest.pt updated)
+  update   740/1525  step 12,124,160  SPS   1,221  pg=-0.0132  vf=0.2672  ent=2.1056  kl=0.0073
+  [phase ms/update]  rollout=537  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12722  total=13273
+  update   750/1525  step 12,288,000  SPS   1,221  pg=-0.0098  vf=0.4339  ent=2.1228  kl=0.0090
+  [phase ms/update]  rollout=535  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12726  total=13275
+  update   760/1525  step 12,451,840  SPS   1,222  pg=-0.0114  vf=0.3898  ent=2.0683  kl=0.0075
+  [phase ms/update]  rollout=529  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12727  total=13269
+
+[eval] step 12,500,992...
+  train=9.40±2.37  test=8.10±3.92  gap=1.30
+[checkpoint] Saved step 12,500,992 → checkpoints/coinrun/coinrun__impala__seed2__20260510_133118/step_12500992.pt  (latest.pt updated)
+  update   770/1525  step 12,615,680  SPS   1,222  pg=-0.0126  vf=0.2775  ent=2.0455  kl=0.0084
+  [phase ms/update]  rollout=527  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12728  total=13269
+  update   780/1525  step 12,779,520  SPS   1,222  pg=-0.0117  vf=0.2258  ent=2.1090  kl=0.0059
+  [phase ms/update]  rollout=539  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12727  total=13281
+  update   790/1525  step 12,943,360  SPS   1,222  pg=-0.0083  vf=0.4378  ent=2.1242  kl=0.0049
+  [phase ms/update]  rollout=533  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12722  total=13269
+
+[eval] step 13,008,896...
+  train=9.60±1.96  test=8.50±3.57  gap=1.10
+[checkpoint] Saved step 13,008,896 → checkpoints/coinrun/coinrun__impala__seed2__20260510_133118/step_13008896.pt  (latest.pt updated)
+  update   800/1525  step 13,107,200  SPS   1,222  pg=-0.0120  vf=0.3853  ent=2.1655  kl=0.0073
+  [phase ms/update]  rollout=552  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12719  total=13286
+  update   810/1525  step 13,271,040  SPS   1,222  pg=-0.0114  vf=0.5525  ent=2.0637  kl=0.0067
+  [phase ms/update]  rollout=541  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12720  total=13275
+  update   820/1525  step 13,434,880  SPS   1,222  pg=-0.0126  vf=0.2832  ent=2.1222  kl=0.0093
+  [phase ms/update]  rollout=544  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12717  total=13275
+
+[eval] step 13,500,416...
+  train=9.40±2.37  test=8.30±3.76  gap=1.10
+[checkpoint] Saved step 13,500,416 → checkpoints/coinrun/coinrun__impala__seed2__20260510_133118/step_13500416.pt  (latest.pt updated)
+  update   830/1525  step 13,598,720  SPS   1,222  pg=-0.0112  vf=0.2887  ent=2.0740  kl=0.0063
+  [phase ms/update]  rollout=556  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12718  total=13287
+  update   840/1525  step 13,762,560  SPS   1,222  pg=-0.0090  vf=0.3439  ent=2.1018  kl=0.0068
+  [phase ms/update]  rollout=537  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12718  total=13270
+  update   850/1525  step 13,926,400  SPS   1,222  pg=-0.0117  vf=0.1940  ent=2.1641  kl=0.0086
+  [phase ms/update]  rollout=546  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12720  total=13280
+
+[eval] step 14,008,320...
+  train=9.80±1.40  test=8.30±3.76  gap=1.50
+[checkpoint] Saved step 14,008,320 → checkpoints/coinrun/coinrun__impala__seed2__20260510_133118/step_14008320.pt  (latest.pt updated)
+  update   860/1525  step 14,090,240  SPS   1,222  pg=-0.0139  vf=0.3763  ent=2.1420  kl=0.0080
+  [phase ms/update]  rollout=537  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12724  total=13274
+  update   870/1525  step 14,254,080  SPS   1,222  pg=-0.0115  vf=0.3137  ent=2.1164  kl=0.0070
+  [phase ms/update]  rollout=542  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12717  total=13274
+  update   880/1525  step 14,417,920  SPS   1,223  pg=-0.0108  vf=0.4583  ent=2.1670  kl=0.0066
+  [phase ms/update]  rollout=521  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12721  total=13256
+
+[eval] step 14,516,224...
+  train=9.70±1.71  test=8.50±3.57  gap=1.20
+[checkpoint] Saved step 14,516,224 → checkpoints/coinrun/coinrun__impala__seed2__20260510_133118/step_14516224.pt  (latest.pt updated)
+  update   890/1525  step 14,581,760  SPS   1,222  pg=-0.0142  vf=0.3145  ent=2.1737  kl=0.0081
+  [phase ms/update]  rollout=536  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12730  total=13280
+  update   900/1525  step 14,745,600  SPS   1,223  pg=-0.0103  vf=0.3551  ent=2.0703  kl=0.0063
+  [phase ms/update]  rollout=548  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12725  total=13287
+  update   910/1525  step 14,909,440  SPS   1,223  pg=-0.0122  vf=0.4324  ent=2.1721  kl=0.0079
+  [phase ms/update]  rollout=536  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12717  total=13267
+
+[eval] step 15,007,744...
+  train=9.50±2.18  test=8.30±3.76  gap=1.20
+[checkpoint] Saved step 15,007,744 → checkpoints/coinrun/coinrun__impala__seed2__20260510_133118/step_15007744.pt  (latest.pt updated)
+  update   920/1525  step 15,073,280  SPS   1,223  pg=-0.0132  vf=0.3273  ent=2.1262  kl=0.0069
+  [phase ms/update]  rollout=534  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12729  total=13277
+  update   930/1525  step 15,237,120  SPS   1,223  pg=-0.0107  vf=0.2533  ent=2.0722  kl=0.0051
+  [phase ms/update]  rollout=538  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12733  total=13285
+  update   940/1525  step 15,400,960  SPS   1,223  pg=-0.0123  vf=0.2664  ent=2.0586  kl=0.0076
+  [phase ms/update]  rollout=544  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12726  total=13284
+
+[eval] step 15,515,648...
+  train=9.50±2.18  test=8.40±3.67  gap=1.10
+[checkpoint] Saved step 15,515,648 → checkpoints/coinrun/coinrun__impala__seed2__20260510_133118/step_15515648.pt  (latest.pt updated)
+  update   950/1525  step 15,564,800  SPS   1,223  pg=-0.0099  vf=0.4741  ent=2.2083  kl=0.0074
+  [phase ms/update]  rollout=531  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12727  total=13272
+  update   960/1525  step 15,728,640  SPS   1,223  pg=-0.0112  vf=0.2516  ent=2.1139  kl=0.0092
+  [phase ms/update]  rollout=533  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12732  total=13279
+  update   970/1525  step 15,892,480  SPS   1,223  pg=-0.0118  vf=0.3450  ent=2.1758  kl=0.0074
+  [phase ms/update]  rollout=542  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12719  total=13275
+
+[eval] step 16,007,168...
+  train=9.70±1.71  test=8.60±3.47  gap=1.10
+[checkpoint] Saved step 16,007,168 → checkpoints/coinrun/coinrun__impala__seed2__20260510_133118/step_16007168.pt  (latest.pt updated)
+  update   980/1525  step 16,056,320  SPS   1,223  pg=-0.0105  vf=0.3240  ent=2.1829  kl=0.0061
+  [phase ms/update]  rollout=540  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12727  total=13280
+  update   990/1525  step 16,220,160  SPS   1,223  pg=-0.0106  vf=0.3407  ent=2.1744  kl=0.0060
+  [phase ms/update]  rollout=543  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12721  total=13279
+  update  1000/1525  step 16,384,000  SPS   1,223  pg=-0.0118  vf=0.4656  ent=2.1388  kl=0.0054
+  [phase ms/update]  rollout=554  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12724  total=13291
+
+[eval] step 16,515,072...
+  train=9.30±2.55  test=8.20±3.84  gap=1.10
+[checkpoint] Saved step 16,515,072 → checkpoints/coinrun/coinrun__impala__seed2__20260510_133118/step_16515072.pt  (latest.pt updated)
+  update  1010/1525  step 16,547,840  SPS   1,223  pg=-0.0106  vf=0.2639  ent=2.1851  kl=0.0068
+  [phase ms/update]  rollout=536  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12724  total=13275
+  update  1020/1525  step 16,711,680  SPS   1,223  pg=-0.0123  vf=0.4316  ent=2.0664  kl=0.0068
+  [phase ms/update]  rollout=532  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12721  total=13267
+  update  1030/1525  step 16,875,520  SPS   1,223  pg=-0.0115  vf=0.3249  ent=2.0756  kl=0.0071
+  [phase ms/update]  rollout=536  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12720  total=13270
+
+[eval] step 17,006,592...
+  train=9.60±1.96  test=8.50±3.57  gap=1.10
+[checkpoint] Saved step 17,006,592 → checkpoints/coinrun/coinrun__impala__seed2__20260510_133118/step_17006592.pt  (latest.pt updated)
+  update  1040/1525  step 17,039,360  SPS   1,223  pg=-0.0098  vf=0.2974  ent=2.1256  kl=0.0064
+  [phase ms/update]  rollout=518  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12721  total=13253
+  update  1050/1525  step 17,203,200  SPS   1,223  pg=-0.0119  vf=0.2841  ent=2.0646  kl=0.0062
+  [phase ms/update]  rollout=549  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12717  total=13280
+  update  1060/1525  step 17,367,040  SPS   1,223  pg=-0.0109  vf=0.2980  ent=2.0094  kl=0.0076
+  [phase ms/update]  rollout=555  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12717  total=13286
+
+[eval] step 17,514,496...
+  train=9.40±2.37  test=8.70±3.36  gap=0.70
+[checkpoint] Saved step 17,514,496 → checkpoints/coinrun/coinrun__impala__seed2__20260510_133118/step_17514496.pt  (latest.pt updated)
+  update  1070/1525  step 17,530,880  SPS   1,223  pg=-0.0119  vf=0.4348  ent=2.0224  kl=0.0070
+  [phase ms/update]  rollout=534  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12714  total=13262
+  update  1080/1525  step 17,694,720  SPS   1,224  pg=-0.0133  vf=0.2615  ent=2.0641  kl=0.0090
+  [phase ms/update]  rollout=540  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12717  total=13271
+  update  1090/1525  step 17,858,560  SPS   1,224  pg=-0.0114  vf=0.3679  ent=2.0793  kl=0.0081
+  [phase ms/update]  rollout=554  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12728  total=13297
+
+[eval] step 18,006,016...
+  train=9.50±2.18  test=8.60±3.47  gap=0.90
+[checkpoint] Saved step 18,006,016 → checkpoints/coinrun/coinrun__impala__seed2__20260510_133118/step_18006016.pt  (latest.pt updated)
+  update  1100/1525  step 18,022,400  SPS   1,224  pg=-0.0111  vf=0.2148  ent=2.0813  kl=0.0080
+  [phase ms/update]  rollout=533  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12734  total=13282
+  update  1110/1525  step 18,186,240  SPS   1,224  pg=-0.0120  vf=0.3015  ent=2.0616  kl=0.0072
+  [phase ms/update]  rollout=526  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12730  total=13269
+  update  1120/1525  step 18,350,080  SPS   1,224  pg=-0.0082  vf=0.3332  ent=2.0819  kl=0.0051
+  [phase ms/update]  rollout=562  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12721  total=13297
+  update  1130/1525  step 18,513,920  SPS   1,224  pg=-0.0105  vf=0.3688  ent=2.1652  kl=0.0062
+  [phase ms/update]  rollout=541  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12718  total=13273
+
+[eval] step 18,513,920...
+  train=9.60±1.96  test=8.80±3.25  gap=0.80
+[checkpoint] Saved step 18,513,920 → checkpoints/coinrun/coinrun__impala__seed2__20260510_133118/step_18513920.pt  (latest.pt updated)
+  update  1140/1525  step 18,677,760  SPS   1,224  pg=-0.0137  vf=0.2394  ent=2.0642  kl=0.0073
+  [phase ms/update]  rollout=540  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12721  total=13276
+  update  1150/1525  step 18,841,600  SPS   1,224  pg=-0.0121  vf=0.2637  ent=2.0696  kl=0.0072
+  [phase ms/update]  rollout=533  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12728  total=13275
+  update  1160/1525  step 19,005,440  SPS   1,224  pg=-0.0122  vf=0.3899  ent=2.0668  kl=0.0073
+  [phase ms/update]  rollout=543  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12732  total=13289
+
+[eval] step 19,005,440...
+  train=9.30±2.55  test=8.60±3.47  gap=0.70
+[checkpoint] Saved step 19,005,440 → checkpoints/coinrun/coinrun__impala__seed2__20260510_133118/step_19005440.pt  (latest.pt updated)
+  update  1170/1525  step 19,169,280  SPS   1,224  pg=-0.0121  vf=0.3015  ent=2.0467  kl=0.0067
+  [phase ms/update]  rollout=532  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12734  total=13279
+  update  1180/1525  step 19,333,120  SPS   1,224  pg=-0.0133  vf=0.2571  ent=2.0796  kl=0.0070
+  [phase ms/update]  rollout=561  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12715  total=13290
+  update  1190/1525  step 19,496,960  SPS   1,224  pg=-0.0093  vf=0.2381  ent=2.1117  kl=0.0060
+  [phase ms/update]  rollout=538  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12715  total=13268
+
+[eval] step 19,513,344...
+  train=9.90±0.99  test=8.30±3.76  gap=1.60
+[checkpoint] Saved step 19,513,344 → checkpoints/coinrun/coinrun__impala__seed2__20260510_133118/step_19513344.pt  (latest.pt updated)
+  update  1200/1525  step 19,660,800  SPS   1,224  pg=-0.0143  vf=0.3608  ent=2.0602  kl=0.0097
+  [phase ms/update]  rollout=538  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12721  total=13273
+  update  1210/1525  step 19,824,640  SPS   1,224  pg=-0.0113  vf=0.2651  ent=2.0477  kl=0.0079
+  [phase ms/update]  rollout=525  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12734  total=13273
+  update  1220/1525  step 19,988,480  SPS   1,224  pg=-0.0118  vf=0.4026  ent=2.1075  kl=0.0077
+  [phase ms/update]  rollout=536  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12732  total=13282
+
+[eval] step 20,004,864...
+  train=9.80±1.40  test=8.60±3.47  gap=1.20
+[checkpoint] Saved step 20,004,864 → checkpoints/coinrun/coinrun__impala__seed2__20260510_133118/step_20004864.pt  (latest.pt updated)
+  update  1230/1525  step 20,152,320  SPS   1,224  pg=-0.0111  vf=0.2698  ent=2.0227  kl=0.0084
+  [phase ms/update]  rollout=559  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12725  total=13298
+  update  1240/1525  step 20,316,160  SPS   1,224  pg=-0.0112  vf=0.1445  ent=2.0290  kl=0.0084
+  [phase ms/update]  rollout=537  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12712  total=13263
+  update  1250/1525  step 20,480,000  SPS   1,224  pg=-0.0132  vf=0.2451  ent=2.0733  kl=0.0084
+  [phase ms/update]  rollout=537  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12713  total=13264
+
+[eval] step 20,512,768...
+  train=9.60±1.96  test=8.40±3.67  gap=1.20
+[checkpoint] Saved step 20,512,768 → checkpoints/coinrun/coinrun__impala__seed2__20260510_133118/step_20512768.pt  (latest.pt updated)
+  update  1260/1525  step 20,643,840  SPS   1,224  pg=-0.0120  vf=0.1955  ent=2.0323  kl=0.0095
+  [phase ms/update]  rollout=531  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12714  total=13259
+  update  1270/1525  step 20,807,680  SPS   1,224  pg=-0.0126  vf=0.3784  ent=2.0633  kl=0.0076
+  [phase ms/update]  rollout=535  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12720  total=13269
+  update  1280/1525  step 20,971,520  SPS   1,224  pg=-0.0113  vf=0.0854  ent=1.9991  kl=0.0089
+  [phase ms/update]  rollout=536  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12719  total=13270
+
+[eval] step 21,004,288...
+  train=9.80±1.40  test=8.50±3.57  gap=1.30
+[checkpoint] Saved step 21,004,288 → checkpoints/coinrun/coinrun__impala__seed2__20260510_133118/step_21004288.pt  (latest.pt updated)
+  update  1290/1525  step 21,135,360  SPS   1,224  pg=-0.0104  vf=0.3620  ent=2.0186  kl=0.0060
+  [phase ms/update]  rollout=533  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12718  total=13265
+  update  1300/1525  step 21,299,200  SPS   1,224  pg=-0.0090  vf=0.2470  ent=2.1186  kl=0.0075
+  [phase ms/update]  rollout=532  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12718  total=13264
+  update  1310/1525  step 21,463,040  SPS   1,224  pg=-0.0119  vf=0.2460  ent=2.0666  kl=0.0071
+  [phase ms/update]  rollout=537  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12730  total=13281
+
+[eval] step 21,512,192...
+  train=9.70±1.71  test=8.40±3.67  gap=1.30
+[checkpoint] Saved step 21,512,192 → checkpoints/coinrun/coinrun__impala__seed2__20260510_133118/step_21512192.pt  (latest.pt updated)
+  update  1320/1525  step 21,626,880  SPS   1,224  pg=-0.0094  vf=0.4130  ent=2.0469  kl=0.0067
+  [phase ms/update]  rollout=549  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12728  total=13291
+  update  1330/1525  step 21,790,720  SPS   1,225  pg=-0.0113  vf=0.4384  ent=2.0831  kl=0.0074
+  [phase ms/update]  rollout=539  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12731  total=13283
+  update  1340/1525  step 21,954,560  SPS   1,225  pg=-0.0105  vf=0.2815  ent=2.0878  kl=0.0091
+  [phase ms/update]  rollout=540  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12718  total=13272
+
+[eval] step 22,003,712...
+  train=9.50±2.18  test=8.80±3.25  gap=0.70
+[checkpoint] Saved step 22,003,712 → checkpoints/coinrun/coinrun__impala__seed2__20260510_133118/step_22003712.pt  (latest.pt updated)
+  update  1350/1525  step 22,118,400  SPS   1,225  pg=-0.0093  vf=0.2499  ent=2.0487  kl=0.0069
+  [phase ms/update]  rollout=545  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12727  total=13285
+  update  1360/1525  step 22,282,240  SPS   1,225  pg=-0.0114  vf=0.2249  ent=2.0985  kl=0.0072
+  [phase ms/update]  rollout=528  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12721  total=13263
+  update  1370/1525  step 22,446,080  SPS   1,225  pg=-0.0112  vf=0.2107  ent=2.0801  kl=0.0096
+  [phase ms/update]  rollout=542  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12723  total=13279
+
+[eval] step 22,511,616...
+  train=9.70±1.71  test=8.70±3.36  gap=1.00
+[checkpoint] Saved step 22,511,616 → checkpoints/coinrun/coinrun__impala__seed2__20260510_133118/step_22511616.pt  (latest.pt updated)
+  update  1380/1525  step 22,609,920  SPS   1,225  pg=-0.0106  vf=0.2095  ent=2.0676  kl=0.0101
+  [phase ms/update]  rollout=525  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12733  total=13272
+  update  1390/1525  step 22,773,760  SPS   1,225  pg=-0.0114  vf=0.4246  ent=2.0440  kl=0.0073
+  [phase ms/update]  rollout=539  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12723  total=13276
+  update  1400/1525  step 22,937,600  SPS   1,225  pg=-0.0135  vf=0.0890  ent=2.0712  kl=0.0092
+  [phase ms/update]  rollout=539  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12720  total=13273
+
+[eval] step 23,003,136...
+  train=9.80±1.40  test=9.00±3.00  gap=0.80
+[checkpoint] Saved step 23,003,136 → checkpoints/coinrun/coinrun__impala__seed2__20260510_133118/step_23003136.pt  (latest.pt updated)
+  update  1410/1525  step 23,101,440  SPS   1,225  pg=-0.0122  vf=0.3069  ent=2.0818  kl=0.0065
+  [phase ms/update]  rollout=550  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12719  total=13283
+  update  1420/1525  step 23,265,280  SPS   1,225  pg=-0.0098  vf=0.3582  ent=2.0849  kl=0.0063
+  [phase ms/update]  rollout=556  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12722  total=13292
+  update  1430/1525  step 23,429,120  SPS   1,225  pg=-0.0110  vf=0.3623  ent=2.0302  kl=0.0065
+  [phase ms/update]  rollout=575  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12720  total=13310
+
+[eval] step 23,511,040...
+  train=9.80±1.40  test=8.60±3.47  gap=1.20
+[checkpoint] Saved step 23,511,040 → checkpoints/coinrun/coinrun__impala__seed2__20260510_133118/step_23511040.pt  (latest.pt updated)
+  update  1440/1525  step 23,592,960  SPS   1,225  pg=-0.0123  vf=0.2035  ent=2.0369  kl=0.0065
+  [phase ms/update]  rollout=547  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12729  total=13290
+  update  1450/1525  step 23,756,800  SPS   1,225  pg=-0.0106  vf=0.3671  ent=2.0613  kl=0.0077
+  [phase ms/update]  rollout=525  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12731  total=13270
+  update  1460/1525  step 23,920,640  SPS   1,225  pg=-0.0149  vf=0.2503  ent=2.0344  kl=0.0081
+  [phase ms/update]  rollout=521  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12734  total=13268
+
+[eval] step 24,002,560...
+  train=9.50±2.18  test=8.80±3.25  gap=0.70
+[checkpoint] Saved step 24,002,560 → checkpoints/coinrun/coinrun__impala__seed2__20260510_133118/step_24002560.pt  (latest.pt updated)
+  update  1470/1525  step 24,084,480  SPS   1,225  pg=-0.0101  vf=0.2339  ent=2.0527  kl=0.0075
+  [phase ms/update]  rollout=538  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12722  total=13273
+  update  1480/1525  step 24,248,320  SPS   1,225  pg=-0.0097  vf=0.2029  ent=2.0408  kl=0.0060
+  [phase ms/update]  rollout=548  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12727  total=13289
+  update  1490/1525  step 24,412,160  SPS   1,225  pg=-0.0108  vf=0.2344  ent=2.0399  kl=0.0063
+  [phase ms/update]  rollout=529  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12721  total=13263
+
+[eval] step 24,510,464...
+  train=9.80±1.40  test=8.50±3.57  gap=1.30
+[checkpoint] Saved step 24,510,464 → checkpoints/coinrun/coinrun__impala__seed2__20260510_133118/step_24510464.pt  (latest.pt updated)
+  update  1500/1525  step 24,576,000  SPS   1,225  pg=-0.0127  vf=0.1605  ent=2.0350  kl=0.0083
+  [phase ms/update]  rollout=538  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12718  total=13270
+  update  1510/1525  step 24,739,840  SPS   1,225  pg=-0.0110  vf=0.4319  ent=2.0690  kl=0.0066
+  [phase ms/update]  rollout=531  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12722  total=13267
+  update  1520/1525  step 24,903,680  SPS   1,225  pg=-0.0093  vf=0.5403  ent=2.0796  kl=0.0068
+  [phase ms/update]  rollout=535  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12731  total=13281
+[checkpoint] Saved step 24,985,600 → checkpoints/coinrun/coinrun__impala__seed2__20260510_133118/step_24985600_final.pt  (latest.pt updated)
+
+[done] Training complete.
+
+[final eval]
+
+=================================================================
+  coinrun | none+uniform | seed=2
+  train=9.60  test=8.10  gap=1.50
+  expected=[8.5,9.5]  outside range
+=================================================================
+
+wandb: updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:                            charts/SPS ▁▇▇▇████████████████████████████████████
+wandb:     charts/episodic_return_normalised █▂▁▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃
+wandb: charts/episodic_return_normalised_std █▃▂▂▁▂▃▂▂▂▂▂▂▂▂▂▂▂▂▂▁▂▂▂▂▂▁▂▁▂▁▁▁▁▁▁▁▁▁▁
+wandb:                  charts/learning_rate ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:               eval/generalization_gap ▄▁▂▂▅▄▆▃█▅▅▆▅▄▅▃▅▇▅▅▅▄▄▆▅▄▄▄▄▃▃▆▅▅▅▃▄▃▅▅
+wandb:                      eval/test_return ▂▆▆▇▁▆▆▆▄▇▆▆▆▇▆▇▇▆▇▆▆▇▇▇▇▇█▆▇███▇█▇▇███▇
+wandb:                  eval/test_return_std █▅▄▄█▄▄▄▆▃▅▅▅▄▅▃▄▅▃▄▄▃▄▄▃▃▄▃▂▃▃▄▃▃▃▂▂▁▃▃
+wandb:                     eval/train_return ▂▃▄▅▁▆▇▆▇▇▆▇▆▆▇▇▇▇▇▇▇▇▇█▇▇▇▆▇▇▆██▇█▇▇███
+wandb:                 eval/train_return_std █▇▆▅█▄▂▃▃▄▄▄▄▄▃▃▂▃▃▂▃▄▂▂▃▂▄▃▄▃▄▁▂▃▂▃▂▂▂▂
+wandb:                      losses/approx_kl ▁▁▄▆▆▅▄▄▆▄▅▅▄▆▆▃▆▇▃▅▅▃▄▇▇▅▅▅▅▃▆█▇▅▆▆▆▄▄▅
+wandb:                                    +6 ...
+wandb: 
+wandb: Run summary:
+wandb:                            charts/SPS 1225.08045
+wandb:     charts/episodic_return_normalised 10.613
+wandb: charts/episodic_return_normalised_std 2.51709
+wandb:                  charts/learning_rate 0.0005
+wandb:               eval/generalization_gap 1.3
+wandb:                      eval/test_return 8.5
+wandb:                  eval/test_return_std 3.57071
+wandb:                     eval/train_return 9.8
+wandb:                 eval/train_return_std 1.4
+wandb:                      losses/approx_kl 0.00721
+wandb:                                    +6 ...
+wandb: 
+wandb: 🚀 View run coinrun__impala__seed2__20260510_133118 at: https://wandb.ai/staanagnostou-/thesis-rl-baselines/runs/ntuibpxe
+wandb: ⭐️ View project at: https://wandb.ai/staanagnostou-/thesis-rl-baselines
+wandb: Synced 6 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260510_133118-ntuibpxe/logs

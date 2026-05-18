@@ -1,0 +1,569 @@
+[device] GPU detected:   (24.0 GB VRAM)
+[device] Backend: NVIDIA CUDA
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from WANDB_API_KEY.
+wandb: Currently logged in as: stayrosanang (staanagnostou-) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: setting up run zahe7rg9
+wandb: Tracking run with wandb version 0.26.1
+wandb: Run data is saved locally in /workspace/wandb/run-20260511_233811-zahe7rg9
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run miner__impala__seed2__20260511_233811
+wandb: ⭐️ View project at https://wandb.ai/staanagnostou-/thesis-rl-baselines
+wandb: 🚀 View run at https://wandb.ai/staanagnostou-/thesis-rl-baselines/runs/zahe7rg9
+[wandb] Run ID: zahe7rg9  tags=['none', 'miner', 'seed_2', 'impala']
+[env] miner  64 envs  200 levels  mode=easy  backend=auto
+[env] obs_space=(64, 64, 3)  num_actions=15
+[model] torch.compile applied (mode=reduce-overhead)
+[model] IMPALA-CNN  params=626,256
+
+=================================================================
+  Starting PPO  |  env=miner  aug=none  lvl=uniform
+  total_steps=25,000,000  updates=1,525  device=cuda
+=================================================================
+
+  update     1/1525  step     16,384  SPS     308  pg=-0.0002  vf=0.0767  ent=2.7080  kl=0.0000
+  [phase ms/update]  rollout=1641  bulk_xfer=0.1  gae=6.2  ppo_xfer=11  ppo_grad=51545  total=53203
+  update    10/1525  step    163,840  SPS     948  pg=-0.0008  vf=0.0858  ent=2.6159  kl=0.0021
+  [phase ms/update]  rollout=543  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12736  total=13294
+  update    20/1525  step    327,680  SPS   1,072  pg=-0.0029  vf=0.1666  ent=2.5662  kl=0.0050
+  [phase ms/update]  rollout=529  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12733  total=13276
+  update    30/1525  step    491,520  SPS   1,121  pg=-0.0048  vf=0.0907  ent=2.5673  kl=0.0057
+  [phase ms/update]  rollout=539  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12736  total=13289
+
+[eval] step 507,904...
+  train=1.95±3.19  test=1.88±2.65  gap=0.07
+[checkpoint] Saved step 507,904 → checkpoints/miner/miner__impala__seed2__20260511_233811/step_507904.pt  (latest.pt updated)
+  update    40/1525  step    655,360  SPS   1,126  pg=-0.0036  vf=0.0891  ent=2.6114  kl=0.0027
+  [phase ms/update]  rollout=537  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12734  total=13285
+  update    50/1525  step    819,200  SPS   1,146  pg=-0.0032  vf=0.0783  ent=2.6214  kl=0.0026
+  [phase ms/update]  rollout=529  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12734  total=13277
+  update    60/1525  step    983,040  SPS   1,160  pg=-0.0030  vf=0.3239  ent=2.6004  kl=0.0030
+  [phase ms/update]  rollout=531  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12728  total=13273
+
+[eval] step 1,015,808...
+  train=3.15±4.18  test=2.79±3.98  gap=0.36
+[checkpoint] Saved step 1,015,808 → checkpoints/miner/miner__impala__seed2__20260511_233811/step_1015808.pt  (latest.pt updated)
+  update    70/1525  step  1,146,880  SPS   1,157  pg=-0.0084  vf=0.0304  ent=2.5576  kl=0.0065
+  [phase ms/update]  rollout=527  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12730  total=13270
+  update    80/1525  step  1,310,720  SPS   1,166  pg=-0.0043  vf=0.0653  ent=2.5391  kl=0.0042
+  [phase ms/update]  rollout=543  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12737  total=13295
+  update    90/1525  step  1,474,560  SPS   1,173  pg=-0.0035  vf=0.3406  ent=2.5883  kl=0.0037
+  [phase ms/update]  rollout=533  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12728  total=13275
+
+[eval] step 1,507,328...
+  train=2.02±2.71  test=2.52±3.61  gap=-0.50
+[checkpoint] Saved step 1,507,328 → checkpoints/miner/miner__impala__seed2__20260511_233811/step_1507328.pt  (latest.pt updated)
+  update   100/1525  step  1,638,400  SPS   1,170  pg=-0.0050  vf=0.1923  ent=2.5764  kl=0.0050
+  [phase ms/update]  rollout=538  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12727  total=13279
+  update   110/1525  step  1,802,240  SPS   1,176  pg=-0.0045  vf=0.3133  ent=2.5365  kl=0.0045
+  [phase ms/update]  rollout=543  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12728  total=13286
+  update   120/1525  step  1,966,080  SPS   1,180  pg=-0.0043  vf=0.2050  ent=2.5624  kl=0.0040
+  [phase ms/update]  rollout=539  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12725  total=13278
+
+[eval] step 2,015,232...
+  train=2.83±3.79  test=2.67±3.70  gap=0.16
+[checkpoint] Saved step 2,015,232 → checkpoints/miner/miner__impala__seed2__20260511_233811/step_2015232.pt  (latest.pt updated)
+  update   130/1525  step  2,129,920  SPS   1,177  pg=-0.0049  vf=0.2585  ent=2.6103  kl=0.0044
+  [phase ms/update]  rollout=535  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12723  total=13272
+  update   140/1525  step  2,293,760  SPS   1,180  pg=-0.0040  vf=0.0613  ent=2.5984  kl=0.0033
+  [phase ms/update]  rollout=542  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12729  total=13285
+  update   150/1525  step  2,457,600  SPS   1,184  pg=-0.0052  vf=0.0652  ent=2.5894  kl=0.0046
+  [phase ms/update]  rollout=542  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12734  total=13290
+
+[eval] step 2,506,752...
+  train=2.91±3.95  test=2.43±3.48  gap=0.48
+[checkpoint] Saved step 2,506,752 → checkpoints/miner/miner__impala__seed2__20260511_233811/step_2506752.pt  (latest.pt updated)
+  update   160/1525  step  2,621,440  SPS   1,180  pg=-0.0062  vf=0.1280  ent=2.5698  kl=0.0051
+  [phase ms/update]  rollout=539  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12723  total=13275
+  update   170/1525  step  2,785,280  SPS   1,183  pg=-0.0036  vf=0.1728  ent=2.5890  kl=0.0038
+  [phase ms/update]  rollout=536  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12722  total=13272
+  update   180/1525  step  2,949,120  SPS   1,186  pg=-0.0076  vf=0.0725  ent=2.5489  kl=0.0048
+  [phase ms/update]  rollout=531  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12723  total=13268
+
+[eval] step 3,014,656...
+  train=3.72±4.54  test=3.18±4.40  gap=0.54
+[checkpoint] Saved step 3,014,656 → checkpoints/miner/miner__impala__seed2__20260511_233811/step_3014656.pt  (latest.pt updated)
+  update   190/1525  step  3,112,960  SPS   1,184  pg=-0.0063  vf=0.1878  ent=2.5638  kl=0.0050
+  [phase ms/update]  rollout=541  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12723  total=13278
+  update   200/1525  step  3,276,800  SPS   1,186  pg=-0.0064  vf=0.2487  ent=2.5824  kl=0.0044
+  [phase ms/update]  rollout=539  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12723  total=13277
+  update   210/1525  step  3,440,640  SPS   1,189  pg=-0.0074  vf=0.2105  ent=2.5262  kl=0.0061
+  [phase ms/update]  rollout=530  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12720  total=13265
+
+[eval] step 3,506,176...
+  train=4.61±5.10  test=4.41±5.04  gap=0.20
+[checkpoint] Saved step 3,506,176 → checkpoints/miner/miner__impala__seed2__20260511_233811/step_3506176.pt  (latest.pt updated)
+  update   220/1525  step  3,604,480  SPS   1,187  pg=-0.0072  vf=0.1591  ent=2.5435  kl=0.0046
+  [phase ms/update]  rollout=536  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12721  total=13271
+  update   230/1525  step  3,768,320  SPS   1,189  pg=-0.0065  vf=0.3595  ent=2.5205  kl=0.0048
+  [phase ms/update]  rollout=541  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12722  total=13277
+  update   240/1525  step  3,932,160  SPS   1,191  pg=-0.0078  vf=0.3334  ent=2.5342  kl=0.0076
+  [phase ms/update]  rollout=535  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12723  total=13271
+
+[eval] step 4,014,080...
+  train=5.29±5.43  test=4.70±4.94  gap=0.59
+[checkpoint] Saved step 4,014,080 → checkpoints/miner/miner__impala__seed2__20260511_233811/step_4014080.pt  (latest.pt updated)
+  update   250/1525  step  4,096,000  SPS   1,189  pg=-0.0075  vf=0.3652  ent=2.4579  kl=0.0057
+  [phase ms/update]  rollout=530  bulk_xfer=0.1  gae=5.8  ppo_xfer=8  ppo_grad=12730  total=13273
+  update   260/1525  step  4,259,840  SPS   1,191  pg=-0.0086  vf=0.5614  ent=2.4675  kl=0.0060
+  [phase ms/update]  rollout=541  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12724  total=13279
+  update   270/1525  step  4,423,680  SPS   1,193  pg=-0.0078  vf=0.3021  ent=2.3540  kl=0.0081
+  [phase ms/update]  rollout=541  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12734  total=13288
+
+[eval] step 4,505,600...
+  train=6.36±5.66  test=5.55±5.54  gap=0.81
+[checkpoint] Saved step 4,505,600 → checkpoints/miner/miner__impala__seed2__20260511_233811/step_4505600.pt  (latest.pt updated)
+  update   280/1525  step  4,587,520  SPS   1,192  pg=-0.0094  vf=0.5094  ent=2.3035  kl=0.0063
+  [phase ms/update]  rollout=530  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12726  total=13270
+  update   290/1525  step  4,751,360  SPS   1,193  pg=-0.0089  vf=0.3408  ent=2.2468  kl=0.0108
+  [phase ms/update]  rollout=534  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12720  total=13268
+  update   300/1525  step  4,915,200  SPS   1,195  pg=-0.0116  vf=0.4407  ent=2.1802  kl=0.0087
+  [phase ms/update]  rollout=545  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12721  total=13280
+
+[eval] step 5,013,504...
+  train=6.89±5.64  test=5.31±5.52  gap=1.58
+[checkpoint] Saved step 5,013,504 → checkpoints/miner/miner__impala__seed2__20260511_233811/step_5013504.pt  (latest.pt updated)
+  update   310/1525  step  5,079,040  SPS   1,194  pg=-0.0084  vf=0.5321  ent=2.1245  kl=0.0083
+  [phase ms/update]  rollout=541  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12725  total=13280
+  update   320/1525  step  5,242,880  SPS   1,195  pg=-0.0094  vf=0.3526  ent=2.1927  kl=0.0096
+  [phase ms/update]  rollout=522  bulk_xfer=0.1  gae=5.8  ppo_xfer=8  ppo_grad=12726  total=13262
+  update   330/1525  step  5,406,720  SPS   1,196  pg=-0.0081  vf=0.2744  ent=2.2301  kl=0.0099
+  [phase ms/update]  rollout=539  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12723  total=13276
+
+[eval] step 5,505,024...
+  train=8.56±5.43  test=5.83±5.68  gap=2.73
+[checkpoint] Saved step 5,505,024 → checkpoints/miner/miner__impala__seed2__20260511_233811/step_5505024.pt  (latest.pt updated)
+  update   340/1525  step  5,570,560  SPS   1,196  pg=-0.0090  vf=0.3542  ent=2.1301  kl=0.0090
+  [phase ms/update]  rollout=531  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12730  total=13275
+  update   350/1525  step  5,734,400  SPS   1,197  pg=-0.0084  vf=0.3949  ent=2.2079  kl=0.0062
+  [phase ms/update]  rollout=535  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12725  total=13273
+  update   360/1525  step  5,898,240  SPS   1,198  pg=-0.0102  vf=0.3389  ent=2.3266  kl=0.0069
+  [phase ms/update]  rollout=549  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12734  total=13297
+
+[eval] step 6,012,928...
+  train=8.73±5.32  test=6.59±5.57  gap=2.14
+[checkpoint] Saved step 6,012,928 → checkpoints/miner/miner__impala__seed2__20260511_233811/step_6012928.pt  (latest.pt updated)
+  update   370/1525  step  6,062,080  SPS   1,197  pg=-0.0102  vf=0.4695  ent=2.2351  kl=0.0071
+  [phase ms/update]  rollout=538  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12725  total=13277
+  update   380/1525  step  6,225,920  SPS   1,198  pg=-0.0116  vf=0.2656  ent=2.2408  kl=0.0079
+  [phase ms/update]  rollout=529  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12722  total=13265
+  update   390/1525  step  6,389,760  SPS   1,199  pg=-0.0071  vf=0.3326  ent=2.1514  kl=0.0056
+  [phase ms/update]  rollout=526  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12724  total=13263
+
+[eval] step 6,504,448...
+  train=8.95±5.45  test=6.27±5.55  gap=2.68
+[checkpoint] Saved step 6,504,448 → checkpoints/miner/miner__impala__seed2__20260511_233811/step_6504448.pt  (latest.pt updated)
+  update   400/1525  step  6,553,600  SPS   1,198  pg=-0.0118  vf=0.2481  ent=2.3328  kl=0.0065
+  [phase ms/update]  rollout=546  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12732  total=13293
+  update   410/1525  step  6,717,440  SPS   1,199  pg=-0.0092  vf=0.3614  ent=2.2284  kl=0.0084
+  [phase ms/update]  rollout=536  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12735  total=13285
+  update   420/1525  step  6,881,280  SPS   1,200  pg=-0.0086  vf=0.3387  ent=2.2527  kl=0.0065
+  [phase ms/update]  rollout=546  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12735  total=13295
+
+[eval] step 7,012,352...
+  train=8.64±5.44  test=6.44±5.48  gap=2.20
+[checkpoint] Saved step 7,012,352 → checkpoints/miner/miner__impala__seed2__20260511_233811/step_7012352.pt  (latest.pt updated)
+  update   430/1525  step  7,045,120  SPS   1,199  pg=-0.0108  vf=0.3254  ent=2.2116  kl=0.0072
+  [phase ms/update]  rollout=532  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12736  total=13281
+  update   440/1525  step  7,208,960  SPS   1,200  pg=-0.0066  vf=0.4773  ent=2.2351  kl=0.0070
+  [phase ms/update]  rollout=542  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12736  total=13292
+  update   450/1525  step  7,372,800  SPS   1,201  pg=-0.0101  vf=0.3627  ent=2.2174  kl=0.0063
+  [phase ms/update]  rollout=559  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12737  total=13310
+
+[eval] step 7,503,872...
+  train=8.10±5.51  test=6.60±5.55  gap=1.50
+[checkpoint] Saved step 7,503,872 → checkpoints/miner/miner__impala__seed2__20260511_233811/step_7503872.pt  (latest.pt updated)
+  update   460/1525  step  7,536,640  SPS   1,200  pg=-0.0090  vf=0.3896  ent=2.2998  kl=0.0061
+  [phase ms/update]  rollout=548  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12732  total=13294
+  update   470/1525  step  7,700,480  SPS   1,200  pg=-0.0116  vf=0.2767  ent=2.3044  kl=0.0065
+  [phase ms/update]  rollout=535  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12730  total=13279
+  update   480/1525  step  7,864,320  SPS   1,201  pg=-0.0126  vf=0.2580  ent=2.3124  kl=0.0073
+  [phase ms/update]  rollout=549  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12731  total=13294
+
+[eval] step 8,011,776...
+  train=8.04±5.59  test=7.23±5.54  gap=0.81
+[checkpoint] Saved step 8,011,776 → checkpoints/miner/miner__impala__seed2__20260511_233811/step_8011776.pt  (latest.pt updated)
+  update   490/1525  step  8,028,160  SPS   1,200  pg=-0.0111  vf=0.2891  ent=2.3202  kl=0.0072
+  [phase ms/update]  rollout=537  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12726  total=13276
+  update   500/1525  step  8,192,000  SPS   1,201  pg=-0.0087  vf=0.3977  ent=2.3252  kl=0.0052
+  [phase ms/update]  rollout=540  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12734  total=13288
+  update   510/1525  step  8,355,840  SPS   1,202  pg=-0.0111  vf=0.2392  ent=2.3860  kl=0.0060
+  [phase ms/update]  rollout=547  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12732  total=13293
+
+[eval] step 8,503,296...
+  train=9.26±5.32  test=6.98±5.56  gap=2.28
+[checkpoint] Saved step 8,503,296 → checkpoints/miner/miner__impala__seed2__20260511_233811/step_8503296.pt  (latest.pt updated)
+  update   520/1525  step  8,519,680  SPS   1,201  pg=-0.0080  vf=0.3662  ent=2.2641  kl=0.0058
+  [phase ms/update]  rollout=541  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12727  total=13282
+  update   530/1525  step  8,683,520  SPS   1,202  pg=-0.0109  vf=0.3105  ent=2.2451  kl=0.0072
+  [phase ms/update]  rollout=537  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12725  total=13276
+  update   540/1525  step  8,847,360  SPS   1,202  pg=-0.0123  vf=0.2845  ent=2.2426  kl=0.0067
+  [phase ms/update]  rollout=534  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12723  total=13271
+  update   550/1525  step  9,011,200  SPS   1,203  pg=-0.0108  vf=0.3260  ent=2.2566  kl=0.0059
+  [phase ms/update]  rollout=544  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12725  total=13283
+
+[eval] step 9,011,200...
+  train=9.03±5.44  test=7.68±5.60  gap=1.35
+[checkpoint] Saved step 9,011,200 → checkpoints/miner/miner__impala__seed2__20260511_233811/step_9011200.pt  (latest.pt updated)
+  update   560/1525  step  9,175,040  SPS   1,202  pg=-0.0111  vf=0.2846  ent=2.3214  kl=0.0060
+  [phase ms/update]  rollout=544  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12728  total=13286
+  update   570/1525  step  9,338,880  SPS   1,203  pg=-0.0104  vf=0.2727  ent=2.3158  kl=0.0069
+  [phase ms/update]  rollout=546  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12729  total=13289
+  update   580/1525  step  9,502,720  SPS   1,203  pg=-0.0113  vf=0.2853  ent=2.2843  kl=0.0087
+  [phase ms/update]  rollout=550  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12719  total=13283
+
+[eval] step 9,502,720...
+  train=9.64±5.11  test=7.36±5.64  gap=2.28
+[checkpoint] Saved step 9,502,720 → checkpoints/miner/miner__impala__seed2__20260511_233811/step_9502720.pt  (latest.pt updated)
+  update   590/1525  step  9,666,560  SPS   1,203  pg=-0.0103  vf=0.4334  ent=2.2923  kl=0.0062
+  [phase ms/update]  rollout=547  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12728  total=13289
+  update   600/1525  step  9,830,400  SPS   1,204  pg=-0.0092  vf=0.3361  ent=2.2315  kl=0.0052
+  [phase ms/update]  rollout=548  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12731  total=13293
+  update   610/1525  step  9,994,240  SPS   1,204  pg=-0.0113  vf=0.4513  ent=2.2318  kl=0.0066
+  [phase ms/update]  rollout=534  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12721  total=13270
+
+[eval] step 10,010,624...
+  train=10.60±4.55  test=7.97±5.55  gap=2.63
+[checkpoint] Saved step 10,010,624 → checkpoints/miner/miner__impala__seed2__20260511_233811/step_10010624.pt  (latest.pt updated)
+  update   620/1525  step 10,158,080  SPS   1,204  pg=-0.0079  vf=0.3667  ent=2.2038  kl=0.0059
+  [phase ms/update]  rollout=542  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12718  total=13274
+  update   630/1525  step 10,321,920  SPS   1,204  pg=-0.0131  vf=0.4166  ent=2.2259  kl=0.0086
+  [phase ms/update]  rollout=537  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12727  total=13277
+  update   640/1525  step 10,485,760  SPS   1,205  pg=-0.0091  vf=0.2751  ent=2.3068  kl=0.0078
+  [phase ms/update]  rollout=542  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12726  total=13281
+
+[eval] step 10,502,144...
+  train=10.70±4.49  test=8.39±5.57  gap=2.31
+[checkpoint] Saved step 10,502,144 → checkpoints/miner/miner__impala__seed2__20260511_233811/step_10502144.pt  (latest.pt updated)
+  update   650/1525  step 10,649,600  SPS   1,204  pg=-0.0131  vf=0.4169  ent=2.1492  kl=0.0083
+  [phase ms/update]  rollout=544  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12729  total=13286
+  update   660/1525  step 10,813,440  SPS   1,205  pg=-0.0107  vf=0.5286  ent=2.2391  kl=0.0055
+  [phase ms/update]  rollout=543  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12726  total=13282
+  update   670/1525  step 10,977,280  SPS   1,205  pg=-0.0107  vf=0.2667  ent=2.2394  kl=0.0069
+  [phase ms/update]  rollout=545  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12728  total=13286
+
+[eval] step 11,010,048...
+  train=10.89±4.31  test=8.32±5.56  gap=2.57
+[checkpoint] Saved step 11,010,048 → checkpoints/miner/miner__impala__seed2__20260511_233811/step_11010048.pt  (latest.pt updated)
+  update   680/1525  step 11,141,120  SPS   1,205  pg=-0.0091  vf=0.2981  ent=2.2845  kl=0.0099
+  [phase ms/update]  rollout=547  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12730  total=13291
+  update   690/1525  step 11,304,960  SPS   1,205  pg=-0.0118  vf=0.3325  ent=2.1300  kl=0.0081
+  [phase ms/update]  rollout=533  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12733  total=13280
+  update   700/1525  step 11,468,800  SPS   1,206  pg=-0.0077  vf=0.5239  ent=2.2347  kl=0.0051
+  [phase ms/update]  rollout=533  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12723  total=13270
+
+[eval] step 11,501,568...
+  train=10.72±4.45  test=7.98±5.53  gap=2.74
+[checkpoint] Saved step 11,501,568 → checkpoints/miner/miner__impala__seed2__20260511_233811/step_11501568.pt  (latest.pt updated)
+  update   710/1525  step 11,632,640  SPS   1,205  pg=-0.0093  vf=0.2619  ent=2.1958  kl=0.0092
+  [phase ms/update]  rollout=534  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12732  total=13280
+  update   720/1525  step 11,796,480  SPS   1,206  pg=-0.0115  vf=0.2568  ent=2.2447  kl=0.0089
+  [phase ms/update]  rollout=548  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12730  total=13293
+  update   730/1525  step 11,960,320  SPS   1,206  pg=-0.0100  vf=0.4101  ent=2.2349  kl=0.0078
+  [phase ms/update]  rollout=542  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12734  total=13290
+
+[eval] step 12,009,472...
+  train=11.75±3.31  test=7.90±5.57  gap=3.85
+[checkpoint] Saved step 12,009,472 → checkpoints/miner/miner__impala__seed2__20260511_233811/step_12009472.pt  (latest.pt updated)
+  update   740/1525  step 12,124,160  SPS   1,206  pg=-0.0100  vf=0.2893  ent=2.1742  kl=0.0085
+  [phase ms/update]  rollout=527  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12724  total=13264
+  update   750/1525  step 12,288,000  SPS   1,206  pg=-0.0105  vf=0.2815  ent=2.2213  kl=0.0069
+  [phase ms/update]  rollout=540  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12729  total=13283
+  update   760/1525  step 12,451,840  SPS   1,207  pg=-0.0126  vf=0.3539  ent=2.2093  kl=0.0076
+  [phase ms/update]  rollout=538  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12735  total=13288
+
+[eval] step 12,500,992...
+  train=11.30±3.92  test=7.96±5.56  gap=3.34
+[checkpoint] Saved step 12,500,992 → checkpoints/miner/miner__impala__seed2__20260511_233811/step_12500992.pt  (latest.pt updated)
+  update   770/1525  step 12,615,680  SPS   1,206  pg=-0.0074  vf=0.2301  ent=2.2153  kl=0.0072
+  [phase ms/update]  rollout=541  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12728  total=13283
+  update   780/1525  step 12,779,520  SPS   1,207  pg=-0.0099  vf=0.4099  ent=2.1104  kl=0.0061
+  [phase ms/update]  rollout=531  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12723  total=13268
+  update   790/1525  step 12,943,360  SPS   1,207  pg=-0.0095  vf=0.2897  ent=2.1971  kl=0.0080
+  [phase ms/update]  rollout=549  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12714  total=13277
+
+[eval] step 13,008,896...
+  train=11.98±3.17  test=8.71±5.46  gap=3.27
+[checkpoint] Saved step 13,008,896 → checkpoints/miner/miner__impala__seed2__20260511_233811/step_13008896.pt  (latest.pt updated)
+  update   800/1525  step 13,107,200  SPS   1,207  pg=-0.0105  vf=0.2227  ent=2.2370  kl=0.0071
+  [phase ms/update]  rollout=538  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12721  total=13273
+  update   810/1525  step 13,271,040  SPS   1,207  pg=-0.0096  vf=0.2555  ent=2.0639  kl=0.0081
+  [phase ms/update]  rollout=543  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12719  total=13277
+  update   820/1525  step 13,434,880  SPS   1,207  pg=-0.0088  vf=0.2573  ent=2.0865  kl=0.0113
+  [phase ms/update]  rollout=537  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12726  total=13277
+
+[eval] step 13,500,416...
+  train=12.07±2.97  test=8.75±5.24  gap=3.32
+[checkpoint] Saved step 13,500,416 → checkpoints/miner/miner__impala__seed2__20260511_233811/step_13500416.pt  (latest.pt updated)
+  update   830/1525  step 13,598,720  SPS   1,207  pg=-0.0081  vf=0.2777  ent=1.9718  kl=0.0066
+  [phase ms/update]  rollout=539  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12722  total=13275
+  update   840/1525  step 13,762,560  SPS   1,207  pg=-0.0080  vf=0.3797  ent=2.0518  kl=0.0086
+  [phase ms/update]  rollout=546  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12716  total=13276
+  update   850/1525  step 13,926,400  SPS   1,208  pg=-0.0098  vf=0.3534  ent=1.9732  kl=0.0072
+  [phase ms/update]  rollout=558  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12718  total=13290
+
+[eval] step 14,008,320...
+  train=12.08±2.93  test=8.35±5.44  gap=3.73
+[checkpoint] Saved step 14,008,320 → checkpoints/miner/miner__impala__seed2__20260511_233811/step_14008320.pt  (latest.pt updated)
+  update   860/1525  step 14,090,240  SPS   1,208  pg=-0.0079  vf=0.3198  ent=2.1187  kl=0.0101
+  [phase ms/update]  rollout=536  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12729  total=13279
+  update   870/1525  step 14,254,080  SPS   1,208  pg=-0.0094  vf=0.1758  ent=2.0901  kl=0.0081
+  [phase ms/update]  rollout=535  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12726  total=13275
+  update   880/1525  step 14,417,920  SPS   1,208  pg=-0.0088  vf=0.2350  ent=2.1482  kl=0.0076
+  [phase ms/update]  rollout=524  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12727  total=13264
+
+[eval] step 14,516,224...
+  train=12.19±2.76  test=8.21±5.52  gap=3.98
+[checkpoint] Saved step 14,516,224 → checkpoints/miner/miner__impala__seed2__20260511_233811/step_14516224.pt  (latest.pt updated)
+  update   890/1525  step 14,581,760  SPS   1,208  pg=-0.0106  vf=0.3581  ent=2.1654  kl=0.0081
+  [phase ms/update]  rollout=524  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12720  total=13258
+  update   900/1525  step 14,745,600  SPS   1,208  pg=-0.0102  vf=0.1996  ent=2.0329  kl=0.0092
+  [phase ms/update]  rollout=535  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12721  total=13270
+  update   910/1525  step 14,909,440  SPS   1,209  pg=-0.0084  vf=0.2644  ent=2.1060  kl=0.0071
+  [phase ms/update]  rollout=537  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12718  total=13269
+
+[eval] step 15,007,744...
+  train=12.54±2.14  test=8.13±5.61  gap=4.41
+[checkpoint] Saved step 15,007,744 → checkpoints/miner/miner__impala__seed2__20260511_233811/step_15007744.pt  (latest.pt updated)
+  update   920/1525  step 15,073,280  SPS   1,208  pg=-0.0090  vf=0.3242  ent=2.0243  kl=0.0100
+  [phase ms/update]  rollout=537  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12727  total=13278
+  update   930/1525  step 15,237,120  SPS   1,209  pg=-0.0091  vf=0.3064  ent=2.0291  kl=0.0093
+  [phase ms/update]  rollout=534  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12718  total=13266
+  update   940/1525  step 15,400,960  SPS   1,209  pg=-0.0077  vf=0.3095  ent=2.0212  kl=0.0084
+  [phase ms/update]  rollout=540  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12723  total=13278
+
+[eval] step 15,515,648...
+  train=12.29±2.60  test=8.77±5.34  gap=3.52
+[checkpoint] Saved step 15,515,648 → checkpoints/miner/miner__impala__seed2__20260511_233811/step_15515648.pt  (latest.pt updated)
+  update   950/1525  step 15,564,800  SPS   1,209  pg=-0.0085  vf=0.3783  ent=2.1380  kl=0.0076
+  [phase ms/update]  rollout=552  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12723  total=13289
+  update   960/1525  step 15,728,640  SPS   1,209  pg=-0.0093  vf=0.2827  ent=2.0088  kl=0.0074
+  [phase ms/update]  rollout=553  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12718  total=13285
+  update   970/1525  step 15,892,480  SPS   1,209  pg=-0.0067  vf=0.3440  ent=2.1113  kl=0.0090
+  [phase ms/update]  rollout=535  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12725  total=13273
+
+[eval] step 16,007,168...
+  train=12.38±2.35  test=9.16±5.29  gap=3.22
+[checkpoint] Saved step 16,007,168 → checkpoints/miner/miner__impala__seed2__20260511_233811/step_16007168.pt  (latest.pt updated)
+  update   980/1525  step 16,056,320  SPS   1,209  pg=-0.0074  vf=0.2942  ent=2.2060  kl=0.0087
+  [phase ms/update]  rollout=549  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12734  total=13298
+  update   990/1525  step 16,220,160  SPS   1,209  pg=-0.0098  vf=0.3867  ent=2.1533  kl=0.0077
+  [phase ms/update]  rollout=551  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12731  total=13296
+  update  1000/1525  step 16,384,000  SPS   1,210  pg=-0.0098  vf=0.2407  ent=2.1634  kl=0.0077
+  [phase ms/update]  rollout=544  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12720  total=13278
+
+[eval] step 16,515,072...
+  train=12.50±2.20  test=10.16±4.76  gap=2.34
+[checkpoint] Saved step 16,515,072 → checkpoints/miner/miner__impala__seed2__20260511_233811/step_16515072.pt  (latest.pt updated)
+  update  1010/1525  step 16,547,840  SPS   1,210  pg=-0.0085  vf=0.2980  ent=2.0619  kl=0.0103
+  [phase ms/update]  rollout=537  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12721  total=13272
+  update  1020/1525  step 16,711,680  SPS   1,210  pg=-0.0091  vf=0.1948  ent=2.1286  kl=0.0077
+  [phase ms/update]  rollout=545  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12728  total=13287
+  update  1030/1525  step 16,875,520  SPS   1,210  pg=-0.0086  vf=0.1653  ent=2.1524  kl=0.0084
+  [phase ms/update]  rollout=559  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12728  total=13301
+
+[eval] step 17,006,592...
+  train=12.94±0.42  test=9.51±5.12  gap=3.43
+[checkpoint] Saved step 17,006,592 → checkpoints/miner/miner__impala__seed2__20260511_233811/step_17006592.pt  (latest.pt updated)
+  update  1040/1525  step 17,039,360  SPS   1,210  pg=-0.0074  vf=0.2251  ent=2.0305  kl=0.0095
+  [phase ms/update]  rollout=560  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12729  total=13303
+  update  1050/1525  step 17,203,200  SPS   1,210  pg=-0.0092  vf=0.2997  ent=2.0500  kl=0.0085
+  [phase ms/update]  rollout=536  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12725  total=13275
+  update  1060/1525  step 17,367,040  SPS   1,210  pg=-0.0093  vf=0.1719  ent=2.1143  kl=0.0091
+  [phase ms/update]  rollout=556  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12724  total=13295
+
+[eval] step 17,514,496...
+  train=12.70±1.72  test=9.88±4.93  gap=2.82
+[checkpoint] Saved step 17,514,496 → checkpoints/miner/miner__impala__seed2__20260511_233811/step_17514496.pt  (latest.pt updated)
+  update  1070/1525  step 17,530,880  SPS   1,210  pg=-0.0081  vf=0.2565  ent=2.1756  kl=0.0063
+  [phase ms/update]  rollout=548  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12718  total=13279
+  update  1080/1525  step 17,694,720  SPS   1,210  pg=-0.0089  vf=0.2618  ent=2.1002  kl=0.0144
+  [phase ms/update]  rollout=544  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12730  total=13288
+  update  1090/1525  step 17,858,560  SPS   1,211  pg=-0.0090  vf=0.1673  ent=2.0924  kl=0.0082
+  [phase ms/update]  rollout=541  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12730  total=13285
+
+[eval] step 18,006,016...
+  train=12.62±1.86  test=8.69±5.33  gap=3.93
+[checkpoint] Saved step 18,006,016 → checkpoints/miner/miner__impala__seed2__20260511_233811/step_18006016.pt  (latest.pt updated)
+  update  1100/1525  step 18,022,400  SPS   1,210  pg=-0.0068  vf=0.1099  ent=2.0719  kl=0.0088
+  [phase ms/update]  rollout=536  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12726  total=13276
+  update  1110/1525  step 18,186,240  SPS   1,211  pg=-0.0083  vf=0.2317  ent=2.0342  kl=0.0091
+  [phase ms/update]  rollout=549  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12724  total=13288
+  update  1120/1525  step 18,350,080  SPS   1,211  pg=-0.0080  vf=0.3031  ent=2.0540  kl=0.0074
+  [phase ms/update]  rollout=546  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12726  total=13287
+  update  1130/1525  step 18,513,920  SPS   1,211  pg=-0.0089  vf=0.1675  ent=2.0947  kl=0.0076
+  [phase ms/update]  rollout=556  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12727  total=13297
+
+[eval] step 18,513,920...
+  train=12.27±2.68  test=10.09±4.87  gap=2.18
+[checkpoint] Saved step 18,513,920 → checkpoints/miner/miner__impala__seed2__20260511_233811/step_18513920.pt  (latest.pt updated)
+  update  1140/1525  step 18,677,760  SPS   1,211  pg=-0.0082  vf=0.3118  ent=2.0837  kl=0.0078
+  [phase ms/update]  rollout=542  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12728  total=13285
+  update  1150/1525  step 18,841,600  SPS   1,211  pg=-0.0101  vf=0.2012  ent=2.0555  kl=0.0076
+  [phase ms/update]  rollout=539  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12730  total=13283
+  update  1160/1525  step 19,005,440  SPS   1,211  pg=-0.0076  vf=0.2607  ent=1.9558  kl=0.0082
+  [phase ms/update]  rollout=536  bulk_xfer=0.1  gae=5.8  ppo_xfer=8  ppo_grad=12723  total=13273
+
+[eval] step 19,005,440...
+  train=12.55±1.95  test=9.08±5.32  gap=3.47
+[checkpoint] Saved step 19,005,440 → checkpoints/miner/miner__impala__seed2__20260511_233811/step_19005440.pt  (latest.pt updated)
+  update  1170/1525  step 19,169,280  SPS   1,211  pg=-0.0095  vf=0.1771  ent=2.1013  kl=0.0073
+  [phase ms/update]  rollout=548  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12729  total=13292
+  update  1180/1525  step 19,333,120  SPS   1,211  pg=-0.0120  vf=0.1869  ent=2.0473  kl=0.0077
+  [phase ms/update]  rollout=537  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12724  total=13275
+  update  1190/1525  step 19,496,960  SPS   1,212  pg=-0.0059  vf=0.1855  ent=2.0100  kl=0.0083
+  [phase ms/update]  rollout=539  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12716  total=13270
+
+[eval] step 19,513,344...
+  train=12.78±1.38  test=9.49±5.10  gap=3.29
+[checkpoint] Saved step 19,513,344 → checkpoints/miner/miner__impala__seed2__20260511_233811/step_19513344.pt  (latest.pt updated)
+  update  1200/1525  step 19,660,800  SPS   1,212  pg=-0.0079  vf=0.3105  ent=1.9992  kl=0.0077
+  [phase ms/update]  rollout=539  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12719  total=13272
+  update  1210/1525  step 19,824,640  SPS   1,212  pg=-0.0085  vf=0.2219  ent=2.0475  kl=0.0078
+  [phase ms/update]  rollout=547  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12720  total=13280
+  update  1220/1525  step 19,988,480  SPS   1,212  pg=-0.0059  vf=0.2110  ent=2.0294  kl=0.0088
+  [phase ms/update]  rollout=529  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12717  total=13260
+
+[eval] step 20,004,864...
+  train=12.60±1.97  test=9.94±4.76  gap=2.66
+[checkpoint] Saved step 20,004,864 → checkpoints/miner/miner__impala__seed2__20260511_233811/step_20004864.pt  (latest.pt updated)
+  update  1230/1525  step 20,152,320  SPS   1,212  pg=-0.0094  vf=0.2326  ent=1.9828  kl=0.0083
+  [phase ms/update]  rollout=530  bulk_xfer=0.1  gae=5.8  ppo_xfer=8  ppo_grad=12718  total=13262
+  update  1240/1525  step 20,316,160  SPS   1,212  pg=-0.0061  vf=0.1878  ent=1.9209  kl=0.0094
+  [phase ms/update]  rollout=535  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12723  total=13272
+  update  1250/1525  step 20,480,000  SPS   1,212  pg=-0.0079  vf=0.1633  ent=2.0213  kl=0.0091
+  [phase ms/update]  rollout=560  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12723  total=13297
+
+[eval] step 20,512,768...
+  train=12.75±1.56  test=8.76±5.40  gap=3.99
+[checkpoint] Saved step 20,512,768 → checkpoints/miner/miner__impala__seed2__20260511_233811/step_20512768.pt  (latest.pt updated)
+  update  1260/1525  step 20,643,840  SPS   1,212  pg=-0.0059  vf=0.1366  ent=1.9462  kl=0.0086
+  [phase ms/update]  rollout=537  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12723  total=13274
+  update  1270/1525  step 20,807,680  SPS   1,212  pg=-0.0083  vf=0.2151  ent=1.9324  kl=0.0068
+  [phase ms/update]  rollout=542  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12725  total=13282
+  update  1280/1525  step 20,971,520  SPS   1,212  pg=-0.0092  vf=0.1543  ent=1.8606  kl=0.0073
+  [phase ms/update]  rollout=528  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12723  total=13265
+
+[eval] step 21,004,288...
+  train=12.97±0.30  test=10.09±4.82  gap=2.88
+[checkpoint] Saved step 21,004,288 → checkpoints/miner/miner__impala__seed2__20260511_233811/step_21004288.pt  (latest.pt updated)
+  update  1290/1525  step 21,135,360  SPS   1,212  pg=-0.0074  vf=0.1557  ent=1.8963  kl=0.0080
+  [phase ms/update]  rollout=537  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12718  total=13269
+  update  1300/1525  step 21,299,200  SPS   1,212  pg=-0.0094  vf=0.2911  ent=1.8176  kl=0.0077
+  [phase ms/update]  rollout=530  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12718  total=13262
+  update  1310/1525  step 21,463,040  SPS   1,213  pg=-0.0099  vf=0.1645  ent=1.9331  kl=0.0098
+  [phase ms/update]  rollout=530  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12720  total=13263
+
+[eval] step 21,512,192...
+  train=12.73±1.52  test=9.73±5.04  gap=3.00
+[checkpoint] Saved step 21,512,192 → checkpoints/miner/miner__impala__seed2__20260511_233811/step_21512192.pt  (latest.pt updated)
+  update  1320/1525  step 21,626,880  SPS   1,213  pg=-0.0099  vf=0.1323  ent=1.8684  kl=0.0096
+  [phase ms/update]  rollout=541  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12716  total=13271
+  update  1330/1525  step 21,790,720  SPS   1,213  pg=-0.0075  vf=0.1175  ent=2.0111  kl=0.0102
+  [phase ms/update]  rollout=531  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12718  total=13263
+  update  1340/1525  step 21,954,560  SPS   1,213  pg=-0.0072  vf=0.1792  ent=1.8734  kl=0.0091
+  [phase ms/update]  rollout=536  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12720  total=13270
+
+[eval] step 22,003,712...
+  train=12.84±1.07  test=9.77±5.03  gap=3.07
+[checkpoint] Saved step 22,003,712 → checkpoints/miner/miner__impala__seed2__20260511_233811/step_22003712.pt  (latest.pt updated)
+  update  1350/1525  step 22,118,400  SPS   1,213  pg=-0.0060  vf=0.1205  ent=1.8725  kl=0.0118
+  [phase ms/update]  rollout=535  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12722  total=13272
+  update  1360/1525  step 22,282,240  SPS   1,213  pg=-0.0085  vf=0.1054  ent=1.9021  kl=0.0104
+  [phase ms/update]  rollout=518  bulk_xfer=0.1  gae=5.8  ppo_xfer=8  ppo_grad=12723  total=13255
+  update  1370/1525  step 22,446,080  SPS   1,213  pg=-0.0028  vf=0.1386  ent=1.8107  kl=0.0173
+  [phase ms/update]  rollout=530  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12726  total=13270
+
+[eval] step 22,511,616...
+  train=12.74±1.45  test=10.21±4.68  gap=2.53
+[checkpoint] Saved step 22,511,616 → checkpoints/miner/miner__impala__seed2__20260511_233811/step_22511616.pt  (latest.pt updated)
+  update  1380/1525  step 22,609,920  SPS   1,213  pg=-0.0077  vf=0.1390  ent=1.6480  kl=0.0093
+  [phase ms/update]  rollout=525  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12723  total=13262
+  update  1390/1525  step 22,773,760  SPS   1,213  pg=-0.0046  vf=0.1186  ent=1.6179  kl=0.0085
+  [phase ms/update]  rollout=530  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12725  total=13269
+  update  1400/1525  step 22,937,600  SPS   1,213  pg=-0.0071  vf=0.1503  ent=1.7365  kl=0.0093
+  [phase ms/update]  rollout=540  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12723  total=13277
+
+[eval] step 23,003,136...
+  train=12.94±0.42  test=10.14±4.74  gap=2.80
+[checkpoint] Saved step 23,003,136 → checkpoints/miner/miner__impala__seed2__20260511_233811/step_23003136.pt  (latest.pt updated)
+  update  1410/1525  step 23,101,440  SPS   1,213  pg=-0.0067  vf=0.1161  ent=1.5457  kl=0.0094
+  [phase ms/update]  rollout=537  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12725  total=13276
+  update  1420/1525  step 23,265,280  SPS   1,214  pg=-0.0050  vf=0.1547  ent=1.7058  kl=0.0115
+  [phase ms/update]  rollout=547  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12723  total=13284
+  update  1430/1525  step 23,429,120  SPS   1,214  pg=-0.0087  vf=0.1673  ent=1.5920  kl=0.0107
+  [phase ms/update]  rollout=527  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12719  total=13260
+
+[eval] step 23,511,040...
+  train=12.78±1.38  test=10.22±4.78  gap=2.56
+[checkpoint] Saved step 23,511,040 → checkpoints/miner/miner__impala__seed2__20260511_233811/step_23511040.pt  (latest.pt updated)
+  update  1440/1525  step 23,592,960  SPS   1,214  pg=-0.0038  vf=0.0948  ent=1.7255  kl=0.0097
+  [phase ms/update]  rollout=532  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12718  total=13264
+  update  1450/1525  step 23,756,800  SPS   1,214  pg=-0.0087  vf=0.1077  ent=1.7406  kl=0.0084
+  [phase ms/update]  rollout=534  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12721  total=13269
+  update  1460/1525  step 23,920,640  SPS   1,214  pg=-0.0088  vf=0.1280  ent=1.6241  kl=0.0105
+  [phase ms/update]  rollout=537  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12726  total=13277
+
+[eval] step 24,002,560...
+  train=12.80±1.20  test=9.87±4.98  gap=2.93
+[checkpoint] Saved step 24,002,560 → checkpoints/miner/miner__impala__seed2__20260511_233811/step_24002560.pt  (latest.pt updated)
+  update  1470/1525  step 24,084,480  SPS   1,214  pg=-0.0028  vf=0.0901  ent=1.6225  kl=0.0127
+  [phase ms/update]  rollout=556  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12735  total=13305
+  update  1480/1525  step 24,248,320  SPS   1,214  pg=-0.0093  vf=0.1028  ent=1.7566  kl=0.0117
+  [phase ms/update]  rollout=556  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12734  total=13304
+  update  1490/1525  step 24,412,160  SPS   1,214  pg=-0.0092  vf=0.0703  ent=1.5810  kl=0.0084
+  [phase ms/update]  rollout=550  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12732  total=13296
+
+[eval] step 24,510,464...
+  train=12.91±0.51  test=9.84±4.98  gap=3.07
+[checkpoint] Saved step 24,510,464 → checkpoints/miner/miner__impala__seed2__20260511_233811/step_24510464.pt  (latest.pt updated)
+  update  1500/1525  step 24,576,000  SPS   1,214  pg=-0.0081  vf=0.1183  ent=1.5702  kl=0.0087
+  [phase ms/update]  rollout=560  bulk_xfer=0.1  gae=6.1  ppo_xfer=8  ppo_grad=12736  total=13310
+  update  1510/1525  step 24,739,840  SPS   1,214  pg=-0.0046  vf=0.0779  ent=1.7159  kl=0.0115
+  [phase ms/update]  rollout=530  bulk_xfer=0.1  gae=6.0  ppo_xfer=8  ppo_grad=12728  total=13272
+  update  1520/1525  step 24,903,680  SPS   1,214  pg=-0.0050  vf=0.1292  ent=1.4937  kl=0.0119
+  [phase ms/update]  rollout=529  bulk_xfer=0.1  gae=5.9  ppo_xfer=8  ppo_grad=12721  total=13264
+[checkpoint] Saved step 24,985,600 → checkpoints/miner/miner__impala__seed2__20260511_233811/step_24985600_final.pt  (latest.pt updated)
+
+[done] Training complete.
+
+[final eval]
+
+=================================================================
+  miner | none+uniform | seed=2
+  train=12.91  test=10.83  gap=2.08
+=================================================================
+
+wandb: updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading output.log
+wandb: 
+wandb: Run history:
+wandb:                            charts/SPS ▁▂▂▃▄▅▅▅▆▅▆▆▆▆▆▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇██████████
+wandb:     charts/episodic_return_normalised ▁▂▂▃▃▃▃▃▃▄▄▅▅▇▇▆▆▇▆▇▆█▆▇██▇▇▇█▇▇█▇█▇▇▇▇▇
+wandb: charts/episodic_return_normalised_std ▅▆▆▅▅▇███▇▇▇▇▇▇▇▇▆▆▇▇▅▅▅▄▅▄▃▄▄▃▃▂▂▃▂▂▁▂▁
+wandb:                  charts/learning_rate ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:               eval/generalization_gap ▂▂▁▂▃▂▃▃▄▆▆▅▄▃▅▅▆▅▆▆▇▇▇██▇▇▅▇▆▅▇▇▆█▆▇▆▆▇
+wandb:                      eval/test_return ▁▂▂▂▁▃▃▄▄▄▅▅▅▅▅▆▆▆▆▆▇▇▆▆▆▇█▇█▇▇▇█▇██████
+wandb:                  eval/test_return_std ▁▄▃▃▃▇▆███████████████▇▇█▇▇▆▇▆▆▇▇▆▇▇▆▆▆▆
+wandb:                     eval/train_return ▁▂▁▂▂▃▃▄▄▅▅▅▅▅▆▆▆▇▇▇▇▇▇█████████████████
+wandb:                 eval/train_return_std ▅▆▄▆▆▇█████████▇▇▆▆▆▅▄▄▄▃▄▃▁▃▃▃▂▃▃▁▂▃▁▂▁
+wandb:                      losses/approx_kl ▂▁▂▂▁▄▃▄▄▄▄▄▃▄▄▃▄▂▄▅▅▄▄▄▄▅▄▄▃▄▄▅▅▄▅▅█▄▆▇
+wandb:                                    +6 ...
+wandb: 
+wandb: Run summary:
+wandb:                            charts/SPS 1214.29685
+wandb:     charts/episodic_return_normalised 10.77
+wandb: charts/episodic_return_normalised_std 1.71045
+wandb:                  charts/learning_rate 0.0005
+wandb:               eval/generalization_gap 3.07
+wandb:                      eval/test_return 9.84
+wandb:                  eval/test_return_std 4.97739
+wandb:                     eval/train_return 12.91
+wandb:                 eval/train_return_std 0.51176
+wandb:                      losses/approx_kl 0.01072
+wandb:                                    +6 ...
+wandb: 
+wandb: 🚀 View run miner__impala__seed2__20260511_233811 at: https://wandb.ai/staanagnostou-/thesis-rl-baselines/runs/zahe7rg9
+wandb: ⭐️ View project at: https://wandb.ai/staanagnostou-/thesis-rl-baselines
+wandb: Synced 6 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260511_233811-zahe7rg9/logs

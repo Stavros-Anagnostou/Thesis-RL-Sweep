@@ -1,0 +1,11 @@
+[device] GPU detected:   (24.0 GB VRAM)
+[device] Backend: NVIDIA CUDA
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from WANDB_API_KEY.
+wandb: Currently logged in as: stayrosanang (staanagnostou-) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.26.1
+wandb: Run data is saved locally in /workspace/wandb/run-20260508_113409-ejfxynor
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run coinrun__impala__seed5__20260508_113408
+wandb: ⭐️ View project at https://wandb.ai/staanagnostou-/thesis-rl-baselines
+wandb: 🚀 View run at https://wandb.ai/staanagnostou-/thesis-rl-baselines/runs/ejfxynor
+HW Exception by GPU node-1 (Agent handle: 0x27da6a80) reason :GPU Hang
