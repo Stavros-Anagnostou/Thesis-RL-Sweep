@@ -73,14 +73,18 @@ class DrAC:
         loss = torch.tensor(0.0, device=obs.device)
 
         with torch.no_grad():
-            # Original policy logits and values (stop-gradient — targets).
-            orig_logits = self.model.policy_head(self.model.encoder(obs_float))
-            orig_value  = self.model.value_head(self.model.encoder(obs_float)).squeeze(-1)
+            # One encoder pass for original obs — cache features for both heads.
+            orig_features = self.model.encoder(obs_float)
+            orig_logits   = self.model.policy_head(orig_features)
+            orig_value    = self.model.value_head(orig_features).squeeze(-1)
+
+        # One encoder pass for augmented obs — cache features for both heads.
+        aug_features = self.model.encoder(obs_aug)
 
         if self.mode in ("full", "actor_only"):
             # Policy regularization: KL( π_aug || π_orig )
             # Using π_orig as the fixed target.
-            aug_logits  = self.model.policy_head(self.model.encoder(obs_aug))
+            aug_logits = self.model.policy_head(aug_features)
             # KL(P||Q) = sum P * (log P - log Q)  where P = aug policy
             # Using F.kl_div which expects log-probs for input and probs for target.
             log_p_aug = F.log_softmax(aug_logits, dim=-1)
@@ -90,7 +94,7 @@ class DrAC:
 
         if self.mode in ("full", "critic_only"):
             # Value regularization: MSE( V(aug), V(orig) )
-            aug_value = self.model.value_head(self.model.encoder(obs_aug)).squeeze(-1)
+            aug_value = self.model.value_head(aug_features).squeeze(-1)
             value_reg = F.mse_loss(aug_value, orig_value)
             loss = loss + value_reg
 

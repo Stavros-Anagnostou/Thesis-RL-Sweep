@@ -283,12 +283,15 @@ def main() -> None:
         print(f"[model] torch.compile applied (mode={compile_mode})")
     optimizer = optim.Adam(model.parameters(), lr=cfg["learning_rate"], eps=1e-5)
 
-    # AMP: FP16 conv forward+backward is 2-4x faster on AMD RDNA 3 / NVIDIA Ampere+.
-    # Off by default — enable explicitly with use_amp: true in config once server GPU
-    # health is verified (see thesis_rl_handoff.md Step 1 benchmark).
+    # AMP: bfloat16 is preferred over float16 on ROCm — it has a larger dynamic range
+    # (no overflow/NaN issues) and doesn't need a GradScaler. gfx1100 (RDNA 3) supports
+    # bfloat16 natively. float16 caused a GPU hang on the server; bfloat16 avoids it.
     use_amp = (device.type == "cuda") and cfg.get("use_amp", False)
+    # ROCm: prefer bfloat16; CUDA: float16 (can be overridden via amp_dtype in config).
+    _is_rocm = hasattr(torch.version, "hip") and torch.version.hip is not None
+    amp_dtype = torch.bfloat16 if _is_rocm else torch.float16
     if use_amp:
-        print("[amp] Mixed precision (FP16) enabled")
+        print(f"[amp] Mixed precision enabled  dtype={'bfloat16' if amp_dtype == torch.bfloat16 else 'float16'}")
 
     # --- Build augmentation and PLR after model is ready ---
     aug_module = _build_augmentation_module(cfg, model)
@@ -344,7 +347,8 @@ def main() -> None:
     print(f"{'='*65}\n")
 
     start_time = time.time()
-    scaler = torch.amp.GradScaler(device=device.type, enabled=use_amp)
+    # bfloat16 has enough dynamic range — GradScaler is a no-op for it.
+    scaler = torch.amp.GradScaler(device=device.type, enabled=use_amp and amp_dtype == torch.float16)
     # Phase timing accumulators (milliseconds, reset each print interval)
     _pt_rollout = _pt_bulk_xfer = _pt_gae = _pt_ppo_xfer = _pt_ppo_grad = 0.0
     _pt_updates = 0
@@ -491,7 +495,7 @@ def main() -> None:
                 if cfg.get("norm_adv", True):
                     mb_advs = (mb_advs - mb_advs.mean()) / (mb_advs.std() + 1e-8)
 
-                with torch.autocast(device_type=device.type, dtype=torch.float16, enabled=use_amp):
+                with torch.autocast(device_type=device.type, dtype=amp_dtype, enabled=use_amp):
                     _, new_logp, entropy, new_value = model.get_action_and_value(mb_obs_input, mb_acts)
                     new_value = new_value.squeeze(-1)
 
