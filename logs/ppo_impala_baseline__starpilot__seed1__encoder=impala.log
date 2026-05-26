@@ -1,0 +1,38 @@
+[device] GPU detected:   (24.0 GB VRAM)
+[device] Backend: NVIDIA CUDA
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from WANDB_API_KEY.
+Traceback (most recent call last):
+  File "/workspace/src/train_ppo.py", line 712, in <module>
+    main()
+  File "/workspace/src/train_ppo.py", line 256, in main
+    run = wandb.init(**wandb_kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/wandb/sdk/wandb_init.py", line 1524, in init
+    wi.maybe_login(init_settings)
+  File "/usr/local/lib/python3.11/dist-packages/wandb/sdk/wandb_init.py", line 200, in maybe_login
+    wandb_login._login(
+  File "/usr/local/lib/python3.11/dist-packages/wandb/sdk/wandb_login.py", line 204, in _login
+    _print_logged_in_message(settings, host=str(host_url))
+  File "/usr/local/lib/python3.11/dist-packages/wandb/sdk/wandb_login.py", line 319, in _print_logged_in_message
+    username = singleton._get_username()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/wandb/sdk/wandb_setup.py", line 315, in _get_username
+    return self.viewer.get("username")
+           ^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/wandb/sdk/wandb_setup.py", line 330, in viewer
+    return self._server.viewer
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/wandb/sdk/lib/server.py", line 57, in viewer
+    self.query_with_timeout()
+  File "/usr/local/lib/python3.11/dist-packages/wandb/sdk/lib/server.py", line 32, in query_with_timeout
+    viewer_tuple, viewer_thread = async_viewer()
+                                  ^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/wandb/util.py", line 1279, in wrapper
+    result = q.get(True, timeout)
+             ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/queue.py", line 180, in get
+    self.not_empty.wait(remaining)
+  File "/usr/lib/python3.11/threading.py", line 324, in wait
+    gotit = waiter.acquire(True, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

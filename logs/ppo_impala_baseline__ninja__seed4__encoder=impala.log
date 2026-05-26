@@ -1,0 +1,23 @@
+[device] GPU detected:   (24.0 GB VRAM)
+[device] Backend: NVIDIA CUDA
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from WANDB_API_KEY.
+wandb: Currently logged in as: stayrosanang (staanagnostou-) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.26.1
+wandb: Run data is saved locally in /workspace/wandb/run-20260508_113613-t2b8n4sy
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run ninja__impala__seed4__20260508_113612
+wandb: ⭐️ View project at https://wandb.ai/staanagnostou-/thesis-rl-baselines
+wandb: 🚀 View run at https://wandb.ai/staanagnostou-/thesis-rl-baselines/runs/t2b8n4sy
+[wandb] Run ID: t2b8n4sy  tags=['none', 'ninja', 'seed_4', 'impala']
+[env] ninja  64 envs  200 levels  mode=easy  backend=auto
+[env] obs_space=(64, 64, 3)  num_actions=15
+[model] torch.compile applied (mode=reduce-overhead)
+[amp] Mixed precision (FP16) enabled
+[model] IMPALA-CNN  params=626,256
+
+=================================================================
+  Starting PPO  |  env=ninja  aug=none  lvl=uniform
+  total_steps=25,000,000  updates=1,525  device=cuda
+=================================================================
+
+HW Exception by GPU node-1 (Agent handle: 0x33cce0a0) reason :GPU Hang
