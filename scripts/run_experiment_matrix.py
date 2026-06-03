@@ -66,6 +66,32 @@ class Run:
             parts.append(override_str)
         return "__".join(parts)
 
+    def config_key(self) -> str:
+        """
+        Stable fingerprint derived from effective training config.
+
+        Used to match completed W&B runs whose names predate the run_id format
+        (old runs were named {env_id}__{encoder}__seed{N}__{timestamp}).
+        Loads the base YAML so overrides are merged with defaults correctly.
+        """
+        cfg_path = Path("configs") / self.config_file
+        try:
+            with open(cfg_path) as f:
+                base: dict[str, Any] = yaml.safe_load(f) or {}
+        except FileNotFoundError:
+            base = {}
+        effective = {**base, **self.overrides}
+
+        script_tag = "dqn" if "dqn" in self.config_file else "ppo"
+        aug        = effective.get("augmentation_method", "none")
+        encoder    = effective.get("encoder", "impala")
+        level_sel  = effective.get("level_selection", "uniform")
+        return f"{script_tag}|{self.env_id}|{self.seed}|{aug}|{encoder}|{level_sel}"
+
+    def is_completed(self, completed: set[str]) -> bool:
+        """True if this run is already done — matches by run_id OR by config key."""
+        return self.run_id in completed or self.config_key() in completed
+
     def to_cmd(self) -> list[str]:
         """Build the command-line invocation."""
         cmd = [
@@ -73,6 +99,7 @@ class Run:
             "--config", f"configs/{self.config_file}",
             "--env-id", self.env_id,
             "--seed", str(self.seed),
+            "--run-name", self.run_id,
         ]
         for key, value in self.overrides.items():
             # Convert snake_case → --kebab-case
@@ -163,7 +190,12 @@ def build_run_list(
 def get_completed_run_ids(project: str, entity: str | None = None) -> set[str]:
     """
     Query W&B for all completed runs in the project.
-    Returns a set of run names that have state='finished'.
+
+    Returns a set containing two types of keys for each finished run:
+      1. run.name        — matches new-format runs whose name == run_id
+      2. config_key      — matches old-format runs (named with a timestamp) by
+                           their effective training config
+                           format: "{ppo|dqn}|{env_id}|{seed}|{aug}|{encoder}|{level_sel}"
 
     Returns empty set if wandb is not available or not logged in.
     """
@@ -172,7 +204,21 @@ def get_completed_run_ids(project: str, entity: str | None = None) -> set[str]:
         api = wandb.Api()
         path = f"{entity}/{project}" if entity else project
         runs = api.runs(path, filters={"state": "finished"})
-        return {r.name for r in runs}
+        completed: set[str] = set()
+        for r in runs:
+            completed.add(r.name)
+            cfg = r.config or {}
+            env_id = cfg.get("env_id")
+            seed   = cfg.get("seed")
+            if env_id and seed is not None:
+                # Detect DQN vs PPO: DQN configs have eps_start / replay buffer keys.
+                is_dqn    = "eps_start" in cfg or "replay_buffer_size" in cfg
+                script_tag = "dqn" if is_dqn else "ppo"
+                aug       = cfg.get("augmentation_method", "none")
+                encoder   = cfg.get("encoder", "impala")
+                level_sel = cfg.get("level_selection", "uniform")
+                completed.add(f"{script_tag}|{env_id}|{seed}|{aug}|{encoder}|{level_sel}")
+        return completed
     except Exception as e:
         print(f"[wandb] Could not query completed runs: {e}")
         return set()
@@ -189,7 +235,7 @@ def run_sequential(runs: list[Run], skip_completed: set[str], dry_run: bool) -> 
 
     for i, run in enumerate(runs, 1):
         # Check if already completed
-        if run.run_id in skip_completed:
+        if run.is_completed(skip_completed):
             print(f"  [{i:>4}/{total}] SKIP (completed)  {run.run_id}")
             continue
 
@@ -292,7 +338,7 @@ def run_parallel(runs: list[Run], skip_completed: set[str], n_parallel: int) -> 
     """Run up to n_parallel experiments concurrently using subprocess."""
     import concurrent.futures
 
-    pending = [r for r in runs if r.run_id not in skip_completed]
+    pending = [r for r in runs if not r.is_completed(skip_completed)]
     total = len(pending)
     completed = 0
     failed = 0
@@ -443,7 +489,7 @@ def main() -> None:
         print(f"[wandb] Found {len(skip_completed)} completed runs.")
 
     # Print summary
-    pending = [r for r in runs if r.run_id not in skip_completed]
+    pending = [r for r in runs if not r.is_completed(skip_completed)]
     print(f"  Total:    {len(runs)}")
     print(f"  Skip:     {len(runs) - len(pending)}")
     print(f"  To run:   {len(pending)}")

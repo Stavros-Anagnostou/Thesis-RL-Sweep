@@ -174,6 +174,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--device",          type=str, default=None)
     parser.add_argument("--total-timesteps", type=int, default=None)
     parser.add_argument("--no-wandb",        action="store_true")
+    parser.add_argument("--run-name",        type=str, default=None,
+                        help="Override the auto-generated W&B/checkpoint run name")
     return parser.parse_args()
 
 
@@ -208,7 +210,7 @@ def main() -> None:
     device = get_device(cfg["device"])
     set_seed(cfg["seed"])
 
-    run_name = make_run_name(cfg)
+    run_name = args.run_name if args.run_name else make_run_name(cfg)
     checkpoint_dir = Path("checkpoints") / cfg["env_id"] / run_name
     checkpoint_dir.mkdir(parents=True, exist_ok=True)
 
