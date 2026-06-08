@@ -358,14 +358,20 @@ def main() -> None:
     for update in range(updates_done + 1, num_updates + 1):
 
         # ==================================================================
-        # 1. PLR level selection (reconstructs env if needed)
+        # 1. PLR level selection (reconstructs env only when level changes)
         # ==================================================================
         if plr is not None:
-            plr_current_level = plr.sample_level()
-            train_env.close()
-            train_env = _make_plr_env(cfg, plr_current_level)
-            obs  = torch.from_numpy(train_env.reset())
-            done = torch.zeros(cfg["num_envs"])
+            new_level = plr.sample_level()
+            if new_level != plr_current_level:
+                train_env.close()
+                train_env = _make_plr_env(cfg, new_level)
+                obs  = torch.from_numpy(train_env.reset())
+                done = torch.zeros(cfg["num_envs"])
+            else:
+                # Same level — reset the existing env instead of recreating it.
+                obs  = torch.from_numpy(train_env.reset())
+                done = torch.zeros(cfg["num_envs"])
+            plr_current_level = new_level
             plr_vl_accum = []
 
         # ==================================================================

@@ -170,16 +170,17 @@ def random_grayscale(x: Tensor, prob: float = 0.2) -> Tensor:
 def random_cutout(x: Tensor, patch_size: int = 16) -> Tensor:
     """Zero out a randomly located `patch_size × patch_size` square patch."""
     b, c, h, w = x.shape
-    # Sample top-left corner uniformly so the patch fits within the image.
-    top  = torch.randint(0, h - patch_size + 1, (b,))
-    left = torch.randint(0, w - patch_size + 1, (b,))
+    top  = torch.randint(0, h - patch_size + 1, (b,), device=x.device)
+    left = torch.randint(0, w - patch_size + 1, (b,), device=x.device)
 
-    # Build a mask (1 = keep, 0 = zero) — do this on CPU then move to device.
-    mask = torch.ones(b, 1, h, w, device=x.device)
-    for i in range(b):
-        mask[i, :, top[i]:top[i] + patch_size, left[i]:left[i] + patch_size] = 0.0
-
-    return x * mask
+    # Build mask via broadcast comparison — single GPU op, no Python loop.
+    rows = torch.arange(h, device=x.device).view(1, 1, h, 1)
+    cols = torch.arange(w, device=x.device).view(1, 1, 1, w)
+    top_t  = top.view(b, 1, 1, 1)
+    left_t = left.view(b, 1, 1, 1)
+    in_patch = (rows >= top_t) & (rows < top_t + patch_size) & \
+               (cols >= left_t) & (cols < left_t + patch_size)
+    return x * (~in_patch).float()
 
 
 # ---------------------------------------------------------------------------

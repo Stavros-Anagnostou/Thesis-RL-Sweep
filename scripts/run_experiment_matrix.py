@@ -205,9 +205,24 @@ def get_completed_run_ids(project: str, entity: str | None = None) -> set[str]:
         path = f"{entity}/{project}" if entity else project
         runs = api.runs(path, filters={"state": "finished"})
         completed: set[str] = set()
+        bogus = 0
         for r in runs:
-            completed.add(r.name)
             cfg = r.config or {}
+            summary = r.summary or {}
+
+            # W&B can report state="finished" for runs that crashed before logging
+            # a single training step (e.g. a Colab launch that died on
+            # "ImportError: Neither EnvPool nor procgen are available" within the
+            # first second). Such runs have _step=None / _runtime≈0 yet still match
+            # by name and config_key, permanently skipping the real run. Only trust
+            # a "finished" run if it actually logged progress close to completion.
+            step = summary.get("_step")
+            total_timesteps = cfg.get("total_timesteps")
+            if step is None or (total_timesteps and step < 0.9 * total_timesteps):
+                bogus += 1
+                continue
+
+            completed.add(r.name)
             env_id = cfg.get("env_id")
             seed   = cfg.get("seed")
             if env_id and seed is not None:
@@ -218,6 +233,8 @@ def get_completed_run_ids(project: str, entity: str | None = None) -> set[str]:
                 encoder   = cfg.get("encoder", "impala")
                 level_sel = cfg.get("level_selection", "uniform")
                 completed.add(f"{script_tag}|{env_id}|{seed}|{aug}|{encoder}|{level_sel}")
+        if bogus:
+            print(f"[wandb] Ignoring {bogus} 'finished' run(s) that never logged training progress (likely crashed before step 0).")
         return completed
     except Exception as e:
         print(f"[wandb] Could not query completed runs: {e}")

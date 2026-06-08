@@ -23,6 +23,7 @@ EnvPool Procgen task ID format:
 
 from __future__ import annotations
 
+import os
 import numpy as np
 from typing import Any
 
@@ -280,7 +281,7 @@ def _make_envpool_procgen(
     task_id = f"{env_id.capitalize()}{mode_label}-v0"
 
     if num_threads is None:
-        num_threads = num_envs
+        num_threads = min(num_envs, os.cpu_count() or num_envs)
 
     raw_env = envpool.make(
         task_id,

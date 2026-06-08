@@ -272,6 +272,7 @@ def main() -> None:
 
     global_step = 0
     total_timesteps = cfg["total_timesteps"]
+    train_iter = 0  # counts env steps (iterations), not total transitions
 
     next_checkpoint_step = cfg["checkpoint_freq"]
     next_eval_step       = cfg["eval_freq"]
@@ -315,11 +316,15 @@ def main() -> None:
 
         obs = next_obs
         global_step += num_envs
+        train_iter += 1
 
         # --- DQN update (after filling buffer past learning_starts) ---
+        # Use train_iter (iteration count) not global_step: global_step increments
+        # by num_envs each step, so global_step % train_freq would always be 0
+        # when num_envs is a multiple of train_freq, collapsing to every-step training.
         if (
             len(replay_buffer) >= cfg["learning_starts"]
-            and global_step % cfg["train_freq"] == 0
+            and train_iter % cfg["train_freq"] == 0
         ):
             batch = replay_buffer.sample(cfg["batch_size"], device)
 
